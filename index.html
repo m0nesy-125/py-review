@@ -58,11 +58,84 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <body>
 <header>
 <h1>Python 学习复习</h1>
-<div class="sub">共 101 篇 · 最后生成 2026-11-19</div>
+<div class="sub">共 102 篇 · 最后生成 2026-11-19</div>
 <input id="q" type="search" placeholder="搜索关键词，如 SQL、argv、Git…" autocomplete="off">
-<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
+<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
 </header>
-<main><details data-kind="易错点" data-text="# 易错点汇总（自动汇总，按出错次数排序）
+<main><details data-kind="复习" data-text="# 工位电脑更新复习页（首次配置 + 日常用法）
+
+&gt; 2026-11-19 建立。目标：工位电脑也能生成并部署复习页，不必回宿舍。
+
+## 一、首次配置（只做一次，约 2 分钟）
+
+1. 插 u 盘；
+2. 双击运行：
+
+```
+e:\dsh-portable\review-tools\login.cmd
+```
+
+3. 屏幕会显示一个 6 位设备码（形如 `abcd-1234`）；
+4. 手机或浏览器打开 https://github.com/login/device ，用 `m0nesy-125` 登录并输入该码；
+5. 回到命令行按任意键，看到 `token_ok` 即成功。
+
+令牌保存在**这台电脑**的 `%userprofile%\.dsh\gh_token`，**不在 u 盘里**。
+
+## 二、日常更新（每次学完）
+
+### 方式 a：双击
+
+```
+e:\dsh-portable\review-tools\update.cmd
+```
+
+它会：重新生成复习页 → 上传到 github pages → 显示 `status: built`。
+
+### 方式 b：在 dsh 里说“更新复习页”
+
+导师会运行同样的生成 + 部署流程。
+
+## 三、前提条件
+
+| 条件 | 说明 |
+|---|---|
+| 学习记录在本机 | 工位首次使用先跑 `sync-from-usb.cmd`，或直接在工位写 |
+| python | 用 u 盘自带 python，无需另装 |
+| 网络 | 能访问 github.com（上传用 api，不依赖 git push） |
+
+## 四、手机端
+
+- 地址固定：https://m0nesy-125.github.io/py-review/
+- 电脑全关也能看（内容已缓存）；
+- 工位更新后，手机联网打开/下拉刷新即可。
+
+## 五、注意
+
+1. 不要手动改 `learning\pages`，那是部署临时目录；
+2. 令牌只对 `py-review` 仓库有写权限；如泄露，在 github → settings → applications 撤销；
+3. u 盘同步前先关 dsh/编辑器，避免文件占用。
+">
+<summary><span class="date">11-19 20:06</span><span>工位电脑更新复习页（首次配置 + 日常用法）</span><span class="kind">复习</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><h2>工位电脑更新复习页（首次配置 + 日常用法）</h2>
+<blockquote>2026-11-19 建立。目标：工位电脑也能生成并部署复习页，不必回宿舍。</blockquote>
+<h3>一、首次配置（只做一次，约 2 分钟）</h3>
+<ul><li>插 U 盘；</li><li>双击运行：</li></ul>
+<pre><code>E:\DSH-Portable\review-tools\login.cmd</code></pre>
+<ul><li>屏幕会显示一个 6 位设备码（形如 <code>ABCD-1234</code>）；</li><li>手机或浏览器打开 https://github.com/login/device ，用 <code>m0nesy-125</code> 登录并输入该码；</li><li>回到命令行按任意键，看到 <code>TOKEN_OK</code> 即成功。</li></ul>
+<p>令牌保存在<strong>这台电脑</strong>的 <code>%USERPROFILE%\.dsh\gh_token</code>，<strong>不在 U 盘里</strong>。</p>
+<h3>二、日常更新（每次学完）</h3>
+<h4>方式 A：双击</h4>
+<pre><code>E:\DSH-Portable\review-tools\update.cmd</code></pre>
+<p>它会：重新生成复习页 → 上传到 GitHub Pages → 显示 <code>status: built</code>。</p>
+<h4>方式 B：在 DSH 里说“更新复习页”</h4>
+<p>导师会运行同样的生成 + 部署流程。</p>
+<h3>三、前提条件</h3>
+<table><thead><tr><th>条件</th><th>说明</th></tr></thead><tbody><tr><td>学习记录在本机</td><td>工位首次使用先跑 <code>sync-from-usb.cmd</code>，或直接在工位写</td></tr><tr><td>Python</td><td>用 U 盘自带 Python，无需另装</td></tr><tr><td>网络</td><td>能访问 github.com（上传用 API，不依赖 git push）</td></tr></tbody></table>
+<h3>四、手机端</h3>
+<ul><li>地址固定：https://m0nesy-125.github.io/py-review/</li><li>电脑全关也能看（内容已缓存）；</li><li>工位更新后，手机联网打开/下拉刷新即可。</li></ul>
+<h3>五、注意</h3>
+<ul><li>不要手动改 <code>learning\pages</code>，那是部署临时目录；</li><li>令牌只对 <code>py-review</code> 仓库有写权限；如泄露，在 GitHub → Settings → Applications 撤销；</li><li>U 盘同步前先关 DSH/编辑器，避免文件占用。</li></ul></div>
+</details><details data-kind="易错点" data-text="# 易错点汇总（自动汇总，按出错次数排序）
 
 &gt; 来源：`notes/retest-2026-11-18-sql*.md`、`sessions/2026-11-19-*.md`、`sessions/2026-11-19-http.md`。
 &gt; 用法：复习时先看这张表，能说出“错在哪、正确写法是什么”再往下看。
@@ -9633,10 +9706,19 @@ chips.forEach(c=>c.addEventListener('click',()=>{
 }));
 let deferred=null;
 const btn=document.getElementById('install');
+btn.hidden=false;
+if(window.matchMedia('(display-mode: standalone)').matches){btn.hidden=true;}
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;btn.hidden=false;});
 btn.addEventListener('click',async()=>{
   if(deferred){deferred.prompt();await deferred.userChoice;deferred=null;btn.hidden=true;}
-  else{alert('请用 Chrome 菜单 → 添加到主屏幕');}
+  else{alert('当前浏览器没有弹出安装框。
+
+请这样做：
+1) 用 Chrome 打开本页
+2) 点右上角 ⋮
+3) 选「安装应用」或「添加到主屏幕」
+
+如果用的是微信/QQ/夸克/小米浏览器，请先复制链接到 Chrome 打开。');}
 });
 const cv=document.createElement('div');
 cv.id='codeview';
