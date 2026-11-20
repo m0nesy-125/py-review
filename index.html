@@ -62,11 +62,89 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <body>
 <header>
 <h1>Python 学习复习</h1>
-<div class="sub">共 109 篇 · 最后生成 2026-11-20</div>
+<div class="sub">共 110 篇 · 最后生成 2026-11-20</div>
 <input id="q" type="search" placeholder="搜索关键词，如 SQL、argv、Git…" autocomplete="off">
-<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
+<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
 </header>
-<main><details data-kind="进度" data-text="# 学习进度
+<main><details data-kind="其他" data-text="# 配置与训练规则调整记录（2026-11-20）
+
+&gt; 本次为最小范围优化：不重装、不重置、不改教学体系主体；只修进度、证据、训练规则与发布配置。
+
+## 1. 进度修正
+
+- `progress.md` 更新时间改为 **2026-11-20**；
+- 当前阶段改为 **第 2 阶段收尾**（git 已覆盖；sql 内容覆盖但独立证据不足；http 基础已学，待短迁移）；
+- 最近一次学习改为 11-20 晚 `report.py` 综合练习，附独立部分/指导部分；
+- 下次起点重排：http 短迁移 → fastapi；sql 陌生业务迁移；git 冲突复测；发布前隐私检查；
+- 清除重复待办（原“下次起点”里重复的 ②③ 已合并）；
+- 历史记录未删，新增“当前有效规则 / 已失效旧计划”一节。
+
+## 2. 证据准确性
+
+`report.py` 的混合证据按条拆分：
+
+| 部分 | 归属 |
+|---|---|
+| `import`、`fetch(url)`、`try/except httperror`、`if resp is none`、`json.dump`、循环求平均 | 学员独立敲出 |
+| `path(__file__).parent`、统计缩进移出 `with`、`return none` 含义、`httperror` 归属、`sys.exit` 作用 | 经指导修正 |
+
+- 最终证据等级：`hinted_run`（不再写 `independent_run`）；
+- 运行成功只说明当次可运行，不等于独立掌握；
+- 历史代码与原始成绩未改。
+
+## 3. sql 训练调整
+
+- **取消**“连续 3 天默写完整骨架 0 错误才能复测”的硬性要求；
+- 熟悉的代码不再机械默写；
+- 改为一次陌生业务场景综合迁移：新表/新字段/新 csv，允许查官方文档，不给现成实现；
+- 验收看理解、程序组织、调试、幂等，不要求覆盖数据库高级知识。
+
+## 4. http 与后续
+
+- 保留 http 已学成果（get/post/头/超时/异常/重试/模块化），不退回重学；
+- 先做一次 30–40 分钟短独立迁移（异常分类、请求失败、模块化），通过后进 fastapi；
+- 新语法仍先讲透再实践；每天一个主题。
+
+## 5. 配置与复习页
+
+- skill 简介与正文统一为：**主线 python 后端 + 大模型应用开发，机器学习工程为并行方向**；
+- 复习页构建加入脱敏：本地路径、邮箱、用户名、u 盘路径一律替换；
+- 发布后核对本地与线上 `index.html` 哈希一致（本次一致）；
+- **令牌风险**：当前令牌是 oauth `repo` 权限（对该账号所有仓库可写）。建议换成 **fine-grained token，仅 `py-review` 仓库、contents 读写**；替换步骤见下；
+- u 盘同步与收尾提醒保留；历史备份未删。
+
+## 6. 待你确认
+
+原消息最后一行是“**保”，内容被截断（可能是“保留…”）。请补一句完整要求，我按原意补上。
+
+## 附：更换为限定仓库令牌（可选，1 分钟）
+
+1. github → settings → developer settings → **fine-grained tokens** → generate new token；
+2. repository access：only select repositories → `py-review`；
+3. permissions：**contents: read and write**（若 pages 需要，再加 pages: read and write）；
+4. 生成后复制，覆盖本机 `用户目录\.dsh\gh_token`（一行，无空格）；
+5. 旧 oauth 令牌可在 settings → applications 撤销。
+">
+<summary><span class="date">11-20 21:06</span><span>配置与训练规则调整记录（2026-11-20）</span><span class="kind">其他</span></summary>
+<div class="body"><h2>配置与训练规则调整记录（2026-11-20）</h2>
+<blockquote>本次为最小范围优化：不重装、不重置、不改教学体系主体；只修进度、证据、训练规则与发布配置。</blockquote>
+<h3>1. 进度修正</h3>
+<ul><li><code>PROGRESS.md</code> 更新时间改为 <strong>2026-11-20</strong>；</li><li>当前阶段改为 <strong>第 2 阶段收尾</strong>（Git 已覆盖；SQL 内容覆盖但独立证据不足；HTTP 基础已学，待短迁移）；</li><li>最近一次学习改为 11-20 晚 <code>report.py</code> 综合练习，附独立部分/指导部分；</li><li>下次起点重排：HTTP 短迁移 → FastAPI；SQL 陌生业务迁移；Git 冲突复测；发布前隐私检查；</li><li>清除重复待办（原“下次起点”里重复的 ②③ 已合并）；</li><li>历史记录未删，新增“当前有效规则 / 已失效旧计划”一节。</li></ul>
+<h3>2. 证据准确性</h3>
+<p><code>report.py</code> 的混合证据按条拆分：</p>
+<table><thead><tr><th>部分</th><th>归属</th></tr></thead><tbody><tr><td><code>import</code>、<code>fetch(url)</code>、<code>try/except HTTPError</code>、<code>if resp is None</code>、<code>json.dump</code>、循环求平均</td><td>学员独立敲出</td></tr><tr><td><code>Path(__file__).parent</code>、统计缩进移出 <code>with</code>、<code>return None</code> 含义、<code>HTTPError</code> 归属、<code>sys.exit</code> 作用</td><td>经指导修正</td></tr></tbody></table>
+<ul><li>最终证据等级：<code>HINTED_RUN</code>（不再写 <code>INDEPENDENT_RUN</code>）；</li><li>运行成功只说明当次可运行，不等于独立掌握；</li><li>历史代码与原始成绩未改。</li></ul>
+<h3>3. SQL 训练调整</h3>
+<ul><li><strong>取消</strong>“连续 3 天默写完整骨架 0 错误才能复测”的硬性要求；</li><li>熟悉的代码不再机械默写；</li><li>改为一次陌生业务场景综合迁移：新表/新字段/新 CSV，允许查官方文档，不给现成实现；</li><li>验收看理解、程序组织、调试、幂等，不要求覆盖数据库高级知识。</li></ul>
+<h3>4. HTTP 与后续</h3>
+<ul><li>保留 HTTP 已学成果（GET/POST/头/超时/异常/重试/模块化），不退回重学；</li><li>先做一次 30–40 分钟短独立迁移（异常分类、请求失败、模块化），通过后进 FastAPI；</li><li>新语法仍先讲透再实践；每天一个主题。</li></ul>
+<h3>5. 配置与复习页</h3>
+<ul><li>Skill 简介与正文统一为：<strong>主线 Python 后端 + 大模型应用开发，机器学习工程为并行方向</strong>；</li><li>复习页构建加入脱敏：本地路径、邮箱、用户名、U 盘路径一律替换；</li><li>发布后核对本地与线上 <code>index.html</code> 哈希一致（本次一致）；</li><li><strong>令牌风险</strong>：当前令牌是 OAuth <code>repo</code> 权限（对该账号所有仓库可写）。建议换成 <strong>fine-grained token，仅 <code>py-review</code> 仓库、Contents 读写</strong>；替换步骤见下；</li><li>U 盘同步与收尾提醒保留；历史备份未删。</li></ul>
+<h3>6. 待你确认</h3>
+<p>原消息最后一行是“**保”，内容被截断（可能是“保留…”）。请补一句完整要求，我按原意补上。</p>
+<h3>附：更换为限定仓库令牌（可选，1 分钟）</h3>
+<ul><li>GitHub → Settings → Developer settings → <strong>Fine-grained tokens</strong> → Generate new token；</li><li>Repository access：Only select repositories → <code>py-review</code>；</li><li>Permissions：<strong>Contents: Read and write</strong>（若 Pages 需要，再加 Pages: Read and write）；</li><li>生成后复制，覆盖本机 <code>用户目录\.dsh\gh_token</code>（一行，无空格）；</li><li>旧 OAuth 令牌可在 Settings → Applications 撤销。</li></ul></div>
+</details><details data-kind="进度" data-text="# 学习进度
 
 - 更新时间：2026-11-20
 - **路径变更（2026-11-13）**：学习根目录由 `学习目录` 搬迁为 `学习目录`；所有文本文件内的旧路径已批量替换；`用户目录\.dsh\skills\python-bioinformatics-tutor` junction 已重新指向新位置；历史记录内容未改。旧目录残留空文件夹（被进程占用），重启后可删。
