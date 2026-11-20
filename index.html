@@ -62,11 +62,183 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <body>
 <header>
 <h1>Python 学习复习</h1>
-<div class="sub">共 108 篇 · 最后生成 2026-11-20</div>
+<div class="sub">共 109 篇 · 最后生成 2026-11-20</div>
 <input id="q" type="search" placeholder="搜索关键词，如 SQL、argv、Git…" autocomplete="off">
-<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
+<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
 </header>
-<main><details data-kind="进度" data-text="# 学习进度
+<main><details data-kind="其他" data-text="# 答疑：json、文件写入与取值（2026-11-20 晚）
+
+&gt; 对应 `report.py` 里的 `data = resp.json()`、`json.dump(...)`、`members = data[ members ]`。
+
+## 1. `resp.json()` 与 `json.dump()` 方向相反
+
+| 操作 | 方向 | 输入 | 输出 |
+|---|---|---|---|
+| `resp.json()` | json 文本 → python | 响应字符串 | `dict` / `list` |
+| `json.dump(data, f)` | python → json 文本 | `dict` / `list` | 文件里的字符串 |
+
+- `resp.text` 是原始字符串；
+- `resp.json()` 把它解析成字典；
+- `json.dump` 再把字典变回 json 写进文件。
+
+## 2. `json.dump(data, f, ...)` 每个参数
+
+| 参数 | 作用 |
+|---|---|
+| `data` | 要写的 python 对象 |
+| `f` | `open()` 返回的文件把手，不是文件名 |
+| `ensure_ascii=false` | 中文原样写，不转 `\uxxxx` |
+| `indent=2` | 缩进 2 格、换行 |
+
+等价三步：
+
+```python
+f = open( team.json ,  w , encoding= utf-8 )
+json.dump(data, f)
+f.close()
+```
+
+`with open(...) as f:` 只是自动关门。
+
+## 3. 为什么存 json 不存 `.py`
+
+| | json | `.py` |
+|---|---|---|
+| 内容 | 纯数据 | 可执行代码 |
+| 谁能读 | python、js、excel、手机 app | 基本只有 python |
+| 读取 | `json.load` 解析 | `import` 会执行文件 |
+| 安全 | 只解析 | 可能执行任意代码 |
+
+网页（复习页 app）只能读 json，读不了 `.py`。
+
+## 4. 怎么知道 `data` 里有什么键
+
+不要猜，先打印：
+
+```python
+print(type(data))          #  
+print(data.keys())         # dict_keys([&#x27;team&#x27;, &#x27;members&#x27;])
+print(data)                # 看整体结构
+```
+
+本次题目里结构是导师给的（`{ team :...,  members :[...]}`），真实场景要自己先看接口返回或文档。
+
+## 5. `members = data[ members ]` 是什么
+
+从字典按 key 取值，再起个变量名：
+
+```python
+members = data[ members ]
+# 等价于后面每次写 data[ members ]
+```
+
+`data[ data ]` 会 `keyerror`，因为顶层没有 `data` 这个键。
+
+## 6. 统计那段
+
+```python
+members = data[ members ]
+total = 0
+for m in members:
+    total = total + m[ score ]
+
+avg = total / len(members)
+print( 成员 , len(members),  人，平均 , round(avg, 1))
+```
+
+| 轮次 | `m[ score ]` | `total` |
+|---|---|---|
+| 1 | 80 | 80 |
+| 2 | 70 | 150 |
+
+`avg = 150 / 2 = 75.0`。
+
+## 7. `sys.exit(1)` 为什么需要
+
+`fetch()` 三次都失败会 `return none`；调用方要：
+
+```python
+if resp is none:
+    print( 服务不可用 )
+    sys.exit(1)
+```
+
+`sys.exit(1)` = 立刻结束 + 标记失败；退出码 `0` 成功、`1` 失败。
+
+## 8. `httperror` 为什么要在调用方接
+
+`fetch()` 只捕获 `connectionerror` 和 `timeout`，没捕获 `httperror`，所以 404 时异常会抛给调用方：
+
+```python
+try:
+    resp = fetch(url)
+except requests.httperror:
+    print( 接口错误 )
+```
+
+## 9. 相对路径的坑
+
+```python
+open( team.json ,  w )          # 写到“当前工作目录”
+open(base /  team.json ,  w )   # 写到脚本所在目录（推荐）
+```
+
+`base = path(__file__).parent` 保证不管从哪里运行，文件都落在脚本旁边。
+">
+<summary><span class="date">11-20 20:33</span><span>答疑：JSON、文件写入与取值（2026-11-20 晚）</span><span class="kind">其他</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><h2>答疑：JSON、文件写入与取值（2026-11-20 晚）</h2>
+<blockquote>对应 <code>report.py</code> 里的 <code>data = resp.json()</code>、<code>json.dump(...)</code>、<code>members = data[&quot;members&quot;]</code>。</blockquote>
+<h3>1. <code>resp.json()</code> 与 <code>json.dump()</code> 方向相反</h3>
+<table><thead><tr><th>操作</th><th>方向</th><th>输入</th><th>输出</th></tr></thead><tbody><tr><td><code>resp.json()</code></td><td>JSON 文本 → Python</td><td>响应字符串</td><td><code>dict</code> / <code>list</code></td></tr><tr><td><code>json.dump(data, f)</code></td><td>Python → JSON 文本</td><td><code>dict</code> / <code>list</code></td><td>文件里的字符串</td></tr></tbody></table>
+<ul><li><code>resp.text</code> 是原始字符串；</li><li><code>resp.json()</code> 把它解析成字典；</li><li><code>json.dump</code> 再把字典变回 JSON 写进文件。</li></ul>
+<h3>2. <code>json.dump(data, f, ...)</code> 每个参数</h3>
+<table><thead><tr><th>参数</th><th>作用</th></tr></thead><tbody><tr><td><code>data</code></td><td>要写的 Python 对象</td></tr><tr><td><code>f</code></td><td><code>open()</code> 返回的文件把手，不是文件名</td></tr><tr><td><code>ensure_ascii=False</code></td><td>中文原样写，不转 <code>\uXXXX</code></td></tr><tr><td><code>indent=2</code></td><td>缩进 2 格、换行</td></tr></tbody></table>
+<p>等价三步：</p>
+<pre><code>f = open(&quot;team.json&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;)
+json.dump(data, f)
+f.close()</code></pre>
+<p><code>with open(...) as f:</code> 只是自动关门。</p>
+<h3>3. 为什么存 JSON 不存 <code>.py</code></h3>
+<table><thead><tr><th></th><th>JSON</th><th><code>.py</code></th></tr></thead><tbody><tr><td>内容</td><td>纯数据</td><td>可执行代码</td></tr><tr><td>谁能读</td><td>Python、JS、Excel、手机 App</td><td>基本只有 Python</td></tr><tr><td>读取</td><td><code>json.load</code> 解析</td><td><code>import</code> 会执行文件</td></tr><tr><td>安全</td><td>只解析</td><td>可能执行任意代码</td></tr></tbody></table>
+<p>网页（复习页 App）只能读 JSON，读不了 <code>.py</code>。</p>
+<h3>4. 怎么知道 <code>data</code> 里有什么键</h3>
+<p>不要猜，先打印：</p>
+<pre><code>print(type(data))          # &lt;class &#x27;dict&#x27;&gt;
+print(data.keys())         # dict_keys([&#x27;team&#x27;, &#x27;members&#x27;])
+print(data)                # 看整体结构</code></pre>
+<p>本次题目里结构是导师给的（<code>{&quot;team&quot;:..., &quot;members&quot;:[...]}</code>），真实场景要自己先看接口返回或文档。</p>
+<h3>5. <code>members = data[&quot;members&quot;]</code> 是什么</h3>
+<p>从字典按 key 取值，再起个变量名：</p>
+<pre><code>members = data[&quot;members&quot;]
+# 等价于后面每次写 data[&quot;members&quot;]</code></pre>
+<p><code>data[&quot;data&quot;]</code> 会 <code>KeyError</code>，因为顶层没有 <code>data</code> 这个键。</p>
+<h3>6. 统计那段</h3>
+<pre><code>members = data[&quot;members&quot;]
+total = 0
+for m in members:
+    total = total + m[&quot;score&quot;]
+
+avg = total / len(members)
+print(&quot;成员&quot;, len(members), &quot;人，平均&quot;, round(avg, 1))</code></pre>
+<table><thead><tr><th>轮次</th><th><code>m[&quot;score&quot;]</code></th><th><code>total</code></th></tr></thead><tbody><tr><td>1</td><td>80</td><td>80</td></tr><tr><td>2</td><td>70</td><td>150</td></tr></tbody></table>
+<p><code>avg = 150 / 2 = 75.0</code>。</p>
+<h3>7. <code>sys.exit(1)</code> 为什么需要</h3>
+<p><code>fetch()</code> 三次都失败会 <code>return None</code>；调用方要：</p>
+<pre><code>if resp is None:
+    print(&quot;服务不可用&quot;)
+    sys.exit(1)</code></pre>
+<p><code>sys.exit(1)</code> = 立刻结束 + 标记失败；退出码 <code>0</code> 成功、<code>1</code> 失败。</p>
+<h3>8. <code>HTTPError</code> 为什么要在调用方接</h3>
+<p><code>fetch()</code> 只捕获 <code>ConnectionError</code> 和 <code>Timeout</code>，没捕获 <code>HTTPError</code>，所以 404 时异常会抛给调用方：</p>
+<pre><code>try:
+    resp = fetch(url)
+except requests.HTTPError:
+    print(&quot;接口错误&quot;)</code></pre>
+<h3>9. 相对路径的坑</h3>
+<pre><code>open(&quot;team.json&quot;, &quot;w&quot;)          # 写到“当前工作目录”
+open(base / &quot;team.json&quot;, &quot;w&quot;)   # 写到脚本所在目录（推荐）</code></pre>
+<p><code>base = Path(__file__).parent</code> 保证不管从哪里运行，文件都落在脚本旁边。</p></div>
+</details><details data-kind="进度" data-text="# 学习进度
 
 - 更新时间：2026-11-19
 - **路径变更（2026-11-13）**：学习根目录由 `d:\pythonbioinformaticslearning` 搬迁为 `d:\python 学习`；所有文本文件内的旧路径已批量替换；`c:\users\admin\.dsh\skills\python-bioinformatics-tutor` junction 已重新指向新位置；历史记录内容未改。旧目录残留空文件夹（被进程占用），重启后可删。
