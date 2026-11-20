@@ -10082,14 +10082,7 @@ if(window.matchMedia('(display-mode: standalone)').matches){btn.hidden=true;}
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;btn.hidden=false;});
 btn.addEventListener('click',async()=>{
   if(deferred){deferred.prompt();await deferred.userChoice;deferred=null;btn.hidden=true;}
-  else{alert('当前浏览器没有弹出安装框。
-
-请这样做：
-1) 用 Chrome 打开本页
-2) 点右上角 ⋮
-3) 选「安装应用」或「添加到主屏幕」
-
-如果用的是微信/QQ/夸克/小米浏览器，请先复制链接到 Chrome 打开。');}
+  else{alert('当前浏览器没有弹出安装框。\n\n请这样做：\n1) 用 Chrome 打开本页\n2) 点右上角 ⋮\n3) 选「安装应用」或「添加到主屏幕」\n\n如果用的是微信/QQ/夸克/小米浏览器，请先复制链接到 Chrome 打开。');}
 });
 const cv=document.createElement('div');
 cv.id='codeview';
