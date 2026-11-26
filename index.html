@@ -62,7 +62,7 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <body>
 <header>
 <h1>Python 学习复习</h1>
-<div class="sub">共 133 篇 · 最后生成 2026-11-26</div>
+<div class="sub">共 134 篇 · 最后生成 2026-11-26</div>
 <input id="q" type="search" placeholder="搜索关键词，如 SQL、argv、Git…" autocomplete="off">
 <div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="HTTP · 复测">HTTP · 复测</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
 </header>
@@ -96,7 +96,13 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 
   - 2026-11-26 上午 **http 短迁移 4（`/tickets.json`）与 5（`/samples.json`）**（`sessions/2026-11-26-http-retest4-5.md`）：两次均为 `hinted_run`；段 4 有 3 处缺陷（`value&gt;1`、排序 key 用全局变量导致排序失效、`except connectionerror` 抓错类），段 5 仅 2 处机械性提示（循环变量残留、键名 `cnt`），提示数 8→2、用时 25 分钟（限时内）；第 2 阶段门禁仍差一次零提示验证。
   - 2026-11-26 上午 **10 分钟零提示验证（`/visits.json`）→ `independent_run`**（`sessions/2026-11-26-http-visits.md`）：11 分钟、零提示、`有效 7 跳过 2`、n2 2/17、n1 3/14、n3 2/9、`summary.json` 正确、代码复核无隐藏缺陷。**第 2 阶段（git/sql/http）门禁完成**。http 提示数轨迹 8→8→8→3→2→0。
-  - 2026-11-26 上午 **阶段 2 收尾复盘（10 问）**：5.5/10；git 冲突标记检查、`{}` 类型（均为第 3 次错）、路径锚定答反；http 异常分类（`connectionerror`/`timeout`）首次全对。错误按复发次数归档为 `notes/错题本-stage2.md`（14 类 + 4 条自查清单）。- **上一批记录（2026-11-24）**
+  - 2026-11-26 上午 **阶段 2 收尾复盘（10 问）**：5.5/10；git 冲突标记检查、`{}` 类型（均为第 3 次错）、路径锚定答反；http 异常分类（`connectionerror`/`timeout`）首次全对。错误按复发次数归档为 `notes/错题本-stage2.md`（14 类 + 4 条自查清单）。
+  - 2026-11-26 中午 **跨主题综合 + 交叉验证 + fastapi 第 1–2 课**（`sessions/2026-11-26-integration-crosscheck-fastapi.md`）：
+    - 综合任务（http→sqlite→`report.json`→三分支）：24 分钟，1 处提示（`skipped = 0`）；
+    - 交叉验证（python 分组 vs sql 分组）：`equal=true`、输出 `一致`，结构由导师给出；
+    - fastapi 第 1 课：`/health`、`/stock/{sku}` 通过，`/docs` 可访问；
+    - fastapi 第 2 课：查询参数、`post` + pydantic、`httpexception(404)`、422 校验全部通过（4 处提示）；
+    - **正式进入阶段 5 主线**；下一课：sqlite + 依赖注入。- **上一批记录（2026-11-24）**
 - 2026-11-24 上午 http 独立迁移（`sessions/2026-11-24-http-independent.md`）：`/courses.json` 分组 + 跳过坏值 + `summary.json`，输出正确且幂等；8 处错误经提示修正，判 `hinted_run`。
 - 2026-11-24 上午 sql 陌生业务任务（`sessions/2026-11-24-sql-business.md`）：`jobs.csv` 过滤 status、跳过坏值、入库、分组 + `result.json`，输出正确且幂等；8 处错误经提示修正，判 `hinted_run`。
 - 2026-11-24 上午 python 基础抽查（`sessions/2026-11-24-basics.md`）：口头 3.5/5；小代码需修 3 处（重复 int、累加器位置、未初始化），最终 `和 8` 正确，判 `hinted_run`。
@@ -275,10 +281,10 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 - 会话记录：`sessions/2026-11-25-http-retest3.md`；
 - 结论：**限时部分未通过**；修正为 `hinted_run`，不判独立；距 fastapi 门禁仍差一次零提示通过。
 ">
-<summary><span class="date">11-26 09:25</span><span>学习进度总览</span><span class="kind">进度</span></summary>
+<summary><span class="date">11-26 13:34</span><span>学习进度总览</span><span class="kind">进度</span></summary>
 <div class="body"><h2>学习进度</h2>
 <ul><li>更新时间：2026-11-25 09:25</li><li><strong>双机整合（2026-11-24）</strong>：以 PC-A 学习记录为基础，已按审核意见修订并部署到 PC-A 本地；18:52 完成 PC-A → U 盘首次正式同步（27 文件，SHA 校验，学习档案与 Skill 一致）；PC-B 待接入。设备登记、同步操作与备份记录见 <code>SYNC_STATUS.md</code>。</li><li><strong>路径变更（2026-11-13）</strong>：学习根目录由 <code>学习目录</code> 搬迁为 <code>学习目录</code>；所有文本文件内的旧路径已批量替换；<code>用户目录\.dsh\skills\python-bioinformatics-tutor</code> junction 已重新指向新位置；历史记录内容未改。旧目录残留空文件夹（被进程占用），重启后可删。</li><li><strong>临时单机模式（2026-11-23 起，2026-11-24 结束）</strong>：PC-A 单机期间 U 盘为冻结快照；11-24 由 PC-B 完成双向同步并登记，现进入双机整合阶段。设备与同步细节统一记录在 <code>SYNC_STATUS.md</code>，本文件不再混入设备信息。</li><li>状态：第 1 阶段内容完成；L1/L2 独立通过、L3 第 5 次独立通过；<strong>第 2 阶段收尾：SQL 已于 11-25 取得首次独立全流程证据；Git 冲突标记检查、HTTP 异常分类仍需补测</strong></li><li>当前阶段：<strong>第 2 阶段（Git / SQL / HTTP 工程基础）收尾</strong>——复习周内：HTTP 独立迁移 → SQL 陌生业务 → Python 基础抽查 → SQL 复测 → 复盘；<strong>暂不进入 FastAPI</strong></li><li>阶段门：第 0 阶段已通过；第 1 阶段门两次未通过（11-07 3/10、11-09 2.5/10），<strong>第三次（2026-11-12）由学员决定跳过</strong>；档案不写“通过”，只写“跳过/未验证”</li><li>历史会话（2026-11-18 晚，已归档）：SQL 第三次复测（<code>library.csv</code>，22:03–22:30，27 分钟，<strong>未通过</strong>：连接写错文件、表名错、<code>INTEGER KEY</code>、<code>append</code> 参数、<code>INSERT</code> 语句不完整、查询缺 <code>SELECT</code>；记录见 <code>notes/retest-2026-11-18-sql3.md</code>）</li><li><strong>学员反馈（2026-11-17）</strong>：新语法未逐行讲解就要求使用，导致“看不懂、背下来没用”。已写入 skill：课前列“全部写法清单”逐条讲；任何文件/运行状态先查再答。</li><li><strong>学员反馈（2026-11-16 晚）</strong>：当天 2 小时“像没学一样”，三块内容太散。已改为<strong>单一主题 + 先测后补</strong>。</li><li>历史会话（2026-11-23 中午，已归档）：复习周 Day1–Day3（<code>sessions/2026-11-23-day1-quiz.md</code> 等）</li><li>Day1 找错题 10 题首答 5.5/10，暴露“变量 vs 字符串”仍不稳；</li><li>Day2 缩进语义 4 份对照 + 3 个 bug；Day3 列名/键名一致性 3 个 bug（2 个独立修、1 个经提示）；</li><li>Day4 只留下 <code>bug_d1–d3.py</code>，无会话记录，待补。</li><li><strong>最新学习记录（2026-11-25，PC-B / <code>&lt;本机&gt;</code>）</strong></li><li>2026-11-25 上午 <strong>SQL 限时复测 3（<code>shipments.csv</code>）首次独立通过</strong>（<code>sessions/2026-11-25-sql-retest3.md</code>）：22 分钟、零提示、一次跑通；<code>有效 7 跳过 3</code>、表 7 行、分组 east 120 / north 50 / west 40、<code>report.json</code> 列表套对象、重跑幂等；主流程 <code>INDEPENDENT_RUN</code>。</li><li>交付后 3 处规格修正（<code>report.json</code> 结构、旧 <code>.db</code> 未删、键名 <code>cnt→count</code>）经提示完成，判 <code>HINTED_RUN</code>。</li><li>错题重做 3 个最小复现（set vs dict、<code>IF NOT EXISTS</code> 旧表、赋值 vs 追加）独立完成（<code>code/2026-11-25-drills</code>）。</li><li>阶段 2 复盘 4 问 2/4：冲突标记检查（误用 <code>git log</code>）、HTTP 异常分类（连不上是 <code>ConnectionError</code> 不是 500）待补。</li><li>同日 PC-B 首次接入：U 盘 → PC-B 30 文件，4 个冲突按 U 盘版人工对齐（两份留存），<code>status</code> 退出 0。</li><li>2026-11-25 上午第二段 <strong>Python 基础抽查 + 20 分钟小代码</strong>（<code>sessions/2026-11-25-py-check.md</code>）：口头 3.5/5（<code>int(None)</code> 判错）；小代码超时后恢复 21 分钟完成，<code>有效 6 跳过 2</code>、<code>summary.json</code> 幂等；主流程 <code>INDEPENDENT_RUN</code>，排序/JSON 块 <code>HINTED_RUN</code>；</li><li>补测：冲突标记检查（<code>Select-String</code> 无输出=干净）通过；HTTP 异常 2/3（404 ✔、没开机 ✔、超时 ✘ 应为 <code>Timeout</code>）。</li><li>2026-11-25 中午 <strong>SQL 变式复测 4（<code>parcels.csv</code>）通过</strong>（<code>sessions/2026-11-25-sql-retest4.md</code>）：27 分钟、换数据换字段；<code>有效 6 跳过 2</code>、表 6 行、n1 40 / n3 20 / n2 17、<code>report.json</code> 四键、avg 1 位、幂等；主流程 <code>INDEPENDENT_RUN</code>，<code>report</code> 收集位置/<code>json.dump</code>/<code>round</code> 3 处 <code>HINTED_RUN</code>。</li><li>结论：SQL 全流程连续两次通过，&quot;30 分钟独立完成&quot;从薄弱点降级为<strong>已改善（需自检 JSON 组装）</strong>。</li><li>2026-11-25 下午 <strong>HTTP 短迁移 2（<code>/orders.json</code>）</strong>（<code>sessions/2026-11-25-http-retest2.md</code>）：42 分钟（超 12），主流程 <code>有效 4 跳过 2</code>、<code>a 3 35</code>、<code>b 1 30</code>、<code>summary.json</code> 幂等；404 → <code>接口不可用</code>、连不上 → <code>服务不可用</code> + 退出码 1，均不写文件；<strong>8 处提示，判 <code>HINTED_RUN</code></strong>，FastAPI 门禁未过。</li></ul>
-<ul><li>2026-11-26 上午 <strong>HTTP 短迁移 4（<code>/tickets.json</code>）与 5（<code>/samples.json</code>）</strong>（<code>sessions/2026-11-26-http-retest4-5.md</code>）：两次均为 <code>HINTED_RUN</code>；段 4 有 3 处缺陷（<code>value&gt;1</code>、排序 key 用全局变量导致排序失效、<code>except ConnectionError</code> 抓错类），段 5 仅 2 处机械性提示（循环变量残留、键名 <code>cnt</code>），提示数 8→2、用时 25 分钟（限时内）；第 2 阶段门禁仍差一次零提示验证。</li><li>2026-11-26 上午 <strong>10 分钟零提示验证（<code>/visits.json</code>）→ <code>INDEPENDENT_RUN</code></strong>（<code>sessions/2026-11-26-http-visits.md</code>）：11 分钟、零提示、<code>有效 7 跳过 2</code>、n2 2/17、n1 3/14、n3 2/9、<code>summary.json</code> 正确、代码复核无隐藏缺陷。<strong>第 2 阶段（Git/SQL/HTTP）门禁完成</strong>。HTTP 提示数轨迹 8→8→8→3→2→0。</li><li>2026-11-26 上午 <strong>阶段 2 收尾复盘（10 问）</strong>：5.5/10；Git 冲突标记检查、<code>{}</code> 类型（均为第 3 次错）、路径锚定答反；HTTP 异常分类（<code>ConnectionError</code>/<code>Timeout</code>）首次全对。错误按复发次数归档为 <code>notes/错题本-stage2.md</code>（14 类 + 4 条自查清单）。- <strong>上一批记录（2026-11-24）</strong></li><li>2026-11-24 上午 HTTP 独立迁移（<code>sessions/2026-11-24-http-independent.md</code>）：<code>/courses.json</code> 分组 + 跳过坏值 + <code>summary.json</code>，输出正确且幂等；8 处错误经提示修正，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 上午 SQL 陌生业务任务（<code>sessions/2026-11-24-sql-business.md</code>）：<code>jobs.csv</code> 过滤 status、跳过坏值、入库、分组 + <code>result.json</code>，输出正确且幂等；8 处错误经提示修正，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 上午 Python 基础抽查（<code>sessions/2026-11-24-basics.md</code>）：口头 3.5/5；小代码需修 3 处（重复 int、累加器位置、未初始化），最终 <code>和 8</code> 正确，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 中午 SQL 限时复测（<code>sessions/2026-11-24-sql-retest.md</code>）：<code>water.csv</code>，30 分钟无提示，<strong>未通过</strong>；计数正确但未收集 rows、<code>executemany</code> 绑定错、SQL 逗号拼接错、<code>json.dump</code> 写字符串。</li><li>2026-11-24 12:01–12:12 SQL 复测按 4 步修正（学员自己改：看 rows→收集→修 SQL→写汇总），最终输出正确、幂等；判 HINTED_RUN。</li><li>历史记录（按时间倒序，仅供追溯）：</li><li>历史会话（2026-11-23 晚，HTTP 同类复测）（<code>sessions/2026-11-23-http-retest.md</code>）</li><li>数据 <code>/books.json</code>（含 <code>&quot;oops&quot;</code> 与 <code>null</code>），要求分组、跳过坏值、写 <code>summary.json</code>；</li><li>最终输出正确、幂等；但 10 处错误均经提示修正，<strong>判 <code>HINTED_RUN</code></strong>；</li><li>教学问题：新目录未放 <code>mytools</code>、未先讲 import 路径，已补讲并记录。</li><li>历史会话（2026-11-23 晚，Git 冲突 7 天复测）（<code>sessions/2026-11-23-git-conflict.md</code>）</li><li>第一次独立尝试：合并方向反了（在 alt 上 merge main），且把冲突标记原样提交；</li><li>经步骤指导后修正：删标记 + 清理 <code> HEAD</code>/<code> main</code> 残留，最终 <code>findstr</code> 无输出、status 干净、graph 有合并提交；</li><li><strong>证据等级：<code>HINTED_RUN</code></strong>；合并方向与标记结构需再练一次才算独立；</li><li>教学缺口：11-15 冲突课未单独讲标记结构，本次已补讲。</li><li>历史会话（2026-11-21 下午，HTTP 短独立迁移）（<code>report_http.py</code>：取 <code>/sales.json</code> → 跳过坏值 → 按 region 分组 → 打印 + 写 <code>summary.json</code>；URL 参数化、404 与连不上分开处理，六项验收全过）。<strong>10 处错误均经指出后修正，判 <code>HINTED_RUN</code></strong>，未达“独立迁移”标准；记录见 <code>sessions/2026-11-21-http-migrate.md</code></li><li>历史会话（2026-11-21 上午）：骨架默写第 3 天（<code>salery</code> 列名错，修正后通过）+ <code>fetch_json</code> 组合函数（<code>sessions/2026-11-21-skeleton3-wrap.md</code>）</li><li>历史会话（2026-11-20 晚）：综合练习 <code>report.py</code>（<code>sessions/2026-11-20-report.md</code>）</li><li>学员独立敲出：<code>import</code>、<code>fetch(url)</code>、<code>try/except requests.HTTPError</code>、<code>if resp is None</code>、<code>json.dump</code> 保存、循环累加求平均；</li><li>经指导修正：<code>Path(__file__).parent</code>（相对路径写错目录）、统计代码缩进移出 <code>with</code>、<code>return None</code> 含义、<code>HTTPError</code> 由调用方接、<code>sys.exit(1)</code> 的作用；</li><li>运行证据：学员本人运行，输出 <code>rabbit</code> + <code>成员 2 人，平均 75.0</code>；<code>team.json</code> 生成在脚本目录；停服务器后验证 <code>尝试 1/3…3/3 失败 → 服务不可用 → exit 1</code>；</li><li><strong>证据等级：<code>HINTED_RUN</code></strong>——主流程独立、路径与结构经指导；最终运行成功不等于独立掌握。</li><li>下次起点：<strong>见 <code>CURRENT_STATE.md</code> 的 <code>NEXT_START</code>（唯一来源；本文件不再定义下一次课程）</strong></li><li><strong>文件规则（2026-11-16 晚学员要求）</strong>：导师只建<strong>空文件</strong>和目录，代码与 SQL 全部由学员自己敲；数据文件（CSV/JSON/配置）可以直接给完整内容。每天不要一次塞多个模块。</li><li>待验证：学员自称“都会了”但无完整程序考核证据，按 <code>CLAIMED_NOT_VERIFIED</code> 记录；后续若做阶段 2 项目可自然补上证据。<strong>2026-11-20 下午</strong>学员自述“SQL 已经掌握了”，当场拒绝限时复测，按 <code>CLAIMED_NOT_VERIFIED</code> 记录，第四次复测待补</li><li><strong>12-31 复盘约定（2026-11-09 原约定 → 2026-11-10 修订）</strong></li><li>原约定（保留原文，不覆盖）：① 阶段门独立通过（无提示、无笔记）；② 独立写出 100 行左右脚本（读文件、分组、写输出、带测试）；③ 不看参考默写文件读取模板与分组统计结构。原判定：三条都达 → 继续阶段 2；达 1–2 条 → 继续但调整目标岗位；一条不达且提示依赖无下降 → 转向“用 Python 做生物/实验数据”方向。</li><li><strong>修订后的用途（2026-11-10）</strong>：12-31 只做学习效果复盘，用于①查看独立编程能力是否提高；②查看对提示的依赖是否减少；③决定教学方法、课程难度与训练任务如何调整；④按实际能力逐步优化就业路线。</li><li><strong>明确取消</strong>：不得因未达到“100 行”“默写模板”“阶段门未过”而自动要求放弃 AI 行业或转回生物方向。职业方向由学员决定，复盘只提供数据与建议。</li><li>设备/偏好：Windows/cmd；每天 3 小时（2026-11-03 起，学员自定目标）；吴恩达机器学习课程另排时间，不占用这 3 小时；单次课 45–90 分钟</li><li><strong>每日同步（2026-11-14 起；历史规则，当前暂停执行）</strong>：宿舍、工位、网吧之间用 U 盘 <code>U盘</code>；<strong>日常只做增量同步</strong>——离开前跑 <code>sync-to-usb.cmd</code>，到达后跑 <code>sync-from-usb.cmd</code>（先备份），只复制更新的文件、不删除，通常只传几 MB；<strong>现行同步限制以 <code>SYNC_STATUS.md</code> 为准，本段不得覆盖</strong>；U 盘同时保留完整便携程序（DSH / VS Code / Git，约 3.1 GB），供没有 DSH 的电脑（如网吧）使用 <code>start-dsh.cmd</code> / <code>code.cmd</code> / <code>dev-shell.cmd</code>；本机用 junction <code>学习目录</code> → <code>学习目录</code> 供批处理调用</li><li><strong>收尾规则（2026-11-15 学员要求，2026-11-20 补充；历史规则，当前暂停执行）</strong>：每次学习结束，导师必须主动询问“是否同步到 U 盘”，不论学员在宿舍、工位还是网吧；同意则运行 <code>sync-to-usb.cmd -y</code> 并确认文件已到 U 盘，未同步要在回复中注明。<strong>同步之后还要问一句“要不要更新复习页”</strong>（<code>build_review.py</code> + <code>pages_deploy.py</code>），否则手机端停留在旧内容——2026-11-20 漏过一次。</li><li>讲解偏好（2026-11-03 学员要求）：每个概念按“是什么 → 为什么需要 → 怎么用 → 逐行例子 → 常见错误 → 自测”讲细；不要用“两行代码 + 自己理解”的方式；先讲透，再进练习</li><li>已掌握（仅有证据的条目）：</li><li>变量、<code>print</code>、<code>len</code>、<code>.count()</code>、<code>type()</code>；<code>str</code>/<code>int</code>/<code>float</code></li><li>list、<code>for</code>、切片（含起点不含终点）</li><li>比较运算、<code>if</code> 单分支、<code>&gt;=</code>/<code>&gt;</code> 边界</li><li>多分支 <code>if</code>/<code>elif</code>/<code>else</code>（<code>else</code> 必须最后，能指出报错位置在 <code>elif</code>）</li><li><code>and</code>/<code>or</code>/<code>not</code>（<code>not</code> 作用于整个比较）、<code>startswith</code></li><li><code>enumerate(start=1)</code>、<code>continue</code>、<code>break</code>（能解释空串占号但不打印）</li><li><code>range(len(seqs))</code> 当索引遍历、<code>while</code> 三件套（初始化/条件/更新），能写出与 for 等价的求和与条件计数</li><li><code>dict</code> 建立、<code>d[k]</code> 取值、<code>d[k]=v</code> 更新、<code>get(k, 默认)</code> 兜底、<code>len(d)</code>；<code>for k in d</code> 与 <code>items()</code> 遍历、按下标筛选并计数求和</li><li><code>set()</code> 去重、<code>in</code> 判断、<code>|</code>/<code>&amp;</code>/<code>-</code>/<code>^</code> 集合运算；能解释并集为何小于两集合大小之和</li><li>嵌套 dict 两层取值 <code>d[k][字段]</code>、<code>del d[k]</code>；能解释循环次数 = 键数</li><li><code>def</code> 定义、参数绑定（调用时按次绑定）、<code>return</code> 交回值；能在循环里调用函数并打印返回值</li><li>文件读取：<code>open(path, encoding=&quot;utf-8&quot;)</code> + <code>with</code> + <code>strip()</code> + <code>split(&quot;,&quot;)</code> + <code>int()</code> + 跳过表头（2026-11-03，<code>HINTED_RUN</code>，待延迟复测）</li><li><code>try/except</code>：捕获 <code>ValueError</code>（坏数据跳过）与 <code>FileNotFoundError</code>（缺失文件返回 0）；<code>try</code> 要贴着可能出错的语句放在循环内（2026-11-03，<code>HINTED_RUN</code>，待复测）</li><li><code>pathlib</code>：<code>Path(&quot;.&quot;)</code>、<code>/</code> 拼接、<code>glob()</code>、<code>read_text(encoding=...)</code>、<code>splitlines()</code>、<code>exists()</code>；理解相对路径与 <code>__file__</code> 的区别（2026-11-03，<code>HINTED_RUN</code>，待复测）</li><li><code>pytest</code> 入门：<code>test_*.py</code> / <code>test_</code> 函数命名、<code>from filetools import ...</code>、<code>assert 实际 == 期望</code>、<code>py -3.12 -m pytest -q</code>；能读 <code>F</code> 失败输出与 <code>error</code>/<code>failed</code> 区别（2026-11-04，<code>STUDENT_RUN</code>）</li><li>调试：用 traceback 定位行号与变量值；识别“不报错但结果错”的累加 bug（<code>count = +1</code>）（2026-11-04，<code>STUDENT_RUN</code>）</li><li>类基础：<code>class</code>、<code>__init__(self, ...)</code>、<code>self.属性</code>、方法调用 <code>obj.method()</code>、默认参数（2026-11-04，<code>STUDENT_RUN</code>）</li><li>Git 基础：三区分界、<code>status</code> 分栏阅读、<code>add</code>/<code>commit</code>/<code>log --oneline</code>/<code>diff HEAD~1</code>、<code>restore --staged</code> 撤销暂存；能读 <code>diff</code> 的 <code>index</code>/<code>@@</code>/<code>+</code> 行；提交哈希 40 位、日常用前 7 位（2026-11-14，<code>HINTED_RUN</code>，待独立复现）</li><li>Git 分支：分支是“会移动的标签”、<code>switch -c</code> 新建并切换、切换会改工作区、<code>merge</code> 的 Fast-forward（不产生合并提交）、<code>branch -d</code> 删标签不删提交、<code>log --oneline --graph</code> 阅读（2026-11-14 下午，<code>HINTED_RUN</code>）</li><li>脚本参数化：<code>import_sales.py</code> 用 <code>sys.argv[1]</code>/<code>[2]</code> + <code>len(sys.argv) &gt; n</code> + 三元默认值，两条路径都可省略；<code>connect(变量)</code>/<code>open(变量)</code> 接收变量；三条验证含幂等重跑（2026-11-18，<code>HINTED_RUN</code>）</li><li>路径基准：<code>Path(__file__).parent</code> + <code>/</code> 拼接，默认路径不再依赖 cwd；从课程目录、<code>D:\</code>、<code>F:\Microsoft VS Code</code> 三处运行均成功，未在错误目录误建库文件（2026-11-18，<code>HINTED_RUN</code>）</li><li>模块化：目录 + <code>__init__.py</code> 构成包，<code>from 包.模块 import 名字</code>，<code>__name__</code> 在 import 与直接运行时的区别；理解“模块只负责它声明的异常，其余由调用方接”（2026-11-20，<code>HINTED_RUN</code>）</li><li>薄弱/待复习：</li><li>字符串 vs 变量：<code>open(&quot;path&quot;)</code> 与 <code>open(path)</code> 混淆；<code>except FileNotFound</code> 名称不完整</li><li>函数结构：<code>def</code> 错放进 <code>try</code>、参数被 <code>path = []</code> 覆盖、<code>results</code> 拼写不一致</li><li><code>continue</code> / <code>return</code> / <code>break</code> 的作用范围仍需在复测中确认</li><li><strong>OOP/模块自述已学但验证未通过</strong>（2026-11-02）：类未写、模块变量未定义；按未掌握处理，后续单独补</li><li>周测 W1 错题：<code>get</code> 与 <code>[]</code> 的差异（缺失键行为）、<code>TypeError</code> 与 <code>KeyError</code> 的区分（<code>int + str</code> 属 TypeError）</li><li>字典是&quot;映射&quot;不是&quot;单条记录&quot;：<code>genes[&quot;name&quot;]</code> 这种把键当字段的写法（W1 代码题首版）</li><li><code>longest</code> 类&quot;打擂台&quot;模式：比较对象应是 <code>best_len</code>，不是硬编码键</li><li>字典方法要用点号：<code>d.items()</code>、<code>d.get(k, default)</code>；字符串与变量名区分（<code>&quot;name&quot;</code> vs <code>name</code>）</li><li><code>count</code>（满足条件数）与 <code>len(d)</code>（键值对总数）的区别（s09 未答）</li><li>累加器 <code>total</code> 不要覆盖内置 <code>sum</code></li><li><code>while</code> 的更新位置：先更新会跳过 0 号并越界；放进 <code>if</code> 体内会死循环（s08b 实际触发死循环）</li><li>索引 / 计数器 / 循环变量三个角色容易混（s08b 用 <code>count</code> 当循环变量）</li><li>累加器与 <code>print</code> 的位置：初始化在循环外、打印在循环后</li><li>输出标签与段落一致（s08 把 <code>while total</code> 写成 <code>range total</code> / <code>while range</code>）</li><li><code>enumerate</code> 不判断内容、空串照常发号（s08 复习再次漏掉）</li><li><code>print</code> 多值格式、逗号后空格等风格</li><li><strong>Git 概念混淆（2026-11-14）</strong>：把 <code>parent</code> 当成“修改的 report.py 的哈希”（应为上一条提交的哈希）、把 <code>HEAD~1</code> 当成“tree 那一条”；提交哈希与 blob 哈希、tree 与 commit 的定位需复述检查</li><li><strong>Git 操作层（2026-11-14）</strong>：<code>--oneline</code> 拼成 <code>--online</code>（当日两次）、<code>git long</code> 拼成；把 <code>README.md</code> 建成目录导致 <code>git add</code> 静默无效（见 <code>errors/2026-11-14-untracked-empty-dir.md</code>）</li><li><strong>Git 危险命令认知（2026-11-14）</strong>：误以为 <code>git restore &lt;file&gt;</code> 丢弃的改动可以找回——实际未提交内容删了就没有；误以为删分支会删提交——实际提交仍由其他标签指达。两条都需在复测中再确认</li><li><strong>终端 vs 编辑器（2026-11-14）</strong>：曾把 <code>git</code> 命令写进 <code>notes.md</code> 文件里，以为会被执行；需确认“命令敲在终端、文件里写的是内容”已成为稳定习惯</li><li><strong>变量名加引号（2026-11-18 复发）</strong>：<code>connect(&quot;path&quot;)</code>、<code>open(&quot;path&quot;)</code> 把变量名写成字符串——与 10-26 s01 的 <code>print(&quot;sample_id&quot;)</code> 同一类错误，第二次出现，复测必须覆盖</li><li><strong>相对路径依赖 cwd（2026-11-18）</strong>：在 <code>F:\Microsoft VS Code</code> 运行脚本导致 <code>sqlite3.OperationalError: unable to open database file</code>；还不知道“相对路径相对于当前目录，不是脚本所在目录”</li><li><strong>shell 语法混淆（2026-11-18）</strong>：在 PowerShell 里用 cmd 的 <code>cd /d</code>；需分清两种 shell 的写法</li><li><strong>import 语序（2026-11-18）</strong>：写成 <code>import pathlib from Path</code>；正确是 <code>from pathlib import Path</code></li><li><strong>Python 版本混用（2026-11-18）</strong>：VS Code 运行按钮用 3.14，终端用 <code>py -3.12</code>；建议统一 3.12，避免日后库行为差异</li><li><strong>SQL 细节准确度（2026-11-18 两轮复测）</strong>：结构记忆已建立（导入/base/连接/建表清空/DictReader/executemany/GROUP BY 都能想起），但细节频错——<code>points PRIMARY</code>、<code>int(reader[...])</code>、append 缩进错位（只入库最后一行）、<code>for</code> 缺冒号、循环变量写成函数调用；仍属 <code>HINTED_RUN</code>，独立通过前不推进 HTTP</li><li><strong>异常层级（2026-11-20）</strong>：把 <code>ConnectionError</code> 当成 <code>HTTPError</code> 的子类，以为 <code>except HTTPError</code> 能接“连不上”；实际两者并列于 <code>RequestException</code></li><li>环境：<code>.venv\Scripts\python.exe</code> 反复清零，统一 <code>py -3.12</code>；<code>fix_venv.cmd</code> 可恢复</li><li>待运行验证：无（s08 学员本人运行，退出码 0）</li><li>档案索引：</li><li>sessions：<code>2026-10-26-s01</code>~<code>s03</code>；<code>2026-10-27-s04</code>~<code>s07</code>；<code>2026-10-28-s08</code>、<code>s08b</code>；<code>2026-10-29-s09-dict.md</code>、<code>2026-10-29-s10-set.md</code>；<code>2026-10-30-s11-nested-dict.md</code>、<code>2026-10-30-s12-functions.md</code>；<code>2026-10-30</code>~<code>2026-11-12</code> 共 15 条（含 <code>2026-11-12-L3-rounds.md</code>、<code>2026-11-12-stage1-skipped.md</code>）；<code>2026-11-14-git-01-three-areas.md</code></li><li>assessments：<code>2026-10-26-stage0-gate.md</code>、<code>2026-10-31-weekly-quiz.md</code>（W1 周测 8/11）</li></ul>
+<ul><li>2026-11-26 上午 <strong>HTTP 短迁移 4（<code>/tickets.json</code>）与 5（<code>/samples.json</code>）</strong>（<code>sessions/2026-11-26-http-retest4-5.md</code>）：两次均为 <code>HINTED_RUN</code>；段 4 有 3 处缺陷（<code>value&gt;1</code>、排序 key 用全局变量导致排序失效、<code>except ConnectionError</code> 抓错类），段 5 仅 2 处机械性提示（循环变量残留、键名 <code>cnt</code>），提示数 8→2、用时 25 分钟（限时内）；第 2 阶段门禁仍差一次零提示验证。</li><li>2026-11-26 上午 <strong>10 分钟零提示验证（<code>/visits.json</code>）→ <code>INDEPENDENT_RUN</code></strong>（<code>sessions/2026-11-26-http-visits.md</code>）：11 分钟、零提示、<code>有效 7 跳过 2</code>、n2 2/17、n1 3/14、n3 2/9、<code>summary.json</code> 正确、代码复核无隐藏缺陷。<strong>第 2 阶段（Git/SQL/HTTP）门禁完成</strong>。HTTP 提示数轨迹 8→8→8→3→2→0。</li><li>2026-11-26 上午 <strong>阶段 2 收尾复盘（10 问）</strong>：5.5/10；Git 冲突标记检查、<code>{}</code> 类型（均为第 3 次错）、路径锚定答反；HTTP 异常分类（<code>ConnectionError</code>/<code>Timeout</code>）首次全对。错误按复发次数归档为 <code>notes/错题本-stage2.md</code>（14 类 + 4 条自查清单）。</li><li>2026-11-26 中午 <strong>跨主题综合 + 交叉验证 + FastAPI 第 1–2 课</strong>（<code>sessions/2026-11-26-integration-crosscheck-fastapi.md</code>）：</li><li>综合任务（HTTP→SQLite→<code>report.json</code>→三分支）：24 分钟，1 处提示（<code>skipped = 0</code>）；</li><li>交叉验证（Python 分组 vs SQL 分组）：<code>equal=true</code>、输出 <code>一致</code>，结构由导师给出；</li><li>FastAPI 第 1 课：<code>/health</code>、<code>/stock/{sku}</code> 通过，<code>/docs</code> 可访问；</li><li>FastAPI 第 2 课：查询参数、<code>POST</code> + Pydantic、<code>HTTPException(404)</code>、422 校验全部通过（4 处提示）；</li><li><strong>正式进入阶段 5 主线</strong>；下一课：SQLite + 依赖注入。- <strong>上一批记录（2026-11-24）</strong></li><li>2026-11-24 上午 HTTP 独立迁移（<code>sessions/2026-11-24-http-independent.md</code>）：<code>/courses.json</code> 分组 + 跳过坏值 + <code>summary.json</code>，输出正确且幂等；8 处错误经提示修正，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 上午 SQL 陌生业务任务（<code>sessions/2026-11-24-sql-business.md</code>）：<code>jobs.csv</code> 过滤 status、跳过坏值、入库、分组 + <code>result.json</code>，输出正确且幂等；8 处错误经提示修正，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 上午 Python 基础抽查（<code>sessions/2026-11-24-basics.md</code>）：口头 3.5/5；小代码需修 3 处（重复 int、累加器位置、未初始化），最终 <code>和 8</code> 正确，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 中午 SQL 限时复测（<code>sessions/2026-11-24-sql-retest.md</code>）：<code>water.csv</code>，30 分钟无提示，<strong>未通过</strong>；计数正确但未收集 rows、<code>executemany</code> 绑定错、SQL 逗号拼接错、<code>json.dump</code> 写字符串。</li><li>2026-11-24 12:01–12:12 SQL 复测按 4 步修正（学员自己改：看 rows→收集→修 SQL→写汇总），最终输出正确、幂等；判 HINTED_RUN。</li><li>历史记录（按时间倒序，仅供追溯）：</li><li>历史会话（2026-11-23 晚，HTTP 同类复测）（<code>sessions/2026-11-23-http-retest.md</code>）</li><li>数据 <code>/books.json</code>（含 <code>&quot;oops&quot;</code> 与 <code>null</code>），要求分组、跳过坏值、写 <code>summary.json</code>；</li><li>最终输出正确、幂等；但 10 处错误均经提示修正，<strong>判 <code>HINTED_RUN</code></strong>；</li><li>教学问题：新目录未放 <code>mytools</code>、未先讲 import 路径，已补讲并记录。</li><li>历史会话（2026-11-23 晚，Git 冲突 7 天复测）（<code>sessions/2026-11-23-git-conflict.md</code>）</li><li>第一次独立尝试：合并方向反了（在 alt 上 merge main），且把冲突标记原样提交；</li><li>经步骤指导后修正：删标记 + 清理 <code> HEAD</code>/<code> main</code> 残留，最终 <code>findstr</code> 无输出、status 干净、graph 有合并提交；</li><li><strong>证据等级：<code>HINTED_RUN</code></strong>；合并方向与标记结构需再练一次才算独立；</li><li>教学缺口：11-15 冲突课未单独讲标记结构，本次已补讲。</li><li>历史会话（2026-11-21 下午，HTTP 短独立迁移）（<code>report_http.py</code>：取 <code>/sales.json</code> → 跳过坏值 → 按 region 分组 → 打印 + 写 <code>summary.json</code>；URL 参数化、404 与连不上分开处理，六项验收全过）。<strong>10 处错误均经指出后修正，判 <code>HINTED_RUN</code></strong>，未达“独立迁移”标准；记录见 <code>sessions/2026-11-21-http-migrate.md</code></li><li>历史会话（2026-11-21 上午）：骨架默写第 3 天（<code>salery</code> 列名错，修正后通过）+ <code>fetch_json</code> 组合函数（<code>sessions/2026-11-21-skeleton3-wrap.md</code>）</li><li>历史会话（2026-11-20 晚）：综合练习 <code>report.py</code>（<code>sessions/2026-11-20-report.md</code>）</li><li>学员独立敲出：<code>import</code>、<code>fetch(url)</code>、<code>try/except requests.HTTPError</code>、<code>if resp is None</code>、<code>json.dump</code> 保存、循环累加求平均；</li><li>经指导修正：<code>Path(__file__).parent</code>（相对路径写错目录）、统计代码缩进移出 <code>with</code>、<code>return None</code> 含义、<code>HTTPError</code> 由调用方接、<code>sys.exit(1)</code> 的作用；</li><li>运行证据：学员本人运行，输出 <code>rabbit</code> + <code>成员 2 人，平均 75.0</code>；<code>team.json</code> 生成在脚本目录；停服务器后验证 <code>尝试 1/3…3/3 失败 → 服务不可用 → exit 1</code>；</li><li><strong>证据等级：<code>HINTED_RUN</code></strong>——主流程独立、路径与结构经指导；最终运行成功不等于独立掌握。</li><li>下次起点：<strong>见 <code>CURRENT_STATE.md</code> 的 <code>NEXT_START</code>（唯一来源；本文件不再定义下一次课程）</strong></li><li><strong>文件规则（2026-11-16 晚学员要求）</strong>：导师只建<strong>空文件</strong>和目录，代码与 SQL 全部由学员自己敲；数据文件（CSV/JSON/配置）可以直接给完整内容。每天不要一次塞多个模块。</li><li>待验证：学员自称“都会了”但无完整程序考核证据，按 <code>CLAIMED_NOT_VERIFIED</code> 记录；后续若做阶段 2 项目可自然补上证据。<strong>2026-11-20 下午</strong>学员自述“SQL 已经掌握了”，当场拒绝限时复测，按 <code>CLAIMED_NOT_VERIFIED</code> 记录，第四次复测待补</li><li><strong>12-31 复盘约定（2026-11-09 原约定 → 2026-11-10 修订）</strong></li><li>原约定（保留原文，不覆盖）：① 阶段门独立通过（无提示、无笔记）；② 独立写出 100 行左右脚本（读文件、分组、写输出、带测试）；③ 不看参考默写文件读取模板与分组统计结构。原判定：三条都达 → 继续阶段 2；达 1–2 条 → 继续但调整目标岗位；一条不达且提示依赖无下降 → 转向“用 Python 做生物/实验数据”方向。</li><li><strong>修订后的用途（2026-11-10）</strong>：12-31 只做学习效果复盘，用于①查看独立编程能力是否提高；②查看对提示的依赖是否减少；③决定教学方法、课程难度与训练任务如何调整；④按实际能力逐步优化就业路线。</li><li><strong>明确取消</strong>：不得因未达到“100 行”“默写模板”“阶段门未过”而自动要求放弃 AI 行业或转回生物方向。职业方向由学员决定，复盘只提供数据与建议。</li><li>设备/偏好：Windows/cmd；每天 3 小时（2026-11-03 起，学员自定目标）；吴恩达机器学习课程另排时间，不占用这 3 小时；单次课 45–90 分钟</li><li><strong>每日同步（2026-11-14 起；历史规则，当前暂停执行）</strong>：宿舍、工位、网吧之间用 U 盘 <code>U盘</code>；<strong>日常只做增量同步</strong>——离开前跑 <code>sync-to-usb.cmd</code>，到达后跑 <code>sync-from-usb.cmd</code>（先备份），只复制更新的文件、不删除，通常只传几 MB；<strong>现行同步限制以 <code>SYNC_STATUS.md</code> 为准，本段不得覆盖</strong>；U 盘同时保留完整便携程序（DSH / VS Code / Git，约 3.1 GB），供没有 DSH 的电脑（如网吧）使用 <code>start-dsh.cmd</code> / <code>code.cmd</code> / <code>dev-shell.cmd</code>；本机用 junction <code>学习目录</code> → <code>学习目录</code> 供批处理调用</li><li><strong>收尾规则（2026-11-15 学员要求，2026-11-20 补充；历史规则，当前暂停执行）</strong>：每次学习结束，导师必须主动询问“是否同步到 U 盘”，不论学员在宿舍、工位还是网吧；同意则运行 <code>sync-to-usb.cmd -y</code> 并确认文件已到 U 盘，未同步要在回复中注明。<strong>同步之后还要问一句“要不要更新复习页”</strong>（<code>build_review.py</code> + <code>pages_deploy.py</code>），否则手机端停留在旧内容——2026-11-20 漏过一次。</li><li>讲解偏好（2026-11-03 学员要求）：每个概念按“是什么 → 为什么需要 → 怎么用 → 逐行例子 → 常见错误 → 自测”讲细；不要用“两行代码 + 自己理解”的方式；先讲透，再进练习</li><li>已掌握（仅有证据的条目）：</li><li>变量、<code>print</code>、<code>len</code>、<code>.count()</code>、<code>type()</code>；<code>str</code>/<code>int</code>/<code>float</code></li><li>list、<code>for</code>、切片（含起点不含终点）</li><li>比较运算、<code>if</code> 单分支、<code>&gt;=</code>/<code>&gt;</code> 边界</li><li>多分支 <code>if</code>/<code>elif</code>/<code>else</code>（<code>else</code> 必须最后，能指出报错位置在 <code>elif</code>）</li><li><code>and</code>/<code>or</code>/<code>not</code>（<code>not</code> 作用于整个比较）、<code>startswith</code></li><li><code>enumerate(start=1)</code>、<code>continue</code>、<code>break</code>（能解释空串占号但不打印）</li><li><code>range(len(seqs))</code> 当索引遍历、<code>while</code> 三件套（初始化/条件/更新），能写出与 for 等价的求和与条件计数</li><li><code>dict</code> 建立、<code>d[k]</code> 取值、<code>d[k]=v</code> 更新、<code>get(k, 默认)</code> 兜底、<code>len(d)</code>；<code>for k in d</code> 与 <code>items()</code> 遍历、按下标筛选并计数求和</li><li><code>set()</code> 去重、<code>in</code> 判断、<code>|</code>/<code>&amp;</code>/<code>-</code>/<code>^</code> 集合运算；能解释并集为何小于两集合大小之和</li><li>嵌套 dict 两层取值 <code>d[k][字段]</code>、<code>del d[k]</code>；能解释循环次数 = 键数</li><li><code>def</code> 定义、参数绑定（调用时按次绑定）、<code>return</code> 交回值；能在循环里调用函数并打印返回值</li><li>文件读取：<code>open(path, encoding=&quot;utf-8&quot;)</code> + <code>with</code> + <code>strip()</code> + <code>split(&quot;,&quot;)</code> + <code>int()</code> + 跳过表头（2026-11-03，<code>HINTED_RUN</code>，待延迟复测）</li><li><code>try/except</code>：捕获 <code>ValueError</code>（坏数据跳过）与 <code>FileNotFoundError</code>（缺失文件返回 0）；<code>try</code> 要贴着可能出错的语句放在循环内（2026-11-03，<code>HINTED_RUN</code>，待复测）</li><li><code>pathlib</code>：<code>Path(&quot;.&quot;)</code>、<code>/</code> 拼接、<code>glob()</code>、<code>read_text(encoding=...)</code>、<code>splitlines()</code>、<code>exists()</code>；理解相对路径与 <code>__file__</code> 的区别（2026-11-03，<code>HINTED_RUN</code>，待复测）</li><li><code>pytest</code> 入门：<code>test_*.py</code> / <code>test_</code> 函数命名、<code>from filetools import ...</code>、<code>assert 实际 == 期望</code>、<code>py -3.12 -m pytest -q</code>；能读 <code>F</code> 失败输出与 <code>error</code>/<code>failed</code> 区别（2026-11-04，<code>STUDENT_RUN</code>）</li><li>调试：用 traceback 定位行号与变量值；识别“不报错但结果错”的累加 bug（<code>count = +1</code>）（2026-11-04，<code>STUDENT_RUN</code>）</li><li>类基础：<code>class</code>、<code>__init__(self, ...)</code>、<code>self.属性</code>、方法调用 <code>obj.method()</code>、默认参数（2026-11-04，<code>STUDENT_RUN</code>）</li><li>Git 基础：三区分界、<code>status</code> 分栏阅读、<code>add</code>/<code>commit</code>/<code>log --oneline</code>/<code>diff HEAD~1</code>、<code>restore --staged</code> 撤销暂存；能读 <code>diff</code> 的 <code>index</code>/<code>@@</code>/<code>+</code> 行；提交哈希 40 位、日常用前 7 位（2026-11-14，<code>HINTED_RUN</code>，待独立复现）</li><li>Git 分支：分支是“会移动的标签”、<code>switch -c</code> 新建并切换、切换会改工作区、<code>merge</code> 的 Fast-forward（不产生合并提交）、<code>branch -d</code> 删标签不删提交、<code>log --oneline --graph</code> 阅读（2026-11-14 下午，<code>HINTED_RUN</code>）</li><li>脚本参数化：<code>import_sales.py</code> 用 <code>sys.argv[1]</code>/<code>[2]</code> + <code>len(sys.argv) &gt; n</code> + 三元默认值，两条路径都可省略；<code>connect(变量)</code>/<code>open(变量)</code> 接收变量；三条验证含幂等重跑（2026-11-18，<code>HINTED_RUN</code>）</li><li>路径基准：<code>Path(__file__).parent</code> + <code>/</code> 拼接，默认路径不再依赖 cwd；从课程目录、<code>D:\</code>、<code>F:\Microsoft VS Code</code> 三处运行均成功，未在错误目录误建库文件（2026-11-18，<code>HINTED_RUN</code>）</li><li>模块化：目录 + <code>__init__.py</code> 构成包，<code>from 包.模块 import 名字</code>，<code>__name__</code> 在 import 与直接运行时的区别；理解“模块只负责它声明的异常，其余由调用方接”（2026-11-20，<code>HINTED_RUN</code>）</li><li>薄弱/待复习：</li><li>字符串 vs 变量：<code>open(&quot;path&quot;)</code> 与 <code>open(path)</code> 混淆；<code>except FileNotFound</code> 名称不完整</li><li>函数结构：<code>def</code> 错放进 <code>try</code>、参数被 <code>path = []</code> 覆盖、<code>results</code> 拼写不一致</li><li><code>continue</code> / <code>return</code> / <code>break</code> 的作用范围仍需在复测中确认</li><li><strong>OOP/模块自述已学但验证未通过</strong>（2026-11-02）：类未写、模块变量未定义；按未掌握处理，后续单独补</li><li>周测 W1 错题：<code>get</code> 与 <code>[]</code> 的差异（缺失键行为）、<code>TypeError</code> 与 <code>KeyError</code> 的区分（<code>int + str</code> 属 TypeError）</li><li>字典是&quot;映射&quot;不是&quot;单条记录&quot;：<code>genes[&quot;name&quot;]</code> 这种把键当字段的写法（W1 代码题首版）</li><li><code>longest</code> 类&quot;打擂台&quot;模式：比较对象应是 <code>best_len</code>，不是硬编码键</li><li>字典方法要用点号：<code>d.items()</code>、<code>d.get(k, default)</code>；字符串与变量名区分（<code>&quot;name&quot;</code> vs <code>name</code>）</li><li><code>count</code>（满足条件数）与 <code>len(d)</code>（键值对总数）的区别（s09 未答）</li><li>累加器 <code>total</code> 不要覆盖内置 <code>sum</code></li><li><code>while</code> 的更新位置：先更新会跳过 0 号并越界；放进 <code>if</code> 体内会死循环（s08b 实际触发死循环）</li><li>索引 / 计数器 / 循环变量三个角色容易混（s08b 用 <code>count</code> 当循环变量）</li><li>累加器与 <code>print</code> 的位置：初始化在循环外、打印在循环后</li><li>输出标签与段落一致（s08 把 <code>while total</code> 写成 <code>range total</code> / <code>while range</code>）</li><li><code>enumerate</code> 不判断内容、空串照常发号（s08 复习再次漏掉）</li><li><code>print</code> 多值格式、逗号后空格等风格</li><li><strong>Git 概念混淆（2026-11-14）</strong>：把 <code>parent</code> 当成“修改的 report.py 的哈希”（应为上一条提交的哈希）、把 <code>HEAD~1</code> 当成“tree 那一条”；提交哈希与 blob 哈希、tree 与 commit 的定位需复述检查</li><li><strong>Git 操作层（2026-11-14）</strong>：<code>--oneline</code> 拼成 <code>--online</code>（当日两次）、<code>git long</code> 拼成；把 <code>README.md</code> 建成目录导致 <code>git add</code> 静默无效（见 <code>errors/2026-11-14-untracked-empty-dir.md</code>）</li><li><strong>Git 危险命令认知（2026-11-14）</strong>：误以为 <code>git restore &lt;file&gt;</code> 丢弃的改动可以找回——实际未提交内容删了就没有；误以为删分支会删提交——实际提交仍由其他标签指达。两条都需在复测中再确认</li><li><strong>终端 vs 编辑器（2026-11-14）</strong>：曾把 <code>git</code> 命令写进 <code>notes.md</code> 文件里，以为会被执行；需确认“命令敲在终端、文件里写的是内容”已成为稳定习惯</li><li><strong>变量名加引号（2026-11-18 复发）</strong>：<code>connect(&quot;path&quot;)</code>、<code>open(&quot;path&quot;)</code> 把变量名写成字符串——与 10-26 s01 的 <code>print(&quot;sample_id&quot;)</code> 同一类错误，第二次出现，复测必须覆盖</li><li><strong>相对路径依赖 cwd（2026-11-18）</strong>：在 <code>F:\Microsoft VS Code</code> 运行脚本导致 <code>sqlite3.OperationalError: unable to open database file</code>；还不知道“相对路径相对于当前目录，不是脚本所在目录”</li><li><strong>shell 语法混淆（2026-11-18）</strong>：在 PowerShell 里用 cmd 的 <code>cd /d</code>；需分清两种 shell 的写法</li><li><strong>import 语序（2026-11-18）</strong>：写成 <code>import pathlib from Path</code>；正确是 <code>from pathlib import Path</code></li><li><strong>Python 版本混用（2026-11-18）</strong>：VS Code 运行按钮用 3.14，终端用 <code>py -3.12</code>；建议统一 3.12，避免日后库行为差异</li><li><strong>SQL 细节准确度（2026-11-18 两轮复测）</strong>：结构记忆已建立（导入/base/连接/建表清空/DictReader/executemany/GROUP BY 都能想起），但细节频错——<code>points PRIMARY</code>、<code>int(reader[...])</code>、append 缩进错位（只入库最后一行）、<code>for</code> 缺冒号、循环变量写成函数调用；仍属 <code>HINTED_RUN</code>，独立通过前不推进 HTTP</li><li><strong>异常层级（2026-11-20）</strong>：把 <code>ConnectionError</code> 当成 <code>HTTPError</code> 的子类，以为 <code>except HTTPError</code> 能接“连不上”；实际两者并列于 <code>RequestException</code></li><li>环境：<code>.venv\Scripts\python.exe</code> 反复清零，统一 <code>py -3.12</code>；<code>fix_venv.cmd</code> 可恢复</li><li>待运行验证：无（s08 学员本人运行，退出码 0）</li><li>档案索引：</li><li>sessions：<code>2026-10-26-s01</code>~<code>s03</code>；<code>2026-10-27-s04</code>~<code>s07</code>；<code>2026-10-28-s08</code>、<code>s08b</code>；<code>2026-10-29-s09-dict.md</code>、<code>2026-10-29-s10-set.md</code>；<code>2026-10-30-s11-nested-dict.md</code>、<code>2026-10-30-s12-functions.md</code>；<code>2026-10-30</code>~<code>2026-11-12</code> 共 15 条（含 <code>2026-11-12-L3-rounds.md</code>、<code>2026-11-12-stage1-skipped.md</code>）；<code>2026-11-14-git-01-three-areas.md</code></li><li>assessments：<code>2026-10-26-stage0-gate.md</code>、<code>2026-10-31-weekly-quiz.md</code>（W1 周测 8/11）</li></ul>
 <h3>计划与每日提示（2026-10-27 起）</h3>
 <ul><li>总计划：<code>learning/PLAN_2027-01-31.md</code>（目标 2027-01-31 学完）</li><li><strong>判定标准（2026-10-29 更新）：以&quot;今日任务是否完成（验收通过）&quot;为准，不以学满 1.5 小时为准</strong>。任务只能提前/超额，不能顺延；做不完当天继续，确实做不完要说明卡点并在次日开头补，且不得连续两次。</li><li>提前完成 → 直接推进下一小节（30–45 分钟），次日补验收；不跨阶段门、不连开两个新知识点、周日不开新内容。</li><li>参考投入：1.5–2 小时/天（轻课 90 / 标准 90–110 / 加强 120–150 分钟）；连续 3 天超 2.5 小时则次日降档。</li><li>周六总结测验 60–90 分钟（周测，记入 assessments），周日休息；<strong>主体 1 月 20 日前完成，最后 10 天只做项目与缓冲</strong>。</li><li><strong>每次开课先给&quot;今日任务 + 验收标准 + 参考时长 + 提前完成的下一项 + 计划偏差&quot;</strong>，学员确认后再上课。</li><li>落后/超前按计划第五节的规则自动调整，并在会话记录里写明调整原因。</li></ul>
 <h3>当前有效规则与已失效旧计划（2026-11-20 整理）</h3>
@@ -303,7 +309,7 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 &gt; 开课必须先读本文件；`progress.md` 只保存完整历史。
 &gt; **本文件是 `next_start` 的唯一来源。**
 
-- 更新时间：2026-11-26 09:25
+- 更新时间：2026-11-26 13:34
 - 运行模式：**pc-a / pc-b / u 盘三方已一致**（pc-a 于 2026-11-25 19:20 pull，`status` 退出 0）
 - 活跃学习电脑：pc-b（白天，` `）/ pc-a（晚间，`desktop-3ldso0s`）
 - pc-a 路径：`学习目录\learning`
@@ -316,7 +322,7 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 | 维度 | 状态 |
 |---|---|
 | 职业主线 | python 后端 + 大模型应用开发（机器学习工程为并行方向） |
-| 课程阶段 | **第 2 阶段（git / sql / http）门禁完成**（2026-11-26 零提示通过） |
+| 课程阶段 | 第 2 阶段门禁完成（11-26）；**已进入第 5 阶段：fastapi 第 1–2 课** |
 | 下一阶段 | **fastapi**（复习周 11-29 结束后启动） |
 | 每日目标 | 3 小时 dsh 学习；吴恩达课程另排 |
 
@@ -350,6 +356,11 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 | **阶段 2 收尾复盘（10 问）** | 5.5/10：git 标记检查（第 3 次错）、`{}` 类型（第 3 次错）、路径锚定答反；http 异常分类全对 | — |
 | **错题本整理** | 14 类错误按复发次数归档，含“改动前 4 条自查清单”：`notes/错题本-stage2.md` | — |
 
+| **跨主题小综合**（http→sqlite→json→三分支） | 24 分钟；1 处提示（`skipped = 0` 应 `+1`） | `hinted_run` |
+| **交叉验证**（python 分组 vs sql 分组） | 两个字典相等、`equal=true`、`一致`；结构由导师给出 | `hinted_run` |
+| **fastapi 第 1 课** | `/health`、`/stock/{sku}` 均 200；`/docs` 可访问 | 完成 |
+| **fastapi 第 2 课** | 查询参数、post+pydantic、404 全部通过；4 处提示（导入/切片/raise 位置/用错变量） | `hinted_run` |
+
 ## 薄弱点（下次优先）
 
 1. **冲突标记检查**：`git log`/`git status` 都不看文件内容，必须 `select-string` 搜 `  0`、`requests.connectionerror`、`r1.json()`、`int(none)` vs `int( abc )`（★）。
@@ -358,14 +369,16 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 
 ## next_start（唯一）
 
-**11-28：跨主题小综合**（40 分钟，允许查文档、不许用现成实现）
+**11-27：fastapi 第 3 课**（约 45 分钟）
 
-- 一条链路打通三块：http 取数（`/orders.json` 或新端点）→ 过滤+分组 → **sqlite 入库（`commit`）** → 多键排序 → `report.json` → 重跑幂等；
-- 验收：三条输出、表行数、json 键名、幂等、404/连不上分支；
-- 通过后 11-29 做复习周复盘，随后启动 **fastapi**；
-- 开课前先看 `notes/错题本-stage2.md` 的“4 条自查清单”，写完代码自己按清单过一遍。
+- 把 `post /stocks` 真正写进 **sqlite**（替换内存 `stocks` 列表）：建表、`insert`、`commit`；
+- 引入**依赖注入** `depends(get_db)`：请求进来拿连接、用完关掉；
+- `get /stocks` 改为从数据库读（`select`）；
+- 验收：post 后 `get` 能查到新建记录；重启服务数据仍在；404 分支照旧；
+- 开课前先过错题本 4 条自查（变量引号 / `{}` 类型 / 循环变量 / 路径锚定）。
 
-- 遗留必考：冲突标记检查方式、`{}` 类型、`timeout` 异常。
+- 复习周剩余：11-28 阶段 3 前的 python 数据处理预习；11-29 复盘后正式进入阶段 5 主线。
+- 遗留必考：冲突标记检查、`{}` 类型、`timeout`。
 
 ## 同步与备份（当前）
 
@@ -373,13 +386,13 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 - 同步程序：三方均为 `f984cbe9…`（v5 + 备份排除补丁，37/37 测试）；
 - 备份：`pc-a_20261124_1333`、`pc-a_20261124_1832`、`usb_20261124_1833`、pc-b 首次接入前备份（`d:\_sync_backup\pc-b-20261125_0821\`）。
 ">
-<summary><span class="date">11-26 09:25</span><span>CURRENT_STATE</span><span class="kind">其他</span></summary>
+<summary><span class="date">11-26 13:34</span><span>CURRENT_STATE</span><span class="kind">其他</span></summary>
 <div class="body"><h2>CURRENT_STATE</h2>
 <blockquote>开课必须先读本文件；<code>PROGRESS.md</code> 只保存完整历史。</blockquote>
 <blockquote><strong>本文件是 <code>NEXT_START</code> 的唯一来源。</strong></blockquote>
-<ul><li>更新时间：2026-11-26 09:25</li><li>运行模式：<strong>PC-A / PC-B / U 盘三方已一致</strong>（PC-A 于 2026-11-25 19:20 pull，<code>status</code> 退出 0）</li><li>活跃学习电脑：PC-B（白天，<code>&lt;本机&gt;</code>）/ PC-A（晚间，<code>DESKTOP-3LDSO0S</code>）</li><li>PC-A 路径：<code>学习目录\learning</code></li><li>PC-B 路径：<code>学习目录\learning</code>（已核验）</li><li>U 盘：自动探测（PC-A <code>E:</code>，PC-B <code>H:</code>）</li><li>自动同步：<strong>已启用</strong>（sync.py SHA <code>f984cbe9…</code>）；两机各有独立基线</li></ul>
+<ul><li>更新时间：2026-11-26 13:34</li><li>运行模式：<strong>PC-A / PC-B / U 盘三方已一致</strong>（PC-A 于 2026-11-25 19:20 pull，<code>status</code> 退出 0）</li><li>活跃学习电脑：PC-B（白天，<code>&lt;本机&gt;</code>）/ PC-A（晚间，<code>DESKTOP-3LDSO0S</code>）</li><li>PC-A 路径：<code>学习目录\learning</code></li><li>PC-B 路径：<code>学习目录\learning</code>（已核验）</li><li>U 盘：自动探测（PC-A <code>E:</code>，PC-B <code>H:</code>）</li><li>自动同步：<strong>已启用</strong>（sync.py SHA <code>f984cbe9…</code>）；两机各有独立基线</li></ul>
 <h3>阶段</h3>
-<table><thead><tr><th>维度</th><th>状态</th></tr></thead><tbody><tr><td>职业主线</td><td>Python 后端 + 大模型应用开发（机器学习工程为并行方向）</td></tr><tr><td>课程阶段</td><td><strong>第 2 阶段（Git / SQL / HTTP）门禁完成</strong>（2026-11-26 零提示通过）</td></tr><tr><td>下一阶段</td><td><strong>FastAPI</strong>（复习周 11-29 结束后启动）</td></tr><tr><td>每日目标</td><td>3 小时 DSH 学习；吴恩达课程另排</td></tr></tbody></table>
+<table><thead><tr><th>维度</th><th>状态</th></tr></thead><tbody><tr><td>职业主线</td><td>Python 后端 + 大模型应用开发（机器学习工程为并行方向）</td></tr><tr><td>课程阶段</td><td>第 2 阶段门禁完成（11-26）；<strong>已进入第 5 阶段：FastAPI 第 1–2 课</strong></td></tr><tr><td>下一阶段</td><td><strong>FastAPI</strong>（复习周 11-29 结束后启动）</td></tr><tr><td>每日目标</td><td>3 小时 DSH 学习；吴恩达课程另排</td></tr></tbody></table>
 <h3>2026-11-25 学习证据</h3>
 <h4>白天（PC-B）</h4>
 <table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td><strong>SQL 限时复测 3（<code>shipments.csv</code>）</strong></td><td>22 分钟零提示跑通：<code>有效 7 跳过 3</code>、表 7 行、分组 east 120/north 50/west 40、<code>report.json</code>、重跑幂等</td><td><strong><code>INDEPENDENT_RUN</code></strong>（主流程）</td></tr><tr><td>交付后规格修正</td><td><code>report.json</code> 结构、表结构、键名 <code>count</code></td><td><code>HINTED_RUN</code>（3 轮）</td></tr><tr><td>错题重做 3 个最小复现</td><td>set vs dict、<code>IF NOT EXISTS</code> 旧表、赋值 vs 追加</td><td>独立完成</td></tr><tr><td>阶段 2 复盘 4 问</td><td>2/4（冲突标记、HTTP 异常分类错）</td><td>—</td></tr><tr><td>Python 基础抽查</td><td>口头 3.5/5；代码主流程独立，排序/JSON 块提示</td><td>混合</td></tr><tr><td>HTTP 短迁移 2（<code>/orders.json</code>）</td><td>42 分钟（超 12），三条分支实现</td><td><code>HINTED_RUN</code>（8 处）</td></tr></tbody></table>
@@ -389,15 +402,435 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <p>| <strong>HTTP 短迁移 4（<code>/tickets.json</code>）</strong> | 36 分钟：三条分支最终全过，但 3 处缺陷（<code>value&gt;1</code>、排序函数用全局变量导致排序失效、<code>except ConnectionError</code> 抓错类）经指出后修 | <code>HINTED_RUN</code> | | <strong>HTTP 短迁移 5（<code>/samples.json</code>）</strong> | 25 分钟（限时内）：三条分支全过、<code>summary.json</code> 键与顺序正确、幂等；2 处机械性提示（循环变量残留、键名 <code>cnt</code>） | <code>HINTED_RUN</code>（提示数 8→2） |</p>
 <p>| <strong>10 分钟零提示验证（<code>/visits.json</code>）</strong> | 11 分钟、<strong>零提示</strong>：<code>有效 7 跳过 2</code>、n2 2/17、n1 3/14、n3 2/9、<code>summary.json</code> 正确、代码复核无缺陷 | <strong><code>INDEPENDENT_RUN</code></strong> |</p>
 <p>| <strong>阶段 2 收尾复盘（10 问）</strong> | 5.5/10：Git 标记检查（第 3 次错）、<code>{}</code> 类型（第 3 次错）、路径锚定答反；HTTP 异常分类全对 | — | | <strong>错题本整理</strong> | 14 类错误按复发次数归档，含“改动前 4 条自查清单”：<code>notes/错题本-stage2.md</code> | — |</p>
+<p>| <strong>跨主题小综合</strong>（HTTP→SQLite→JSON→三分支） | 24 分钟；1 处提示（<code>skipped = 0</code> 应 <code>+1</code>） | <code>HINTED_RUN</code> | | <strong>交叉验证</strong>（Python 分组 vs SQL 分组） | 两个字典相等、<code>equal=true</code>、<code>一致</code>；结构由导师给出 | <code>HINTED_RUN</code> | | <strong>FastAPI 第 1 课</strong> | <code>/health</code>、<code>/stock/{sku}</code> 均 200；<code>/docs</code> 可访问 | 完成 | | <strong>FastAPI 第 2 课</strong> | 查询参数、POST+Pydantic、404 全部通过；4 处提示（导入/切片/raise 位置/用错变量） | <code>HINTED_RUN</code> |</p>
 <h3>薄弱点（下次优先）</h3>
 <ul><li><strong>冲突标记检查</strong>：<code>git log</code>/<code>git status</code> 都不看文件内容，必须 <code>Select-String</code> 搜 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>（第 3 次错，★★★）；</li><li><strong><code>{}</code> 二义性</strong>：<code>{1,2,3}</code> 是集合、<code>{&quot;a&quot;:1}</code> 才是字典（第 3 次错，★★★）；</li><li><strong>路径锚定</strong>：<code>&quot;x.json&quot;</code> 是相对路径（依赖 cwd），<code>base / &quot;x.json&quot;</code> 才是绝对路径；</li><li><strong>循环变量残留</strong>：循环体只能用当前循环变量（★★）；</li><li><strong>排序 key 用参数</strong>，不用全局变量（★★）；</li><li><strong>JSON 键名照规格</strong>（★★）；</li><li>边界 <code>&gt; 0</code>、<code>requests.ConnectionError</code>、<code>r1.json()</code>、<code>int(None)</code> vs <code>int(&quot;abc&quot;)</code>（★）。</li></ul>
 <blockquote>完整清单见 <code>notes/错题本-stage2.md</code>（含“改动前 4 条自查清单”）。</blockquote>
 <h3>NEXT_START（唯一）</h3>
-<p><strong>11-28：跨主题小综合</strong>（40 分钟，允许查文档、不许用现成实现）</p>
-<ul><li>一条链路打通三块：HTTP 取数（<code>/orders.json</code> 或新端点）→ 过滤+分组 → <strong>SQLite 入库（<code>commit</code>）</strong> → 多键排序 → <code>report.json</code> → 重跑幂等；</li><li>验收：三条输出、表行数、JSON 键名、幂等、404/连不上分支；</li><li>通过后 11-29 做复习周复盘，随后启动 <strong>FastAPI</strong>；</li><li>开课前先看 <code>notes/错题本-stage2.md</code> 的“4 条自查清单”，写完代码自己按清单过一遍。</li></ul>
-<ul><li>遗留必考：冲突标记检查方式、<code>{}</code> 类型、<code>Timeout</code> 异常。</li></ul>
+<p><strong>11-27：FastAPI 第 3 课</strong>（约 45 分钟）</p>
+<ul><li>把 <code>POST /stocks</code> 真正写进 <strong>SQLite</strong>（替换内存 <code>STOCKS</code> 列表）：建表、<code>INSERT</code>、<code>commit</code>；</li><li>引入<strong>依赖注入</strong> <code>Depends(get_db)</code>：请求进来拿连接、用完关掉；</li><li><code>GET /stocks</code> 改为从数据库读（<code>SELECT</code>）；</li><li>验收：POST 后 <code>GET</code> 能查到新建记录；重启服务数据仍在；404 分支照旧；</li><li>开课前先过错题本 4 条自查（变量引号 / <code>{}</code> 类型 / 循环变量 / 路径锚定）。</li></ul>
+<ul><li>复习周剩余：11-28 阶段 3 前的 Python 数据处理预习；11-29 复盘后正式进入阶段 5 主线。</li><li>遗留必考：冲突标记检查、<code>{}</code> 类型、<code>Timeout</code>。</li></ul>
 <h3>同步与备份（当前）</h3>
 <ul><li>三方一致（PC-A 2026-11-25 19:20 pull，498 文件，<code>diff=0</code>）；晚间记录已 push，详见 <code>SYNC_STATUS.md</code>；</li><li>同步程序：三方均为 <code>f984cbe9…</code>（v5 + 备份排除补丁，37/37 测试）；</li><li>备份：<code>PC-A_20261124_1333</code>、<code>PC-A_20261124_1832</code>、<code>USB_20261124_1833</code>、PC-B 首次接入前备份（<code>D:\_sync_backup\PC-B-20261125_0821\</code>）。</li></ul></div>
+</details><details data-kind="其他" data-text="# 跨主题综合 + 交叉验证 + fastapi 第 1–2 课（2026-11-26 中午）
+
+- 机器：pc-b（` `）
+- 三段合计：09:34:16–10:26:43（24 分钟）+ 12:13（1 分钟）+ 12:41:14–13:33:58（53 分钟）
+
+## 一、跨主题小综合（09:34–10:26，24 分钟）
+
+目录 `code/2026-11-26-integration`，链路：http 取数 → 过滤 → sqlite 入库 → 分组 → 排序 → `report.json` → 三分支。
+
+| 验收 | 结果 |
+|---|---|
+| `有效 5 跳过 2`、b 2/11、a 2/7、c 1/2 | ✓ |
+| 表 `stocks(sku,qty)` 两列、5 行、`commit` | ✓ |
+| `summary.json` 键与顺序 | ✓ |
+| 幂等 | ✓ |
+| 404 / 连不上 | ✓ |
+
+1 处提示：`except` 里写成 `skipped = 0`（清零），应 `skipped = skipped + 1`。判 `hinted_run`。
+
+## 二、交叉验证（10:02 起，未完成 → 12:13 完成）
+
+目录 `code/2026-11-26-crosscheck`：同一数据用 python dict 与 sql 各算一遍，比较两个字典。
+
+首版问题：
+- 循环里 `stats[ python ] = [...]` 覆盖，只剩最后一组；
+- 比较语句 `if sku == sku and ...` 无意义；
+- `compare.json` 结构不对。
+
+改后（结构由导师给出）：
+
+```json
+{ python : { b :[2,11], a :[2,7], c :[1,2]},
+  sql :    { b :[2,11], a :[2,7], c :[1,2]},
+  equal : true}
+```
+
+输出 `一致`，独立核对两字典相等、各 3 组。判 `hinted_run`（结构给了）。
+
+## 三、fastapi 第 1 课（12:41 起，约 20 分钟）
+
+环境：`fastapi 0.165.0` / `uvicorn 0.54.0` / `pydantic 2.14.4`（3.12 与 3.14 各装一份；全局 vs code 解释器已固定 3.12）。
+
+- 讲完 7 条新语法：`fastapi()`、`@app.get`、返回 dict→json、路径参数、`uvicorn 模块:实例`、`/docs`
+- 学员写 `app.py`：`/health`、`/stock/{sku}`
+- 验收：三个地址 200、`/docs` 可访问
+
+## 四、fastapi 第 2 课（约 30 分钟）
+
+新语法 7 条：查询参数、`@app.post`、`basemodel`、字段类型、`httpexception`、切片、422 校验。
+
+学员实现四条路由，4 处提示后通过：
+
+| 问题 | 修正 |
+|---|---|
+| 少导入 `httpexception` | `from fastapi import fastapi, httpexception` |
+| `stocks[2:limit]` | `stocks[:limit]` |
+| `raise` 写在 `else` 里 | 移到循环之后 |
+| `{ created :a, qty :7}` | `item.sku` / `item.qty` |
+
+另：启动未加 `--reload`，改了代码不生效（与“文件没保存”同类）。
+
+最终验收（服务日志与实测一致）：
+
+```
+get /health 200 · get /stocks 200 · /stocks?limit=3 200
+get /stocks/b 200 · get /stocks/z 404 · post 200 · post 422
+```
+
+## 五、答疑要点（学员提问）
+
+- fastapi 是**后端**，返回 json，不做网页；前端另算
+- `@app.get(...)` 是装饰器 = 往路由表注册
+- `return` 结束整个函数；`break` 只跳出循环
+- `sku` 是 url 里那一段，不是常量
+- get 读、post 写（body 传数据）
+- `stockin` 是请求体结构声明，422 由 pydantic 自动给
+- 404 来自业务逻辑（找不到），与类型无关
+- `--reload` 让改动自动生效
+
+## 证据分级
+
+| 内容 | 等级 |
+|---|---|
+| 综合任务 | `hinted_run`（1 处） |
+| 交叉验证 | `hinted_run`（结构给了） |
+| fastapi 第 1 课 | 完成（照 demo 迁移） |
+| fastapi 第 2 课 | `hinted_run`（4 处） |
+">
+<summary><span class="date">11-26 13:34</span><span>跨主题综合 + 交叉验证 + FastAPI 第 1–2 课（2026-11-26 中午）</span><span class="kind">其他</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><h2>跨主题综合 + 交叉验证 + FastAPI 第 1–2 课（2026-11-26 中午）</h2>
+<ul><li>机器：PC-B（<code>&lt;本机&gt;</code>）</li><li>三段合计：09:34:16–10:26:43（24 分钟）+ 12:13（1 分钟）+ 12:41:14–13:33:58（53 分钟）</li></ul>
+<h3>一、跨主题小综合（09:34–10:26，24 分钟）</h3>
+<p>目录 <code>code/2026-11-26-integration</code>，链路：HTTP 取数 → 过滤 → SQLite 入库 → 分组 → 排序 → <code>report.json</code> → 三分支。</p>
+<table><thead><tr><th>验收</th><th>结果</th></tr></thead><tbody><tr><td><code>有效 5 跳过 2</code>、B 2/11、A 2/7、C 1/2</td><td>✓</td></tr><tr><td>表 <code>stocks(sku,qty)</code> 两列、5 行、<code>commit</code></td><td>✓</td></tr><tr><td><code>summary.json</code> 键与顺序</td><td>✓</td></tr><tr><td>幂等</td><td>✓</td></tr><tr><td>404 / 连不上</td><td>✓</td></tr></tbody></table>
+<p>1 处提示：<code>except</code> 里写成 <code>skipped = 0</code>（清零），应 <code>skipped = skipped + 1</code>。判 <code>HINTED_RUN</code>。</p>
+<h3>二、交叉验证（10:02 起，未完成 → 12:13 完成）</h3>
+<p>目录 <code>code/2026-11-26-crosscheck</code>：同一数据用 Python dict 与 SQL 各算一遍，比较两个字典。</p>
+<p>首版问题：</p>
+<ul><li>循环里 <code>stats[&quot;python&quot;] = [...]</code> 覆盖，只剩最后一组；</li><li>比较语句 <code>if sku == sku and ...</code> 无意义；</li><li><code>compare.json</code> 结构不对。</li></ul>
+<p>改后（结构由导师给出）：</p>
+<pre><code>{&quot;python&quot;: {&quot;B&quot;:[2,11],&quot;A&quot;:[2,7],&quot;C&quot;:[1,2]},
+ &quot;sql&quot;:    {&quot;B&quot;:[2,11],&quot;A&quot;:[2,7],&quot;C&quot;:[1,2]},
+ &quot;equal&quot;: true}</code></pre>
+<p>输出 <code>一致</code>，独立核对两字典相等、各 3 组。判 <code>HINTED_RUN</code>（结构给了）。</p>
+<h3>三、FastAPI 第 1 课（12:41 起，约 20 分钟）</h3>
+<p>环境：<code>fastapi 0.165.0</code> / <code>uvicorn 0.54.0</code> / <code>pydantic 2.14.4</code>（3.12 与 3.14 各装一份；全局 VS Code 解释器已固定 3.12）。</p>
+<ul><li>讲完 7 条新语法：<code>FastAPI()</code>、<code>@app.get</code>、返回 dict→JSON、路径参数、<code>uvicorn 模块:实例</code>、<code>/docs</code></li><li>学员写 <code>app.py</code>：<code>/health</code>、<code>/stock/{sku}</code></li><li>验收：三个地址 200、<code>/docs</code> 可访问</li></ul>
+<h3>四、FastAPI 第 2 课（约 30 分钟）</h3>
+<p>新语法 7 条：查询参数、<code>@app.post</code>、<code>BaseModel</code>、字段类型、<code>HTTPException</code>、切片、422 校验。</p>
+<p>学员实现四条路由，4 处提示后通过：</p>
+<table><thead><tr><th>问题</th><th>修正</th></tr></thead><tbody><tr><td>少导入 <code>HTTPException</code></td><td><code>from fastapi import FastAPI, HTTPException</code></td></tr><tr><td><code>STOCKS[2:limit]</code></td><td><code>STOCKS[:limit]</code></td></tr><tr><td><code>raise</code> 写在 <code>else</code> 里</td><td>移到循环之后</td></tr><tr><td><code>{&quot;created&quot;:A,&quot;qty&quot;:7}</code></td><td><code>item.sku</code> / <code>item.qty</code></td></tr></tbody></table>
+<p>另：启动未加 <code>--reload</code>，改了代码不生效（与“文件没保存”同类）。</p>
+<p>最终验收（服务日志与实测一致）：</p>
+<pre><code>GET /health 200 · GET /stocks 200 · /stocks?limit=3 200
+GET /stocks/B 200 · GET /stocks/Z 404 · POST 200 · POST 422</code></pre>
+<h3>五、答疑要点（学员提问）</h3>
+<ul><li>FastAPI 是<strong>后端</strong>，返回 JSON，不做网页；前端另算</li><li><code>@app.get(...)</code> 是装饰器 = 往路由表注册</li><li><code>return</code> 结束整个函数；<code>break</code> 只跳出循环</li><li><code>sku</code> 是 URL 里那一段，不是常量</li><li>GET 读、POST 写（body 传数据）</li><li><code>StockIn</code> 是请求体结构声明，422 由 Pydantic 自动给</li><li>404 来自业务逻辑（找不到），与类型无关</li><li><code>--reload</code> 让改动自动生效</li></ul>
+<h3>证据分级</h3>
+<table><thead><tr><th>内容</th><th>等级</th></tr></thead><tbody><tr><td>综合任务</td><td><code>HINTED_RUN</code>（1 处）</td></tr><tr><td>交叉验证</td><td><code>HINTED_RUN</code>（结构给了）</td></tr><tr><td>FastAPI 第 1 课</td><td>完成（照 DEMO 迁移）</td></tr><tr><td>FastAPI 第 2 课</td><td><code>HINTED_RUN</code>（4 处）</td></tr></tbody></table></div>
+</details><details data-kind="其他" data-text="```python
+from fastapi import fastapi,httpexception
+from pydantic import basemodel
+app = fastapi()
+
+stocks = [{ sku : a , qty :7},{ sku : b , qty :11},{ sku :&#x27;c&#x27;, qty :2}]
+class stockin(basemodel):
+    sku : str
+    qty : int
+
+@app.get( /health )
+def health():
+    return{ status : ok , service : study-api }
+
+@app.get( /stocks )
+def list_stocks(limit: int = 2):
+    return stocks[:limit]
+
+@app.get( /stocks/{sku} )
+def get_stock(sku: str):
+    for s in stocks:
+        if s[ sku ] == sku:
+            return s
+        
+    raise httpexception(status_code=404,detail= 链接错误 )
+
+@app.post( /stocks )
+def create_stock(item: stockin):
+    return { created :item.sku, qty :item.qty}
+```
+">
+<summary><span class="date">11-26 13:08</span><span>其他 · 代码练习</span><span class="kind">其他</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>from fastapi import FastAPI,HTTPException
+from pydantic import BaseModel
+app = FastAPI()
+
+STOCKS = [{&quot;sku&quot;:&quot;A&quot;,&quot;qty&quot;:7},{&quot;sku&quot;:&quot;B&quot;,&quot;qty&quot;:11},{&quot;sku&quot;:&#x27;C&#x27;,&quot;qty&quot;:2}]
+class StockIn(BaseModel):
+    sku : str
+    qty : int
+
+@app.get(&quot;/health&quot;)
+def health():
+    return{&quot;status&quot;:&quot;ok&quot;,&quot;service&quot;:&quot;study-api&quot;}
+
+@app.get(&quot;/stocks&quot;)
+def list_stocks(limit: int = 2):
+    return STOCKS[:limit]
+
+@app.get(&quot;/stocks/{sku}&quot;)
+def get_stock(sku: str):
+    for s in STOCKS:
+        if s[&quot;sku&quot;] == sku:
+            return s
+        
+    raise HTTPException(status_code=404,detail=&quot;链接错误&quot;)
+
+@app.post(&quot;/stocks&quot;)
+def create_stock(item: StockIn):
+    return {&quot;created&quot;:item.sku,&quot;qty&quot;:item.qty}</code></pre></div>
+</details><details data-kind="其他" data-text="```python
+from pathlib import path
+import sys
+import csv
+import json
+import requests
+import sqlite3
+base = path(__file__).parent
+db_path = sys.argv[1] if len(sys.argv) &gt; 1 else base /  stocks.db 
+url = sys.argv[2] if len(sys.argv) &gt; 2 else  http://127.0.0.1:8766/stocks.json 
+cnn = sqlite3.connect(db_path)
+cur = cnn.cursor()
+cur.execute( create table if not exists stocks(sku text,qty integer) )
+cur.execute( delete from stocks )
+cnn.commit()
+try:
+    r1 = requests.get(url,timeout=5)
+except requests.connectionerror:
+    print( 服务不可用 )
+    sys.exit(1)
+if r1.status_code == 404:
+    print( 接口不可用 )
+    sys.exit(1)
+
+data = r1.json()[ stocks ]
+valid = 0
+skipped = 0
+row = []
+rows = {}
+for n in data:
+    try:
+        value = int(n[ qty ])
+    except (typeerror,valueerror):
+        skipped = skipped + 1
+        continue
+    if value &gt; 0:
+        valid = valid + 1
+        sku = n[ sku ]
+        row.append((sku,value))
+        if sku not in rows:
+            rows[sku] = [0,0]
+        rows[sku][0] = rows[sku][0] + 1
+        rows[sku][1] = rows[sku][1] + value
+    else:
+        skipped = skipped + 1
+        continue
+print( 有效 ,valid, 跳过 ,skipped)
+cur.executemany( insert into stocks(sku,qty) values(?,?) ,row)
+cnn.commit()
+sql_stats = {}
+for sku,count,total in cur.execute( select sku,count(*),sum(qty) from stocks group by sku order by sum(qty) desc,sku asc ):
+    sql_stats[sku] = [count,total]
+    
+def sum(a):
+    return rows[a][1]
+names = sorted(rows)
+names.sort(key=sum,reverse=true)
+py_stats = {}
+for sku in names:
+    count,total = rows[sku]
+    py_stats[sku] = [count,total]
+
+equal = (py_stats == sql_stats)
+print( 一致  if equal else  差异 )
+
+with open(base /  compare.json , w ,encoding= utf-8 ) as f:
+    json.dump({ python :py_stats, sql :sql_stats, equal :equal},f,ensure_ascii=false,indent=2)
+```
+">
+<summary><span class="date">11-26 12:11</span><span>其他 · 代码练习</span><span class="kind">其他</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>from pathlib import Path
+import sys
+import csv
+import json
+import requests
+import sqlite3
+base = Path(__file__).parent
+db_path = sys.argv[1] if len(sys.argv) &gt; 1 else base / &quot;stocks.db&quot;
+URL = sys.argv[2] if len(sys.argv) &gt; 2 else &quot;http://127.0.0.1:8766/stocks.json&quot;
+cnn = sqlite3.connect(db_path)
+cur = cnn.cursor()
+cur.execute(&quot;CREATE TABLE IF NOT EXISTS stocks(sku TEXT,qty INTEGER)&quot;)
+cur.execute(&quot;DELETE FROM stocks&quot;)
+cnn.commit()
+try:
+    r1 = requests.get(URL,timeout=5)
+except requests.ConnectionError:
+    print(&quot;服务不可用&quot;)
+    sys.exit(1)
+if r1.status_code == 404:
+    print(&quot;接口不可用&quot;)
+    sys.exit(1)
+
+data = r1.json()[&quot;stocks&quot;]
+valid = 0
+skipped = 0
+row = []
+rows = {}
+for n in data:
+    try:
+        value = int(n[&quot;qty&quot;])
+    except (TypeError,ValueError):
+        skipped = skipped + 1
+        continue
+    if value &gt; 0:
+        valid = valid + 1
+        sku = n[&quot;sku&quot;]
+        row.append((sku,value))
+        if sku not in rows:
+            rows[sku] = [0,0]
+        rows[sku][0] = rows[sku][0] + 1
+        rows[sku][1] = rows[sku][1] + value
+    else:
+        skipped = skipped + 1
+        continue
+print(&quot;有效&quot;,valid,&quot;跳过&quot;,skipped)
+cur.executemany(&quot;INSERT INTO stocks(sku,qty) VALUES(?,?)&quot;,row)
+cnn.commit()
+sql_stats = {}
+for sku,count,total in cur.execute(&quot;SELECT sku,COUNT(*),SUM(qty) FROM stocks GROUP BY sku ORDER BY SUM(qty) DESC,sku ASC&quot;):
+    sql_stats[sku] = [count,total]
+    
+def sum(a):
+    return rows[a][1]
+names = sorted(rows)
+names.sort(key=sum,reverse=True)
+py_stats = {}
+for sku in names:
+    count,total = rows[sku]
+    py_stats[sku] = [count,total]
+
+equal = (py_stats == sql_stats)
+print(&quot;一致&quot; if equal else &quot;差异&quot;)
+
+with open(base / &quot;compare.json&quot;,&quot;w&quot;,encoding=&quot;utf-8&quot;) as f:
+    json.dump({&quot;python&quot;:py_stats,&quot;sql&quot;:sql_stats,&quot;equal&quot;:equal},f,ensure_ascii=False,indent=2)</code></pre></div>
+</details><details data-kind="其他" data-text="```python
+from pathlib import path
+import sys
+import csv
+import json
+import requests
+import sqlite3
+base = path(__file__).parent
+db_path = sys.argv[1] if len(sys.argv) &gt; 1 else base /  stocks.db 
+url = sys.argv[2] if len(sys.argv) &gt; 2 else  http://127.0.0.1:8766/stocks.json 
+cnn = sqlite3.connect(db_path)
+cur = cnn.cursor()
+cur.execute( create table if not exists stocks(sku text,qty integer) )
+cur.execute( delete from stocks )
+cnn.commit()
+try:
+    r1 = requests.get(url,timeout=5)
+except requests.connectionerror:
+    print( 服务不可用 )
+    sys.exit(1)
+if r1.status_code == 404:
+    print( 接口不可用 )
+    sys.exit(1)
+
+data = r1.json()[ stocks ]
+valid = 0
+skipped = 0
+row = []
+for n in data:
+    try:
+        value = int(n[ qty ])
+    except (typeerror,valueerror):
+        skipped = skipped + 1
+        continue
+    if value &gt; 0:
+        valid = valid + 1
+        sku = n[ sku ]
+        row.append((sku,value))
+    else:
+        skipped = skipped + 1
+        continue
+print( 有效 ,valid, 跳过 ,skipped)
+cur.executemany( insert into stocks(sku,qty) values(?,?) ,row)
+cnn.commit()
+stats = []
+for sku,count,total in cur.execute( select sku,count(*),sum(qty) from stocks group by sku order by sum(qty) desc,sku asc ):
+    
+    stats.append({ sku :sku, count :count, total :total})
+    print(sku,count,total)
+with open(base /  report.json , w ,encoding= utf-8 ) as f:
+    json.dump(stats,f,ensure_ascii=false,indent=2)
+```
+">
+<summary><span class="date">11-26 09:57</span><span>其他 · 代码练习</span><span class="kind">其他</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>from pathlib import Path
+import sys
+import csv
+import json
+import requests
+import sqlite3
+base = Path(__file__).parent
+db_path = sys.argv[1] if len(sys.argv) &gt; 1 else base / &quot;stocks.db&quot;
+URL = sys.argv[2] if len(sys.argv) &gt; 2 else &quot;http://127.0.0.1:8766/stocks.json&quot;
+cnn = sqlite3.connect(db_path)
+cur = cnn.cursor()
+cur.execute(&quot;CREATE TABLE IF NOT EXISTS stocks(sku TEXT,qty INTEGER)&quot;)
+cur.execute(&quot;DELETE FROM stocks&quot;)
+cnn.commit()
+try:
+    r1 = requests.get(URL,timeout=5)
+except requests.ConnectionError:
+    print(&quot;服务不可用&quot;)
+    sys.exit(1)
+if r1.status_code == 404:
+    print(&quot;接口不可用&quot;)
+    sys.exit(1)
+
+data = r1.json()[&quot;stocks&quot;]
+valid = 0
+skipped = 0
+row = []
+for n in data:
+    try:
+        value = int(n[&quot;qty&quot;])
+    except (TypeError,ValueError):
+        skipped = skipped + 1
+        continue
+    if value &gt; 0:
+        valid = valid + 1
+        sku = n[&quot;sku&quot;]
+        row.append((sku,value))
+    else:
+        skipped = skipped + 1
+        continue
+print(&quot;有效&quot;,valid,&quot;跳过&quot;,skipped)
+cur.executemany(&quot;INSERT INTO stocks(sku,qty) VALUES(?,?)&quot;,row)
+cnn.commit()
+stats = []
+for sku,count,total in cur.execute(&quot;SELECT sku,COUNT(*),SUM(qty) FROM stocks GROUP BY sku ORDER BY SUM(qty) DESC,sku ASC&quot;):
+    
+    stats.append({&quot;sku&quot;:sku,&quot;count&quot;:count,&quot;total&quot;:total})
+    print(sku,count,total)
+with open(base / &quot;report.json&quot;,&quot;w&quot;,encoding=&quot;utf-8&quot;) as f:
+    json.dump(stats,f,ensure_ascii=False,indent=2)</code></pre></div>
 </details><details data-kind="HTTP" data-text="# 阶段 2 错题本（git / sql / http，2026-11-21 ~ 11-26）
 
 &gt; 按“错误类型”归档，不按日期。每次复盘先看这份清单。
@@ -4785,62 +5218,6 @@ requests          传输层：发请求、抛异常</code></pre>
 <p><code>HINTED_RUN</code>（模块拆分与调用结构由导师给出；两处错误经指出后修正）。</p>
 <h3>下次起点</h3>
 <ul><li>骨架默写第 3 天（11-21）或第四次限时复测（学员自述已掌握，记 <code>CLAIMED_NOT_VERIFIED</code>，复测待补）</li><li>11-22 前后：Git 冲突课 7 天延迟复测</li><li>可选：给 <code>mytools</code> 加第二个函数（如 <code>fetch_json</code>），或 <code>fetch</code> 加递增等待</li></ul></div>
-</details><details data-kind="HTTP" data-text="```python
-import requests
-import time
-
-
-def fetch(url, timeout=5, retries=3):
-    for attempt in range(1, retries + 1):
-        try:
-            r1 = requests.get(url,timeout=timeout) # ① 发请求：用 url 和 timeout 两个变量
-            r1.raise_for_status() # ② 检查状态码（今天学过哪个方法？）
-            return r1 # ③ 成功就 return
-        except (requests.exceptions.connectionerror, requests.exceptions.timeout):
-            print( 尝试 ,attempt, / ,retries, 失败 ) 
-            time.sleep(1) # ④ 打印“尝试 attempt/retries 失败”，然后 time.sleep(1)
-    return none # ⑤ 三次都失败，return 什么？
-
-
-print(fetch( http://127.0.0.1:8799/ ))
-
-
-try:
-    print(fetch( http://127.0.0.1:8766/nope ))
-except requests.exceptions.httperror:
-    print( http 错误 404 )
-print(fetch( http://127.0.0.1:8766/slow , timeout=1))
-r = fetch( http://127.0.0.1:8766/data.json )
-print(r.json()[ team ])
-```
-">
-<summary><span class="date">11-20 13:39</span><span>HTTP · 代码练习</span><span class="kind">HTTP</span></summary>
-<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>import requests
-import time
-
-
-def fetch(url, timeout=5, retries=3):
-    for attempt in range(1, retries + 1):
-        try:
-            r1 = requests.get(url,timeout=timeout) # ① 发请求：用 url 和 timeout 两个变量
-            r1.raise_for_status() # ② 检查状态码（今天学过哪个方法？）
-            return r1 # ③ 成功就 return
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
-            print(&quot;尝试&quot;,attempt,&quot;/&quot;,retries,&quot;失败&quot;) 
-            time.sleep(1) # ④ 打印“尝试 attempt/retries 失败”，然后 time.sleep(1)
-    return None # ⑤ 三次都失败，return 什么？
-
-
-print(fetch(&quot;http://127.0.0.1:8799/&quot;))
-
-
-try:
-    print(fetch(&quot;http://127.0.0.1:8766/nope&quot;))
-except requests.exceptions.HTTPError:
-    print(&quot;HTTP 错误 404&quot;)
-print(fetch(&quot;http://127.0.0.1:8766/slow&quot;, timeout=1))
-r = fetch(&quot;http://127.0.0.1:8766/data.json&quot;)
-print(r.json()[&quot;team&quot;])</code></pre></div>
 </details><details data-kind="SQL" data-text="# sql 迁移变体 #3：products（2026-11-20 下午）
 
 - 时间：13:14–13:36（约 22 分钟，文件 mtime 校准）
@@ -4910,90 +5287,6 @@ fruit 3 24 8.0</code></pre>
 <p><code>INDEPENDENT_RUN</code>（无提示完成，首版输出正确）；两处缺陷由 review 发现，非学员自行发现。</p>
 <h3>下次起点</h3>
 <ul><li>骨架默写第 3 天（11-21，目标 0 错误；已连续 2 天）</li><li>11-22 前后：Git 冲突课 7 天延迟复测</li><li>可选：<code>fetch</code> 递增等待（1s/2s/4s）</li></ul></div>
-</details><details data-kind="SQL" data-text="```python
-from pathlib import path
-import sys
-import sqlite3
-import csv
-base = path(__file__).parent
-
-csv_path = sys.argv[1] if len(sys.argv) &gt; 1 else base /  products.csv 
-db_path = sys.argv[2] if len(sys.argv) &gt; 2 else base /  products.db 
-
-cnn = sqlite3.connect(db_path)
-cur = cnn.cursor()
-cur.execute( create table if not exists products(id integer primary key,category text,price integer) )
-cur.execute( delete from products )
-cnn.commit()
-
-valid = 0
-skipped = 0
-rows = []
-
-with open(csv_path,newline=  ,encoding= utf-8 ) as f:
-    read = csv.dictreader(f)
-    for row in read:
-        try:
-            value = int(row[ price ])
-        except valueerror:
-            skipped = skipped + 1
-            continue
-        valid = valid + 1
-        rows.append((row[ category ],value))
-    print( 有效 ,valid, 跳过 ,skipped)
-
-cur.executemany( insert into products(category,price) values(?,?) ,rows)
-cnn.commit()
-
-
-for category,cnt,total,avg in cur.execute( select category,count(*),sum(price),avg(price) from products group by category order by avg(price) desc ):
-    print(category,cnt,total,round(avg,1))
-
-
-cnn.close()
-```
-">
-<summary><span class="date">11-20 13:33</span><span>SQL · 代码练习</span><span class="kind">SQL</span></summary>
-<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>from pathlib import Path
-import sys
-import sqlite3
-import csv
-base = Path(__file__).parent
-
-csv_path = sys.argv[1] if len(sys.argv) &gt; 1 else base / &quot;products.csv&quot;
-db_path = sys.argv[2] if len(sys.argv) &gt; 2 else base / &quot;products.db&quot;
-
-cnn = sqlite3.connect(db_path)
-cur = cnn.cursor()
-cur.execute(&quot;CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY,category TEXT,price INTEGER)&quot;)
-cur.execute(&quot;DELETE FROM products&quot;)
-cnn.commit()
-
-valid = 0
-skipped = 0
-rows = []
-
-with open(csv_path,newline=&quot;&quot;,encoding=&quot;utf-8&quot;) as f:
-    read = csv.DictReader(f)
-    for row in read:
-        try:
-            value = int(row[&quot;price&quot;])
-        except ValueError:
-            skipped = skipped + 1
-            continue
-        valid = valid + 1
-        rows.append((row[&quot;category&quot;],value))
-    print(&quot;有效&quot;,valid,&quot;跳过&quot;,skipped)
-
-cur.executemany(&quot;INSERT INTO products(category,price) VALUES(?,?)&quot;,rows)
-cnn.commit()
-
-
-for category,cnt,total,avg in cur.execute(&quot;SELECT category,COUNT(*),SUM(price),AVG(price) FROM products GROUP BY category ORDER BY AVG(price) DESC&quot;):
-    print(category,cnt,total,round(avg,1))
-
-
-cnn.close()</code></pre></div>
 </details><details data-kind="HTTP" data-text="# http 第 4 课：重试（2026-11-20 上午）
 
 - 时间：09:21–09:46（约 25 分钟，文件 mtime 校准）
@@ -5240,52 +5533,6 @@ HTTP 错误 404
 <ul><li>掌握：一个请求一个 <code>try</code>、异常类型与场景对应、<code>timeout</code> 的实际效果（1 秒放弃而非等满 5 秒）</li><li>仍需固化：<code>HTTPError</code> 与 <code>ConnectionError</code> 的层级关系（今日检索仍答错）</li><li>证据等级：<code>HINTED_RUN</code>（结构由导师给出，7 处错误经提示修正）</li></ul>
 <h3>下次起点</h3>
 <ul><li>骨架默写第 3 天（11-21，目标 0 错误；已连续 2 天）</li><li>迁移变体 #3（<code>2026-11-19-transfer2</code>，可选）</li><li>11-22 前后：Git 冲突课 7 天延迟复测</li><li>可选：HTTP 重试（<code>for</code> + <code>time.sleep</code> + 只重试 <code>ConnectionError</code>/<code>Timeout</code>）</li></ul></div>
-</details><details data-kind="HTTP" data-text="```python
-import requests
-
-try:
-    r1 = requests.get( http://127.0.0.1:8799/ ,timeout=5)
-    print(r1.status_code)
-except requests.exceptions.connectionerror:
-    print( 连不上 )
-
-try:
-    r2 = requests.get( http://127.0.0.1:8766/nope ,timeout=5)
-    r2.raise_for_status()
-    print(r2.status_code)
-except requests.exceptions.httperror:
-    print( http 错误 404 )
-
-
-try:
-    r3 = requests.get( http://127.0.0.1:8766/slow ,timeout=1)
-    print(r3.status_code)
-except requests.exceptions.timeout:
-    print( 超时 )
-```
-">
-<summary><span class="date">11-20 09:06</span><span>HTTP · 代码练习</span><span class="kind">HTTP</span></summary>
-<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>import requests
-
-try:
-    r1 = requests.get(&quot;http://127.0.0.1:8799/&quot;,timeout=5)
-    print(r1.status_code)
-except requests.exceptions.ConnectionError:
-    print(&quot;连不上&quot;)
-
-try:
-    r2 = requests.get(&quot;http://127.0.0.1:8766/nope&quot;,timeout=5)
-    r2.raise_for_status()
-    print(r2.status_code)
-except requests.exceptions.HTTPError:
-    print(&quot;HTTP 错误 404&quot;)
-
-
-try:
-    r3 = requests.get(&quot;http://127.0.0.1:8766/slow&quot;,timeout=1)
-    print(r3.status_code)
-except requests.exceptions.Timeout:
-    print(&quot;超时&quot;)</code></pre></div>
 </details><details data-kind="HTTP" data-text="# 骨架默写第 2 天 + http 检索（2026-11-20 上午）
 
 - 时间：08:15–08:35（20 分钟）+ 08:44–08:46（2 分钟，按文件 mtime 校准），中间休息不计
