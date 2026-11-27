@@ -62,9 +62,9 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <body>
 <header>
 <h1>Python 学习复习</h1>
-<div class="sub">共 137 篇 · 最后生成 2026-11-27</div>
+<div class="sub">共 138 篇 · 最后生成 2026-11-27</div>
 <input id="q" type="search" placeholder="搜索关键词，如 SQL、argv、Git…" autocomplete="off">
-<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="HTTP · 复测">HTTP · 复测</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
+<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="HTTP · 复测">HTTP · 复测</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
 </header>
 <main><details data-kind="其他" data-text="# current_state
 
@@ -146,7 +146,15 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 | 引导重写 `products` | 最终验收全过：空列表、两次 post、id 自增、单条 200、999 → 404、`/docs`、磁盘 2 行 | `hinted_run`（7 处） |
 
 - 环境：独立 venv `projects/fastapi-api/.venv`（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4）；
-- 11-27 计时：上午 **94 分钟**（08:39–10:13）+ 下午 **102 分钟**（12:22–14:04）= **196 分钟**。
+- 11-27 计时：上午 **94 分钟**（08:39–10:13）+ 下午 **102 分钟**（12:22–14:04）+ 晚间复习 **29 分钟**（22:15–22:44）= **225 分钟**。
+
+### 晚间复习（22:15–22:44）
+
+| 内容 | 结果 |
+|---|---|
+| 骨架口述 5 格 | 仅 `commit` 答对；装饰器、`item: productin`、`values`、422/409 均错 |
+| 6 个快问 | `depends` 位置、`yield`、422/404、未 commit 不可见——对；`fetchone/fetchall` 返回 `none`/`[]` 错；`rowcount` 半对 |
+| 默写两遍 | 第一遍 4 处结构错 → 第二遍仅 `depend` 拼写与键名大小写 |
 
 ## 薄弱点（下次优先）
 
@@ -179,7 +187,7 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 - 同步程序：三方均为 `f984cbe9…`（v5 + 备份排除补丁，37/37 测试）；
 - 备份：`pc-a_20261124_1333`、`pc-a_20261124_1832`、`usb_20261124_1833`、pc-b 首次接入前备份（`d:\_sync_backup\pc-b-20261125_0821\`）。
 ">
-<summary><span class="date">11-27 14:04</span><span>CURRENT_STATE</span><span class="kind">其他</span></summary>
+<summary><span class="date">11-27 22:44</span><span>CURRENT_STATE</span><span class="kind">其他</span></summary>
 <div class="body"><h2>CURRENT_STATE</h2>
 <blockquote>开课必须先读本文件；<code>PROGRESS.md</code> 只保存完整历史。</blockquote>
 <blockquote><strong>本文件是 <code>NEXT_START</code> 的唯一来源。</strong></blockquote>
@@ -202,7 +210,9 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <ul><li>11-26 计时：白天 <strong>167 分钟</strong>（PC-B，含 FastAPI 两课 53 分钟）+ 晚间复习 <strong>30 分钟</strong>（PC-A）。</li></ul>
 <h3>2026-11-27 学习证据（PC-A）</h3>
 <table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td>门禁 3 问</td><td>路径/查询参数首次答反后纠正；422/404 归属对；<code>uvicorn app:app</code> 补精确</td><td>口头</td></tr><tr><td><strong>FastAPI 第 3 课：SQLite + <code>Depends(get_db)</code></strong></td><td>全部验收通过：<code>/stocks</code> 3 条、<code>?limit=1</code> 1 条、<code>/stocks/B</code> 200、<code>/stocks/Z</code> 404、POST 200、<strong>重启后数据仍在</strong></td><td><code>HINTED_RUN</code>（8 处）</td></tr><tr><td>FastAPI 第 4 课：CRUD 补全</td><td>回填后 6 条验收全过（409 / PUT 200 / PUT 404 / DELETE 200 / DELETE 404 / <code>/docs</code>）</td><td><code>HINTED_RUN</code>（给完整版后回填）</td></tr><tr><td><strong><code>products</code> 零提示小验收</strong></td><td>16 分钟只写出 21 行，仍是 <code>stocks</code> 残影（库名/模型/路由斜杠/缺 <code>Depends</code>/SQL 破碎）</td><td><strong>未通过</strong></td></tr><tr><td>引导重写 <code>products</code></td><td>最终验收全过：空列表、两次 POST、id 自增、单条 200、999 → 404、<code>/docs</code>、磁盘 2 行</td><td><code>HINTED_RUN</code>（7 处）</td></tr></tbody></table>
-<ul><li>环境：独立 venv <code>projects/fastapi-api/.venv</code>（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4）；</li><li>11-27 计时：上午 <strong>94 分钟</strong>（08:39–10:13）+ 下午 <strong>102 分钟</strong>（12:22–14:04）= <strong>196 分钟</strong>。</li></ul>
+<ul><li>环境：独立 venv <code>projects/fastapi-api/.venv</code>（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4）；</li><li>11-27 计时：上午 <strong>94 分钟</strong>（08:39–10:13）+ 下午 <strong>102 分钟</strong>（12:22–14:04）+ 晚间复习 <strong>29 分钟</strong>（22:15–22:44）= <strong>225 分钟</strong>。</li></ul>
+<h4>晚间复习（22:15–22:44）</h4>
+<table><thead><tr><th>内容</th><th>结果</th></tr></thead><tbody><tr><td>骨架口述 5 格</td><td>仅 <code>commit</code> 答对；装饰器、<code>item: ProductIn</code>、<code>VALUES</code>、422/409 均错</td></tr><tr><td>6 个快问</td><td><code>Depends</code> 位置、<code>yield</code>、422/404、未 commit 不可见——对；<code>fetchone/fetchall</code> 返回 <code>None</code>/<code>[]</code> 错；<code>rowcount</code> 半对</td></tr><tr><td>默写两遍</td><td>第一遍 4 处结构错 → 第二遍仅 <code>Depend</code> 拼写与键名大小写</td></tr></tbody></table>
 <h3>薄弱点（下次优先）</h3>
 <ul><li><strong>FastAPI 代码结构</strong>：同一路径不能注册两次；路径里的 <code>{sku}</code> 必须在函数签名里；<code>Depends</code> 只能写在路由参数里；</li><li><strong><code>is</code> vs <code>==</code></strong>：判数值用 <code>==</code>（<code>if m is 0</code> 是错）；</li><li><strong>括号语义</strong>：<code>(&quot;C&quot;,2)</code> 元组、<code>(&quot;C&quot;:2)</code> 非法、<code>(&quot;C&quot;,)</code> 单元素元组、<code>init_db()</code> 才是调用；</li><li><strong><code>fetchone()</code> / <code>fetchall()</code></strong>：一条 vs 列表；查不到分别是 <code>None</code> 与 <code>[]</code>；</li><li><strong><code>rowcount</code></strong>：属于 <code>execute</code> 返回的游标，判断要在 <code>commit</code> 前；</li><li><strong>启动环境</strong>：必须用 venv 解释器；<code>python app.py</code> 不起服务，要 <code>python -m uvicorn app:app</code>；cmd 切盘符用 <code>cd /d</code>，含空格路径要引号；</li><li>旧：冲突标记检查（★★★）、<code>{}</code> 集合/字典（★★★）、路径锚定、循环变量残留、排序 key、JSON 键名（★★）。</li></ul>
 <blockquote>完整清单见 <code>notes/错题本-stage2.md</code>（含“改动前 4 条自查清单”）。</blockquote>
@@ -460,8 +470,17 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 - 概念答疑：`productin` vs 请求体 vs `item`（模具/原料/成品）、`productin` vs `basemodel`、get 为何不用 body；
 - 会话记录：`sessions/2026-11-27-products-acceptance.md`；
 - 结论：第 4 课验收通过但为 `hinted_run`；**零提示换表重写仍未通过**，明天先默写 `products` 再进新内容。
+
+## 2026-11-27 晚：fastapi 3–4 课复习（29 分钟）
+
+- 时间：22:15–22:44；形式：骨架口述 5 格 + 6 个快问 + 默写两遍；
+- 第一轮口述：装饰器漏方法名、`item= productin ` 用引号、sql 漏 `values`、把“已存在”答成 422；仅 `commit` 答对；
+- 快问：`depends` 位置、`yield` 前后、422/404 来源、未 commit 不可见——全对；`fetchone/fetchall` 返回 `none`/`[]` 答错；`rowcount` 半对；
+- 默写第一遍 4 处错（等号、参数塞进 sql 字符串、列名、返回键）；第二遍只剩 2 处拼写（`depend`、键名 `create`）；
+- 会话记录：`sessions/2026-11-27-review-fastapi34.md`；
+- 结论：骨架已基本成形，明日默写重点查 `depends` 拼写、json 键名、`fetchone` 的 `none`。全天累计 **225 分钟**。
 ">
-<summary><span class="date">11-27 14:04</span><span>学习进度总览</span><span class="kind">进度</span></summary>
+<summary><span class="date">11-27 22:44</span><span>学习进度总览</span><span class="kind">进度</span></summary>
 <div class="body"><h2>学习进度</h2>
 <ul><li>更新时间：2026-11-25 09:25</li><li><strong>双机整合（2026-11-24）</strong>：以 PC-A 学习记录为基础，已按审核意见修订并部署到 PC-A 本地；18:52 完成 PC-A → U 盘首次正式同步（27 文件，SHA 校验，学习档案与 Skill 一致）；PC-B 待接入。设备登记、同步操作与备份记录见 <code>SYNC_STATUS.md</code>。</li><li><strong>路径变更（2026-11-13）</strong>：学习根目录由 <code>学习目录</code> 搬迁为 <code>学习目录</code>；所有文本文件内的旧路径已批量替换；<code>用户目录\.dsh\skills\python-bioinformatics-tutor</code> junction 已重新指向新位置；历史记录内容未改。旧目录残留空文件夹（被进程占用），重启后可删。</li><li><strong>临时单机模式（2026-11-23 起，2026-11-24 结束）</strong>：PC-A 单机期间 U 盘为冻结快照；11-24 由 PC-B 完成双向同步并登记，现进入双机整合阶段。设备与同步细节统一记录在 <code>SYNC_STATUS.md</code>，本文件不再混入设备信息。</li><li>状态：第 1 阶段内容完成；L1/L2 独立通过、L3 第 5 次独立通过；<strong>第 2 阶段收尾：SQL 已于 11-25 取得首次独立全流程证据；Git 冲突标记检查、HTTP 异常分类仍需补测</strong></li><li>当前阶段：<strong>第 2 阶段（Git / SQL / HTTP 工程基础）收尾</strong>——复习周内：HTTP 独立迁移 → SQL 陌生业务 → Python 基础抽查 → SQL 复测 → 复盘；<strong>暂不进入 FastAPI</strong></li><li>阶段门：第 0 阶段已通过；第 1 阶段门两次未通过（11-07 3/10、11-09 2.5/10），<strong>第三次（2026-11-12）由学员决定跳过</strong>；档案不写“通过”，只写“跳过/未验证”</li><li>历史会话（2026-11-18 晚，已归档）：SQL 第三次复测（<code>library.csv</code>，22:03–22:30，27 分钟，<strong>未通过</strong>：连接写错文件、表名错、<code>INTEGER KEY</code>、<code>append</code> 参数、<code>INSERT</code> 语句不完整、查询缺 <code>SELECT</code>；记录见 <code>notes/retest-2026-11-18-sql3.md</code>）</li><li><strong>学员反馈（2026-11-17）</strong>：新语法未逐行讲解就要求使用，导致“看不懂、背下来没用”。已写入 skill：课前列“全部写法清单”逐条讲；任何文件/运行状态先查再答。</li><li><strong>学员反馈（2026-11-16 晚）</strong>：当天 2 小时“像没学一样”，三块内容太散。已改为<strong>单一主题 + 先测后补</strong>。</li><li>历史会话（2026-11-23 中午，已归档）：复习周 Day1–Day3（<code>sessions/2026-11-23-day1-quiz.md</code> 等）</li><li>Day1 找错题 10 题首答 5.5/10，暴露“变量 vs 字符串”仍不稳；</li><li>Day2 缩进语义 4 份对照 + 3 个 bug；Day3 列名/键名一致性 3 个 bug（2 个独立修、1 个经提示）；</li><li>Day4 只留下 <code>bug_d1–d3.py</code>，无会话记录，待补。</li><li><strong>最新学习记录（2026-11-25，PC-B / <code>QY</code>）</strong></li><li>2026-11-25 上午 <strong>SQL 限时复测 3（<code>shipments.csv</code>）首次独立通过</strong>（<code>sessions/2026-11-25-sql-retest3.md</code>）：22 分钟、零提示、一次跑通；<code>有效 7 跳过 3</code>、表 7 行、分组 east 120 / north 50 / west 40、<code>report.json</code> 列表套对象、重跑幂等；主流程 <code>INDEPENDENT_RUN</code>。</li><li>交付后 3 处规格修正（<code>report.json</code> 结构、旧 <code>.db</code> 未删、键名 <code>cnt→count</code>）经提示完成，判 <code>HINTED_RUN</code>。</li><li>错题重做 3 个最小复现（set vs dict、<code>IF NOT EXISTS</code> 旧表、赋值 vs 追加）独立完成（<code>code/2026-11-25-drills</code>）。</li><li>阶段 2 复盘 4 问 2/4：冲突标记检查（误用 <code>git log</code>）、HTTP 异常分类（连不上是 <code>ConnectionError</code> 不是 500）待补。</li><li>同日 PC-B 首次接入：U 盘 → PC-B 30 文件，4 个冲突按 U 盘版人工对齐（两份留存），<code>status</code> 退出 0。</li><li>2026-11-25 上午第二段 <strong>Python 基础抽查 + 20 分钟小代码</strong>（<code>sessions/2026-11-25-py-check.md</code>）：口头 3.5/5（<code>int(None)</code> 判错）；小代码超时后恢复 21 分钟完成，<code>有效 6 跳过 2</code>、<code>summary.json</code> 幂等；主流程 <code>INDEPENDENT_RUN</code>，排序/JSON 块 <code>HINTED_RUN</code>；</li><li>补测：冲突标记检查（<code>Select-String</code> 无输出=干净）通过；HTTP 异常 2/3（404 ✔、没开机 ✔、超时 ✘ 应为 <code>Timeout</code>）。</li><li>2026-11-25 中午 <strong>SQL 变式复测 4（<code>parcels.csv</code>）通过</strong>（<code>sessions/2026-11-25-sql-retest4.md</code>）：27 分钟、换数据换字段；<code>有效 6 跳过 2</code>、表 6 行、n1 40 / n3 20 / n2 17、<code>report.json</code> 四键、avg 1 位、幂等；主流程 <code>INDEPENDENT_RUN</code>，<code>report</code> 收集位置/<code>json.dump</code>/<code>round</code> 3 处 <code>HINTED_RUN</code>。</li><li>结论：SQL 全流程连续两次通过，&quot;30 分钟独立完成&quot;从薄弱点降级为<strong>已改善（需自检 JSON 组装）</strong>。</li><li>2026-11-25 下午 <strong>HTTP 短迁移 2（<code>/orders.json</code>）</strong>（<code>sessions/2026-11-25-http-retest2.md</code>）：42 分钟（超 12），主流程 <code>有效 4 跳过 2</code>、<code>a 3 35</code>、<code>b 1 30</code>、<code>summary.json</code> 幂等；404 → <code>接口不可用</code>、连不上 → <code>服务不可用</code> + 退出码 1，均不写文件；<strong>8 处提示，判 <code>HINTED_RUN</code></strong>，FastAPI 门禁未过。</li></ul>
 <ul><li>2026-11-26 上午 <strong>HTTP 短迁移 4（<code>/tickets.json</code>）与 5（<code>/samples.json</code>）</strong>（<code>sessions/2026-11-26-http-retest4-5.md</code>）：两次均为 <code>HINTED_RUN</code>；段 4 有 3 处缺陷（<code>value&gt;1</code>、排序 key 用全局变量导致排序失效、<code>except ConnectionError</code> 抓错类），段 5 仅 2 处机械性提示（循环变量残留、键名 <code>cnt</code>），提示数 8→2、用时 25 分钟（限时内）；第 2 阶段门禁仍差一次零提示验证。</li><li>2026-11-26 上午 <strong>10 分钟零提示验证（<code>/visits.json</code>）→ <code>INDEPENDENT_RUN</code></strong>（<code>sessions/2026-11-26-http-visits.md</code>）：11 分钟、零提示、<code>有效 7 跳过 2</code>、n2 2/17、n1 3/14、n3 2/9、<code>summary.json</code> 正确、代码复核无隐藏缺陷。<strong>第 2 阶段（Git/SQL/HTTP）门禁完成</strong>。HTTP 提示数轨迹 8→8→8→3→2→0。</li><li>2026-11-26 上午 <strong>阶段 2 收尾复盘（10 问）</strong>：5.5/10；Git 冲突标记检查、<code>{}</code> 类型（均为第 3 次错）、路径锚定答反；HTTP 异常分类（<code>ConnectionError</code>/<code>Timeout</code>）首次全对。错误按复发次数归档为 <code>notes/错题本-stage2.md</code>（14 类 + 4 条自查清单）。</li><li>2026-11-26 中午 <strong>跨主题综合 + 交叉验证 + FastAPI 第 1–2 课</strong>（<code>sessions/2026-11-26-integration-crosscheck-fastapi.md</code>）：</li><li>综合任务（HTTP→SQLite→<code>report.json</code>→三分支）：24 分钟，1 处提示（<code>skipped = 0</code>）；</li><li>交叉验证（Python 分组 vs SQL 分组）：<code>equal=true</code>、输出 <code>一致</code>，结构由导师给出；</li><li>FastAPI 第 1 课：<code>/health</code>、<code>/stock/{sku}</code> 通过，<code>/docs</code> 可访问；</li><li>FastAPI 第 2 课：查询参数、<code>POST</code> + Pydantic、<code>HTTPException(404)</code>、422 校验全部通过（4 处提示）；</li><li><strong>正式进入阶段 5 主线</strong>；下一课：SQLite + 依赖注入。- <strong>上一批记录（2026-11-24）</strong></li><li>2026-11-24 上午 HTTP 独立迁移（<code>sessions/2026-11-24-http-independent.md</code>）：<code>/courses.json</code> 分组 + 跳过坏值 + <code>summary.json</code>，输出正确且幂等；8 处错误经提示修正，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 上午 SQL 陌生业务任务（<code>sessions/2026-11-24-sql-business.md</code>）：<code>jobs.csv</code> 过滤 status、跳过坏值、入库、分组 + <code>result.json</code>，输出正确且幂等；8 处错误经提示修正，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 上午 Python 基础抽查（<code>sessions/2026-11-24-basics.md</code>）：口头 3.5/5；小代码需修 3 处（重复 int、累加器位置、未初始化），最终 <code>和 8</code> 正确，判 <code>HINTED_RUN</code>。</li><li>2026-11-24 中午 SQL 限时复测（<code>sessions/2026-11-24-sql-retest.md</code>）：<code>water.csv</code>，30 分钟无提示，<strong>未通过</strong>；计数正确但未收集 rows、<code>executemany</code> 绑定错、SQL 逗号拼接错、<code>json.dump</code> 写字符串。</li><li>2026-11-24 12:01–12:12 SQL 复测按 4 步修正（学员自己改：看 rows→收集→修 SQL→写汇总），最终输出正确、幂等；判 HINTED_RUN。</li><li>历史记录（按时间倒序，仅供追溯）：</li><li>历史会话（2026-11-23 晚，HTTP 同类复测）（<code>sessions/2026-11-23-http-retest.md</code>）</li><li>数据 <code>/books.json</code>（含 <code>&quot;oops&quot;</code> 与 <code>null</code>），要求分组、跳过坏值、写 <code>summary.json</code>；</li><li>最终输出正确、幂等；但 10 处错误均经提示修正，<strong>判 <code>HINTED_RUN</code></strong>；</li><li>教学问题：新目录未放 <code>mytools</code>、未先讲 import 路径，已补讲并记录。</li><li>历史会话（2026-11-23 晚，Git 冲突 7 天复测）（<code>sessions/2026-11-23-git-conflict.md</code>）</li><li>第一次独立尝试：合并方向反了（在 alt 上 merge main），且把冲突标记原样提交；</li><li>经步骤指导后修正：删标记 + 清理 <code> HEAD</code>/<code> main</code> 残留，最终 <code>findstr</code> 无输出、status 干净、graph 有合并提交；</li><li><strong>证据等级：<code>HINTED_RUN</code></strong>；合并方向与标记结构需再练一次才算独立；</li><li>教学缺口：11-15 冲突课未单独讲标记结构，本次已补讲。</li><li>历史会话（2026-11-21 下午，HTTP 短独立迁移）（<code>report_http.py</code>：取 <code>/sales.json</code> → 跳过坏值 → 按 region 分组 → 打印 + 写 <code>summary.json</code>；URL 参数化、404 与连不上分开处理，六项验收全过）。<strong>10 处错误均经指出后修正，判 <code>HINTED_RUN</code></strong>，未达“独立迁移”标准；记录见 <code>sessions/2026-11-21-http-migrate.md</code></li><li>历史会话（2026-11-21 上午）：骨架默写第 3 天（<code>salery</code> 列名错，修正后通过）+ <code>fetch_json</code> 组合函数（<code>sessions/2026-11-21-skeleton3-wrap.md</code>）</li><li>历史会话（2026-11-20 晚）：综合练习 <code>report.py</code>（<code>sessions/2026-11-20-report.md</code>）</li><li>学员独立敲出：<code>import</code>、<code>fetch(url)</code>、<code>try/except requests.HTTPError</code>、<code>if resp is None</code>、<code>json.dump</code> 保存、循环累加求平均；</li><li>经指导修正：<code>Path(__file__).parent</code>（相对路径写错目录）、统计代码缩进移出 <code>with</code>、<code>return None</code> 含义、<code>HTTPError</code> 由调用方接、<code>sys.exit(1)</code> 的作用；</li><li>运行证据：学员本人运行，输出 <code>rabbit</code> + <code>成员 2 人，平均 75.0</code>；<code>team.json</code> 生成在脚本目录；停服务器后验证 <code>尝试 1/3…3/3 失败 → 服务不可用 → exit 1</code>；</li><li><strong>证据等级：<code>HINTED_RUN</code></strong>——主流程独立、路径与结构经指导；最终运行成功不等于独立掌握。</li><li>下次起点：<strong>见 <code>CURRENT_STATE.md</code> 的 <code>NEXT_START</code>（唯一来源；本文件不再定义下一次课程）</strong></li><li><strong>文件规则（2026-11-16 晚学员要求）</strong>：导师只建<strong>空文件</strong>和目录，代码与 SQL 全部由学员自己敲；数据文件（CSV/JSON/配置）可以直接给完整内容。每天不要一次塞多个模块。</li><li>待验证：学员自称“都会了”但无完整程序考核证据，按 <code>CLAIMED_NOT_VERIFIED</code> 记录；后续若做阶段 2 项目可自然补上证据。<strong>2026-11-20 下午</strong>学员自述“SQL 已经掌握了”，当场拒绝限时复测，按 <code>CLAIMED_NOT_VERIFIED</code> 记录，第四次复测待补</li><li><strong>12-31 复盘约定（2026-11-09 原约定 → 2026-11-10 修订）</strong></li><li>原约定（保留原文，不覆盖）：① 阶段门独立通过（无提示、无笔记）；② 独立写出 100 行左右脚本（读文件、分组、写输出、带测试）；③ 不看参考默写文件读取模板与分组统计结构。原判定：三条都达 → 继续阶段 2；达 1–2 条 → 继续但调整目标岗位；一条不达且提示依赖无下降 → 转向“用 Python 做生物/实验数据”方向。</li><li><strong>修订后的用途（2026-11-10）</strong>：12-31 只做学习效果复盘，用于①查看独立编程能力是否提高；②查看对提示的依赖是否减少；③决定教学方法、课程难度与训练任务如何调整；④按实际能力逐步优化就业路线。</li><li><strong>明确取消</strong>：不得因未达到“100 行”“默写模板”“阶段门未过”而自动要求放弃 AI 行业或转回生物方向。职业方向由学员决定，复盘只提供数据与建议。</li><li>设备/偏好：Windows/cmd；每天 3 小时（2026-11-03 起，学员自定目标）；吴恩达机器学习课程另排时间，不占用这 3 小时；单次课 45–90 分钟</li><li><strong>每日同步（2026-11-14 起；历史规则，当前暂停执行）</strong>：宿舍、工位、网吧之间用 U 盘 <code>U盘</code>；<strong>日常只做增量同步</strong>——离开前跑 <code>sync-to-usb.cmd</code>，到达后跑 <code>sync-from-usb.cmd</code>（先备份），只复制更新的文件、不删除，通常只传几 MB；<strong>现行同步限制以 <code>SYNC_STATUS.md</code> 为准，本段不得覆盖</strong>；U 盘同时保留完整便携程序（DSH / VS Code / Git，约 3.1 GB），供没有 DSH 的电脑（如网吧）使用 <code>start-dsh.cmd</code> / <code>code.cmd</code> / <code>dev-shell.cmd</code>；本机用 junction <code>学习目录</code> → <code>学习目录</code> 供批处理调用</li><li><strong>收尾规则（2026-11-15 学员要求，2026-11-20 补充；历史规则，当前暂停执行）</strong>：每次学习结束，导师必须主动询问“是否同步到 U 盘”，不论学员在宿舍、工位还是网吧；同意则运行 <code>sync-to-usb.cmd -y</code> 并确认文件已到 U 盘，未同步要在回复中注明。<strong>同步之后还要问一句“要不要更新复习页”</strong>（<code>build_review.py</code> + <code>pages_deploy.py</code>），否则手机端停留在旧内容——2026-11-20 漏过一次。</li><li>讲解偏好（2026-11-03 学员要求）：每个概念按“是什么 → 为什么需要 → 怎么用 → 逐行例子 → 常见错误 → 自测”讲细；不要用“两行代码 + 自己理解”的方式；先讲透，再进练习</li><li>已掌握（仅有证据的条目）：</li><li>变量、<code>print</code>、<code>len</code>、<code>.count()</code>、<code>type()</code>；<code>str</code>/<code>int</code>/<code>float</code></li><li>list、<code>for</code>、切片（含起点不含终点）</li><li>比较运算、<code>if</code> 单分支、<code>&gt;=</code>/<code>&gt;</code> 边界</li><li>多分支 <code>if</code>/<code>elif</code>/<code>else</code>（<code>else</code> 必须最后，能指出报错位置在 <code>elif</code>）</li><li><code>and</code>/<code>or</code>/<code>not</code>（<code>not</code> 作用于整个比较）、<code>startswith</code></li><li><code>enumerate(start=1)</code>、<code>continue</code>、<code>break</code>（能解释空串占号但不打印）</li><li><code>range(len(seqs))</code> 当索引遍历、<code>while</code> 三件套（初始化/条件/更新），能写出与 for 等价的求和与条件计数</li><li><code>dict</code> 建立、<code>d[k]</code> 取值、<code>d[k]=v</code> 更新、<code>get(k, 默认)</code> 兜底、<code>len(d)</code>；<code>for k in d</code> 与 <code>items()</code> 遍历、按下标筛选并计数求和</li><li><code>set()</code> 去重、<code>in</code> 判断、<code>|</code>/<code>&amp;</code>/<code>-</code>/<code>^</code> 集合运算；能解释并集为何小于两集合大小之和</li><li>嵌套 dict 两层取值 <code>d[k][字段]</code>、<code>del d[k]</code>；能解释循环次数 = 键数</li><li><code>def</code> 定义、参数绑定（调用时按次绑定）、<code>return</code> 交回值；能在循环里调用函数并打印返回值</li><li>文件读取：<code>open(path, encoding=&quot;utf-8&quot;)</code> + <code>with</code> + <code>strip()</code> + <code>split(&quot;,&quot;)</code> + <code>int()</code> + 跳过表头（2026-11-03，<code>HINTED_RUN</code>，待延迟复测）</li><li><code>try/except</code>：捕获 <code>ValueError</code>（坏数据跳过）与 <code>FileNotFoundError</code>（缺失文件返回 0）；<code>try</code> 要贴着可能出错的语句放在循环内（2026-11-03，<code>HINTED_RUN</code>，待复测）</li><li><code>pathlib</code>：<code>Path(&quot;.&quot;)</code>、<code>/</code> 拼接、<code>glob()</code>、<code>read_text(encoding=...)</code>、<code>splitlines()</code>、<code>exists()</code>；理解相对路径与 <code>__file__</code> 的区别（2026-11-03，<code>HINTED_RUN</code>，待复测）</li><li><code>pytest</code> 入门：<code>test_*.py</code> / <code>test_</code> 函数命名、<code>from filetools import ...</code>、<code>assert 实际 == 期望</code>、<code>py -3.12 -m pytest -q</code>；能读 <code>F</code> 失败输出与 <code>error</code>/<code>failed</code> 区别（2026-11-04，<code>STUDENT_RUN</code>）</li><li>调试：用 traceback 定位行号与变量值；识别“不报错但结果错”的累加 bug（<code>count = +1</code>）（2026-11-04，<code>STUDENT_RUN</code>）</li><li>类基础：<code>class</code>、<code>__init__(self, ...)</code>、<code>self.属性</code>、方法调用 <code>obj.method()</code>、默认参数（2026-11-04，<code>STUDENT_RUN</code>）</li><li>Git 基础：三区分界、<code>status</code> 分栏阅读、<code>add</code>/<code>commit</code>/<code>log --oneline</code>/<code>diff HEAD~1</code>、<code>restore --staged</code> 撤销暂存；能读 <code>diff</code> 的 <code>index</code>/<code>@@</code>/<code>+</code> 行；提交哈希 40 位、日常用前 7 位（2026-11-14，<code>HINTED_RUN</code>，待独立复现）</li><li>Git 分支：分支是“会移动的标签”、<code>switch -c</code> 新建并切换、切换会改工作区、<code>merge</code> 的 Fast-forward（不产生合并提交）、<code>branch -d</code> 删标签不删提交、<code>log --oneline --graph</code> 阅读（2026-11-14 下午，<code>HINTED_RUN</code>）</li><li>脚本参数化：<code>import_sales.py</code> 用 <code>sys.argv[1]</code>/<code>[2]</code> + <code>len(sys.argv) &gt; n</code> + 三元默认值，两条路径都可省略；<code>connect(变量)</code>/<code>open(变量)</code> 接收变量；三条验证含幂等重跑（2026-11-18，<code>HINTED_RUN</code>）</li><li>路径基准：<code>Path(__file__).parent</code> + <code>/</code> 拼接，默认路径不再依赖 cwd；从课程目录、<code>D:\</code>、<code>F:\Microsoft VS Code</code> 三处运行均成功，未在错误目录误建库文件（2026-11-18，<code>HINTED_RUN</code>）</li><li>模块化：目录 + <code>__init__.py</code> 构成包，<code>from 包.模块 import 名字</code>，<code>__name__</code> 在 import 与直接运行时的区别；理解“模块只负责它声明的异常，其余由调用方接”（2026-11-20，<code>HINTED_RUN</code>）</li><li>薄弱/待复习：</li><li>字符串 vs 变量：<code>open(&quot;path&quot;)</code> 与 <code>open(path)</code> 混淆；<code>except FileNotFound</code> 名称不完整</li><li>函数结构：<code>def</code> 错放进 <code>try</code>、参数被 <code>path = []</code> 覆盖、<code>results</code> 拼写不一致</li><li><code>continue</code> / <code>return</code> / <code>break</code> 的作用范围仍需在复测中确认</li><li><strong>OOP/模块自述已学但验证未通过</strong>（2026-11-02）：类未写、模块变量未定义；按未掌握处理，后续单独补</li><li>周测 W1 错题：<code>get</code> 与 <code>[]</code> 的差异（缺失键行为）、<code>TypeError</code> 与 <code>KeyError</code> 的区分（<code>int + str</code> 属 TypeError）</li><li>字典是&quot;映射&quot;不是&quot;单条记录&quot;：<code>genes[&quot;name&quot;]</code> 这种把键当字段的写法（W1 代码题首版）</li><li><code>longest</code> 类&quot;打擂台&quot;模式：比较对象应是 <code>best_len</code>，不是硬编码键</li><li>字典方法要用点号：<code>d.items()</code>、<code>d.get(k, default)</code>；字符串与变量名区分（<code>&quot;name&quot;</code> vs <code>name</code>）</li><li><code>count</code>（满足条件数）与 <code>len(d)</code>（键值对总数）的区别（s09 未答）</li><li>累加器 <code>total</code> 不要覆盖内置 <code>sum</code></li><li><code>while</code> 的更新位置：先更新会跳过 0 号并越界；放进 <code>if</code> 体内会死循环（s08b 实际触发死循环）</li><li>索引 / 计数器 / 循环变量三个角色容易混（s08b 用 <code>count</code> 当循环变量）</li><li>累加器与 <code>print</code> 的位置：初始化在循环外、打印在循环后</li><li>输出标签与段落一致（s08 把 <code>while total</code> 写成 <code>range total</code> / <code>while range</code>）</li><li><code>enumerate</code> 不判断内容、空串照常发号（s08 复习再次漏掉）</li><li><code>print</code> 多值格式、逗号后空格等风格</li><li><strong>Git 概念混淆（2026-11-14）</strong>：把 <code>parent</code> 当成“修改的 report.py 的哈希”（应为上一条提交的哈希）、把 <code>HEAD~1</code> 当成“tree 那一条”；提交哈希与 blob 哈希、tree 与 commit 的定位需复述检查</li><li><strong>Git 操作层（2026-11-14）</strong>：<code>--oneline</code> 拼成 <code>--online</code>（当日两次）、<code>git long</code> 拼成；把 <code>README.md</code> 建成目录导致 <code>git add</code> 静默无效（见 <code>errors/2026-11-14-untracked-empty-dir.md</code>）</li><li><strong>Git 危险命令认知（2026-11-14）</strong>：误以为 <code>git restore &lt;file&gt;</code> 丢弃的改动可以找回——实际未提交内容删了就没有；误以为删分支会删提交——实际提交仍由其他标签指达。两条都需在复测中再确认</li><li><strong>终端 vs 编辑器（2026-11-14）</strong>：曾把 <code>git</code> 命令写进 <code>notes.md</code> 文件里，以为会被执行；需确认“命令敲在终端、文件里写的是内容”已成为稳定习惯</li><li><strong>变量名加引号（2026-11-18 复发）</strong>：<code>connect(&quot;path&quot;)</code>、<code>open(&quot;path&quot;)</code> 把变量名写成字符串——与 10-26 s01 的 <code>print(&quot;sample_id&quot;)</code> 同一类错误，第二次出现，复测必须覆盖</li><li><strong>相对路径依赖 cwd（2026-11-18）</strong>：在 <code>F:\Microsoft VS Code</code> 运行脚本导致 <code>sqlite3.OperationalError: unable to open database file</code>；还不知道“相对路径相对于当前目录，不是脚本所在目录”</li><li><strong>shell 语法混淆（2026-11-18）</strong>：在 PowerShell 里用 cmd 的 <code>cd /d</code>；需分清两种 shell 的写法</li><li><strong>import 语序（2026-11-18）</strong>：写成 <code>import pathlib from Path</code>；正确是 <code>from pathlib import Path</code></li><li><strong>Python 版本混用（2026-11-18）</strong>：VS Code 运行按钮用 3.14，终端用 <code>py -3.12</code>；建议统一 3.12，避免日后库行为差异</li><li><strong>SQL 细节准确度（2026-11-18 两轮复测）</strong>：结构记忆已建立（导入/base/连接/建表清空/DictReader/executemany/GROUP BY 都能想起），但细节频错——<code>points PRIMARY</code>、<code>int(reader[...])</code>、append 缩进错位（只入库最后一行）、<code>for</code> 缺冒号、循环变量写成函数调用；仍属 <code>HINTED_RUN</code>，独立通过前不推进 HTTP</li><li><strong>异常层级（2026-11-20）</strong>：把 <code>ConnectionError</code> 当成 <code>HTTPError</code> 的子类，以为 <code>except HTTPError</code> 能接“连不上”；实际两者并列于 <code>RequestException</code></li><li>环境：<code>.venv\Scripts\python.exe</code> 反复清零，统一 <code>py -3.12</code>；<code>fix_venv.cmd</code> 可恢复</li><li>待运行验证：无（s08 学员本人运行，退出码 0）</li><li>档案索引：</li><li>sessions：<code>2026-10-26-s01</code>~<code>s03</code>；<code>2026-10-27-s04</code>~<code>s07</code>；<code>2026-10-28-s08</code>、<code>s08b</code>；<code>2026-10-29-s09-dict.md</code>、<code>2026-10-29-s10-set.md</code>；<code>2026-10-30-s11-nested-dict.md</code>、<code>2026-10-30-s12-functions.md</code>；<code>2026-10-30</code>~<code>2026-11-12</code> 共 15 条（含 <code>2026-11-12-L3-rounds.md</code>、<code>2026-11-12-stage1-skipped.md</code>）；<code>2026-11-14-git-01-three-areas.md</code></li><li>assessments：<code>2026-10-26-stage0-gate.md</code>、<code>2026-10-31-weekly-quiz.md</code>（W1 周测 8/11）</li></ul>
@@ -489,7 +508,186 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <h3>2026-11-27（PC-A）：FastAPI 第 3 课通过（<code>HINTED_RUN</code>）；第 4 课未完成</h3>
 <ul><li>时间：08:39–10:13，<strong>94 分钟</strong>（第 3 课 68 分钟 + 第 4 课 26 分钟）；目录 <code>code/2026-11-27-fastapi2</code>；</li><li>环境：新建独立 venv <code>projects/fastapi-api/.venv</code>（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4），未装全局；</li><li>门禁 3 问：路径/查询参数首次答反后纠正；422/404 归属对（404 来源误说 <code>requests</code>，纠正）；<code>uvicorn app:app</code> 补精确到第 3 行；</li><li><strong>第 3 课验收全过</strong>（<code>TUTOR_VERIFIED</code>）：<code>/docs</code> 200、<code>/stocks</code> 3 条、<code>?limit=1</code> 1 条、<code>/stocks/B</code> 200、<code>/stocks/Z</code> 404、POST 新 sku 200、<code>limit=10</code> 5 条、<strong>重启后数据仍在</strong>（磁盘 5 行）；</li><li>过程中指出 8 处：未加引号路径、启动即 <code>DELETE</code>、<code>DB</code> 未定义、<code>is 0</code>、元组写成字典冒号、<code>init_db</code> 漏括号、<code>Depends</code> 写模块顶层、<code>fetchall</code> + <code>!= None</code>；</li><li>启动踩坑 4 类：全局解释器无 fastapi、<code>python app.py</code> 不起服务、cmd <code>cd</code> 不切盘符需 <code>cd /d</code>、路径空格需引号；</li><li><strong>第 4 课未完成</strong>：学员写出 77 行但 4 处结构性错误（重复注册 POST、PUT 缺 <code>sku</code> 参数、<code>cur.rowcount</code> 变量未定义且判断反、DELETE 缺参数元组）；已给完整正确版（H5），<strong>未回填未验证</strong>；</li><li>DEMO：<code>tutor-demo/2026-11-27-depends-demo.py</code>、<code>tutor-demo/2026-11-27-sql-in-route-demo.py</code>；</li><li>会话记录：<code>sessions/2026-11-27-fastapi3.md</code>；</li><li>结论：第 3 课目标达成但为 <code>HINTED_RUN</code>，需零提示重做；第 4 课留待回填验证。</li></ul>
 <h3>2026-11-27 下午：第 4 课验收通过；<code>products</code> 零提示迁移<strong>未通过</strong></h3>
-<ul><li>时间：12:22–14:04，<strong>约 102 分钟</strong>；上午 94 分钟，<strong>全天 196 分钟</strong>；</li><li><strong>第 4 课验收全过</strong>（409 / PUT 200 / PUT 404 / DELETE 200 / DELETE 404 / <code>/docs</code>），但为“给完整版后回填”，记 <code>HINTED_RUN</code>；</li><li>答疑 6 问（<code>item: StockIn</code>、三参数来源、<code>body.sku</code> → 500、<code>SELECT</code> 为何不查 qty、INSERT 为何写 qty、UPDATE 逐段）+ 三条路由完整串讲；</li><li><strong>零提示小验收（<code>products</code>，16 分钟）未通过</strong>：15 分钟只写出 21 行，且是 <code>stocks</code> 的残影（库名、模型、路由斜杠、缺 <code>Depends</code>、<code>SELETE ... WHERE</code> 破碎）→ <strong>迁移能力未达标</strong>；</li><li>引导重写 43 分钟通过，被指出 7 处：<strong>返回写死假数据</strong>、<code>bady: ProductIn</code> 塞进 GET、<code>executr</code>、<code>/prducts</code>、列表查询带 <code>WHERE id</code>、<code>== None</code>、<code>init_db</code> 未 <code>close()</code>；</li><li>最终验收全过（<code>GET</code> 空列表、两次 POST、id 自增 1/2、单条 200、999 → 404、<code>/docs</code> 200、磁盘 2 行）；</li><li>概念答疑：<code>ProductIn</code> vs 请求体 vs <code>item</code>（模具/原料/成品）、<code>ProductIn</code> vs <code>BaseModel</code>、GET 为何不用 body；</li><li>会话记录：<code>sessions/2026-11-27-products-acceptance.md</code>；</li><li>结论：第 4 课验收通过但为 <code>HINTED_RUN</code>；<strong>零提示换表重写仍未通过</strong>，明天先默写 <code>products</code> 再进新内容。</li></ul></div>
+<ul><li>时间：12:22–14:04，<strong>约 102 分钟</strong>；上午 94 分钟，<strong>全天 196 分钟</strong>；</li><li><strong>第 4 课验收全过</strong>（409 / PUT 200 / PUT 404 / DELETE 200 / DELETE 404 / <code>/docs</code>），但为“给完整版后回填”，记 <code>HINTED_RUN</code>；</li><li>答疑 6 问（<code>item: StockIn</code>、三参数来源、<code>body.sku</code> → 500、<code>SELECT</code> 为何不查 qty、INSERT 为何写 qty、UPDATE 逐段）+ 三条路由完整串讲；</li><li><strong>零提示小验收（<code>products</code>，16 分钟）未通过</strong>：15 分钟只写出 21 行，且是 <code>stocks</code> 的残影（库名、模型、路由斜杠、缺 <code>Depends</code>、<code>SELETE ... WHERE</code> 破碎）→ <strong>迁移能力未达标</strong>；</li><li>引导重写 43 分钟通过，被指出 7 处：<strong>返回写死假数据</strong>、<code>bady: ProductIn</code> 塞进 GET、<code>executr</code>、<code>/prducts</code>、列表查询带 <code>WHERE id</code>、<code>== None</code>、<code>init_db</code> 未 <code>close()</code>；</li><li>最终验收全过（<code>GET</code> 空列表、两次 POST、id 自增 1/2、单条 200、999 → 404、<code>/docs</code> 200、磁盘 2 行）；</li><li>概念答疑：<code>ProductIn</code> vs 请求体 vs <code>item</code>（模具/原料/成品）、<code>ProductIn</code> vs <code>BaseModel</code>、GET 为何不用 body；</li><li>会话记录：<code>sessions/2026-11-27-products-acceptance.md</code>；</li><li>结论：第 4 课验收通过但为 <code>HINTED_RUN</code>；<strong>零提示换表重写仍未通过</strong>，明天先默写 <code>products</code> 再进新内容。</li></ul>
+<h3>2026-11-27 晚：FastAPI 3–4 课复习（29 分钟）</h3>
+<ul><li>时间：22:15–22:44；形式：骨架口述 5 格 + 6 个快问 + 默写两遍；</li><li>第一轮口述：装饰器漏方法名、<code>item=&quot;ProductIn&quot;</code> 用引号、SQL 漏 <code>VALUES</code>、把“已存在”答成 422；仅 <code>commit</code> 答对；</li><li>快问：<code>Depends</code> 位置、<code>yield</code> 前后、422/404 来源、未 commit 不可见——全对；<code>fetchone/fetchall</code> 返回 <code>None</code>/<code>[]</code> 答错；<code>rowcount</code> 半对；</li><li>默写第一遍 4 处错（等号、参数塞进 SQL 字符串、列名、返回键）；第二遍只剩 2 处拼写（<code>Depend</code>、键名 <code>CREATE</code>）；</li><li>会话记录：<code>sessions/2026-11-27-review-fastapi34.md</code>；</li><li>结论：骨架已基本成形，明日默写重点查 <code>Depends</code> 拼写、JSON 键名、<code>fetchone</code> 的 <code>None</code>。全天累计 <strong>225 分钟</strong>。</li></ul></div>
+</details><details data-kind="复习" data-text="# 晚间复习：fastapi 第 3–4 课（2026-11-27）
+
+- 时间：22:15–22:44，**约 29 分钟**
+- 机器：pc-a（` `）
+- 范围：只复习当天新内容（sqlite + `depends` / crud / 三种参数来源），不引入新内容
+- 形式：口述骨架 5 格 → 6 个快问 → 默写骨架 → 逐处订正
+
+## 第一轮：口述骨架（post 五格）
+
+| 格 | 学员答案 | 判定 |
+|---|---|---|
+| ① 装饰器 | `@app( /products )` | 错：漏方法名，应为 `@app.post(...)` |
+| ② 签名 | `item= productin ` | 错：引号是字符串/默认值，应为 `item: productin` |
+| ③ sql | `insert into product(name,prices)` | 错：表名缺 s、列名错、漏 `values (?,?)` |
+| ④ 判断 | “当存在 prices 时 422” | 错：422 是请求体不合格；已存在是 409 |
+| ⑤ 收尾 | “要保存” | 对（`commit()`） |
+
+## 第二轮：6 个快问
+
+| # | 题 | 结果 |
+|---|---|---|
+| 1 | `depends` 写在哪 | 对（函数签名里） |
+| 2 | `yield` 前后 | 对（开连接 / `close()`） |
+| 3 | `fetchone` / `fetchall` 查不到 | **错**（答 422；应为 `none` / `[]`） |
+| 4 | `rowcount` | 半对（补：`commit` 前读；0 = 没命中行） |
+| 5 | 422 / 404 来源 | 对 |
+| 6 | 不 commit 能否被别的请求看到 | 对 |
+
+## 第三轮：默写骨架（两遍）
+
+**第一遍**（22:39）4 处错：`item=productin`（等号）、参数元组塞进 sql 字符串、`prices` 列名、返回键 `prices`。
+
+**第二遍**（22:44）仅剩 2 处小错：
+
+```python
+db=depend(get_db)          # 漏 s，应 depends
+return{ create : ...}      # 键名应为  created 
+```
+
+→ 趋势明确：**从 4 处结构性错误降到 2 处拼写错误**，骨架已基本成形。
+
+## 结论
+
+- 今晚为**口头 + 默写复习**，无独立运行产出，不记 `independent_run`；
+- 明天默写 `products` 时重点检查：`depends` 拼写、json 键名、`fetchone` 返回 `none`；
+- 计时：29 分钟（22:15–22:44）。
+">
+<summary><span class="date">11-27 22:44</span><span>晚间复习：FastAPI 第 3–4 课（2026-11-27）</span><span class="kind">复习</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><h2>晚间复习：FastAPI 第 3–4 课（2026-11-27）</h2>
+<ul><li>时间：22:15–22:44，<strong>约 29 分钟</strong></li><li>机器：PC-A（<code>&lt;本机&gt;</code>）</li><li>范围：只复习当天新内容（SQLite + <code>Depends</code> / CRUD / 三种参数来源），不引入新内容</li><li>形式：口述骨架 5 格 → 6 个快问 → 默写骨架 → 逐处订正</li></ul>
+<h3>第一轮：口述骨架（POST 五格）</h3>
+<table><thead><tr><th>格</th><th>学员答案</th><th>判定</th></tr></thead><tbody><tr><td>① 装饰器</td><td><code>@app(&quot;/products&quot;)</code></td><td>错：漏方法名，应为 <code>@app.post(...)</code></td></tr><tr><td>② 签名</td><td><code>item=&quot;ProductIn&quot;</code></td><td>错：引号是字符串/默认值，应为 <code>item: ProductIn</code></td></tr><tr><td>③ SQL</td><td><code>INSERT INTO product(name,prices)</code></td><td>错：表名缺 s、列名错、漏 <code>VALUES (?,?)</code></td></tr><tr><td>④ 判断</td><td>“当存在 prices 时 422”</td><td>错：422 是请求体不合格；已存在是 409</td></tr><tr><td>⑤ 收尾</td><td>“要保存”</td><td>对（<code>commit()</code>）</td></tr></tbody></table>
+<h3>第二轮：6 个快问</h3>
+<table><thead><tr><th>#</th><th>题</th><th>结果</th></tr></thead><tbody><tr><td>1</td><td><code>Depends</code> 写在哪</td><td>对（函数签名里）</td></tr><tr><td>2</td><td><code>yield</code> 前后</td><td>对（开连接 / <code>close()</code>）</td></tr><tr><td>3</td><td><code>fetchone</code> / <code>fetchall</code> 查不到</td><td><strong>错</strong>（答 422；应为 <code>None</code> / <code>[]</code>）</td></tr><tr><td>4</td><td><code>rowcount</code></td><td>半对（补：<code>commit</code> 前读；0 = 没命中行）</td></tr><tr><td>5</td><td>422 / 404 来源</td><td>对</td></tr><tr><td>6</td><td>不 commit 能否被别的请求看到</td><td>对</td></tr></tbody></table>
+<h3>第三轮：默写骨架（两遍）</h3>
+<p><strong>第一遍</strong>（22:39）4 处错：<code>item=ProductIn</code>（等号）、参数元组塞进 SQL 字符串、<code>prices</code> 列名、返回键 <code>prices</code>。</p>
+<p><strong>第二遍</strong>（22:44）仅剩 2 处小错：</p>
+<pre><code>db=Depend(get_db)          # 漏 s，应 Depends
+return{&quot;CREATE&quot;: ...}      # 键名应为 &quot;created&quot;</code></pre>
+<p>→ 趋势明确：<strong>从 4 处结构性错误降到 2 处拼写错误</strong>，骨架已基本成形。</p>
+<h3>结论</h3>
+<ul><li>今晚为<strong>口头 + 默写复习</strong>，无独立运行产出，不记 <code>INDEPENDENT_RUN</code>；</li><li>明天默写 <code>products</code> 时重点检查：<code>Depends</code> 拼写、JSON 键名、<code>fetchone</code> 返回 <code>None</code>；</li><li>计时：29 分钟（22:15–22:44）。</li></ul></div>
+</details><details data-kind="其他" data-text="# sync_status
+
+&gt; 双机 + u 盘同步状态；**u 盘为同步中转与备份；2026-11-25 起 pc-a / pc-b / u 盘三方一致**。
+
+## 机器登记
+
+| 标识 | 主机名 | 工作区绝对路径 | 状态 |
+|---|---|---|---|
+| pc-a | ` ` | `学习目录\learning` | 已确认 |
+| pc-b | `qy` | `学习目录\learning` | **已接入**（2026-11-25 08:22，路径已核验含 `progress.md`） |
+
+## u 盘
+
+- 根目录自动探测：查找各盘符下的 `u盘`，不写死盘符；
+- pc-a 当前：`u盘\study\learning`；
+- pc-b 当前：`h:\u盘\study\learning`；
+- skill：`u盘\skills\python-bioinformatics-tutor`。
+
+## 写锁与基线
+
+- 写锁：无；
+- 每台电脑独立基线，**不得跨机使用**：
+  - pc-a：`_sync/baselines/ .json`（89,868 b，2026-11-26 20:36）；
+  - pc-b：`_sync/baselines/qy.json`（84,193 b，2026-11-25 13:42）；
+- 当前档案数：**522**（pc-a 口径，2026-11-26 20:36）。
+
+## 备份清单（u 盘 `_manual_backups`）
+
+| 备份 | 内容 | 校验 |
+|---|---|---|
+| `pc-a_20261124_1333` | pc-a learning + skill | sha ok |
+| `pc-a_20261124_1832` | pc-a learning + skill | sha ok（426 文件） |
+| `usb_20261124_1833` | u 盘 learning + skill 现状 | sha ok（428 文件） |
+| `usb-learning-20261124_1417.zip` | pc-b 同步前 u 盘备份 | 未逐项复核 |
+| pc-b 首次接入前备份 | `d:\_sync_backup\pc-b-20261125_0821\`（在 pc-b 本机） | pc-b 记录：learning 534 条、skills 9 条，sha 通过 |
+
+## 同步历史
+
+| 时间 | 事件 | 结果 |
+|---|---|---|
+| 11-23 21:48 | pc-a → u 盘（冻结前） | 454 文件 |
+| 11-24 14:17 | pc-b 同步前备份 u 盘 | zip 19.9 mb |
+| 11-24 14:26 | pc-b ↔ u 盘双向同步 | 18 文件；2 个人工合并 |
+| 11-24 18:35 | pc-a 生成整合候选 | 待审核 |
+| 11-24 18:40 | 修订后部署到 pc-a 本地 | 完成 |
+| 11-24 18:52 | pc-a → u 盘首次正式同步 | 27 文件，sha 通过；学习档案+skill 一致 |
+| 11-24 20:10 | pc-a → u 盘（晚间复测 2 会话记录） | 9 文件（备份 4），sha 通过，退出 0 |
+| 11-24 20:15 | pc-a → u 盘（复习页重新生成） | 4 文件（备份 4），sha 通过，退出 0 |
+| 11-25 08:22 | **pc-b 首次接入** | 30 文件，`status` 退出 0 |
+| 11-25 09:27 | pc-b → u 盘 | 18 文件，verified |
+| 11-25 12:23 | pc-b → u 盘 | 10 文件，verified |
+| 11-25 12:53 | pc-b → u 盘 | 11 文件，verified |
+| 11-25 13:39 | pc-b → u 盘 | 10 文件，verified |
+| 11-25 13:42 | pc-b → u 盘（收尾补记录） | 1 文件，verified |
+| 11-25 19:20 | **pc-a ← u 盘（pull）** | 31 文件（备份 8），sha 通过，退出 0；`498=498 diff=0` |
+| 11-25 20:19 | pc-a → u 盘（晚间 http 重测 3 记录） | 7 文件（备份 4），sha 通过，退出 0 |
+| 11-25 20:22 | pc-a 复习页重新生成并部署 | `index.html` 737,270 b / 130 条；线上 sha 与本地一致（`3430af9e…`） |
+| 11-26 09:04 | pc-b → u 盘 | 12 文件，verified |
+| 11-26 09:19 | pc-b → u 盘 | 10 文件，verified |
+| 11-26 09:32 | pc-b → u 盘 | 7 文件，verified |
+| 11-26 13:37 | pc-b → u 盘（白天收尾） | 19 文件，verified |
+| 11-26 20:36 | **pc-a ← u 盘（pull）** | 28 文件（备份 7），sha 通过，退出 0；`522=522 diff=0` |
+| 11-26 21:34 | pc-a → u 盘（晚间 fastapi 复习记录） | 4 文件（备份 3），sha 通过，退出 0 |
+| 11-26 21:36 | pc-a 复习页重新生成并部署 | `index.html` 793,664 b / 135 条；线上 sha 与本地一致（`c6d341c1…`） |
+| 11-27 10:14 | pc-a → u 盘（fastapi 第 3–4 课记录） | 8 文件（备份 3），sha 通过，退出 0 |
+| 11-27 10:19 | pc-a 复习页重新生成并部署 | `index.html` 813,308 b / 136 条；线上 sha 与本地一致（`06dce5f5…`） |
+| 11-27 14:05 | pc-a → u 盘（下午场记录：第 4 课验收 + products 小验收） | 8 文件（备份 5），sha 通过，退出 0 |
+| 11-27 14:09 | pc-a 复习页重新生成并部署 | `index.html` 828,278 b / 137 条；线上 sha 与本地一致（`f20080ba…`） |
+
+## 同步程序（按 sha256 识别）
+
+| 位置 | 实际 sha256 | 说明 |
+|---|---|---|
+| pc-a `learning/tools/sync.py` | `f984cbe9…` | 当前使用（v5 + 备份文件排除补丁） |
+| u 盘 `sync-tools/sync.py` | `f984cbe9…` | 当前使用；与 pc-a 相同 |
+| 原始交付 `sync-delivery-20261124_153501/sync.py` | `0c025559…` | 作为基线保留 |
+
+- 两端程序 sha 一致；37/37 测试通过；不得仅凭非正式版本号判断版本；
+- pc-b 侧程序版本见其 `current_state` 记录（同为 `f984cbe9…`），本机未直接读取 pc-b 文件。
+
+## 待验证 / 待确认
+
+- [x] pc-a 与 u 盘学习档案一致（2026-11-26 20:36：522 文件，diff=0，skill diff=0）；
+- [x] pc-a 建立自己的基线（`_sync/baselines/ .json`）；
+- [x] pc-b 实际路径与主机名复核（`qy` / `学习目录\learning`，已核验）；
+- [x] pc-b 首次接入（2026-11-25 08:22，30 文件，退出 0）；
+- [x] pc-b 建立自己的基线（`_sync/baselines/qy.json`）；
+- [ ] pc-b 自 11-26 13:37 之后是否有未推送的本地改动——本机不可见，下次在 pc-b 上跑 `sync-status` 确认。
+
+## 当前状态
+
+- pc-a 与 u 盘：学习档案与 skill **已一致**（522 = 522，diff = 0）；
+- pc-b：已接入；最后一次 push 为 2026-11-26 13:37，其后 u 盘无新写入；
+- 结论：截至 2026-11-26 20:36，三方档案一致（pc-b 端未推送改动需下次在其本机确认）。
+">
+<summary><span class="date">11-27 14:10</span><span>SYNC_STATUS</span><span class="kind">其他</span></summary>
+<div class="body"><h2>SYNC_STATUS</h2>
+<blockquote>双机 + U 盘同步状态；<strong>U 盘为同步中转与备份；2026-11-25 起 PC-A / PC-B / U 盘三方一致</strong>。</blockquote>
+<h3>机器登记</h3>
+<table><thead><tr><th>标识</th><th>主机名</th><th>工作区绝对路径</th><th>状态</th></tr></thead><tbody><tr><td>PC-A</td><td><code>&lt;本机&gt;</code></td><td><code>学习目录\learning</code></td><td>已确认</td></tr><tr><td>PC-B</td><td><code>QY</code></td><td><code>学习目录\learning</code></td><td><strong>已接入</strong>（2026-11-25 08:22，路径已核验含 <code>PROGRESS.md</code>）</td></tr></tbody></table>
+<h3>U 盘</h3>
+<ul><li>根目录自动探测：查找各盘符下的 <code>U盘</code>，不写死盘符；</li><li>PC-A 当前：<code>U盘\study\learning</code>；</li><li>PC-B 当前：<code>H:\U盘\study\learning</code>；</li><li>Skill：<code>U盘\skills\python-bioinformatics-tutor</code>。</li></ul>
+<h3>写锁与基线</h3>
+<ul><li>写锁：无；</li><li>每台电脑独立基线，<strong>不得跨机使用</strong>：</li><li>PC-A：<code>_sync/baselines/&lt;本机&gt;.json</code>（89,868 B，2026-11-26 20:36）；</li><li>PC-B：<code>_sync/baselines/QY.json</code>（84,193 B，2026-11-25 13:42）；</li><li>当前档案数：<strong>522</strong>（PC-A 口径，2026-11-26 20:36）。</li></ul>
+<h3>备份清单（U 盘 <code>_manual_backups</code>）</h3>
+<table><thead><tr><th>备份</th><th>内容</th><th>校验</th></tr></thead><tbody><tr><td><code>PC-A_20261124_1333</code></td><td>PC-A learning + Skill</td><td>SHA OK</td></tr><tr><td><code>PC-A_20261124_1832</code></td><td>PC-A learning + Skill</td><td>SHA OK（426 文件）</td></tr><tr><td><code>USB_20261124_1833</code></td><td>U 盘 learning + Skill 现状</td><td>SHA OK（428 文件）</td></tr><tr><td><code>USB-learning-20261124_1417.zip</code></td><td>PC-B 同步前 U 盘备份</td><td>未逐项复核</td></tr><tr><td>PC-B 首次接入前备份</td><td><code>D:\_sync_backup\PC-B-20261125_0821\</code>（在 PC-B 本机）</td><td>PC-B 记录：learning 534 条、skills 9 条，SHA 通过</td></tr></tbody></table>
+<h3>同步历史</h3>
+<table><thead><tr><th>时间</th><th>事件</th><th>结果</th></tr></thead><tbody><tr><td>11-23 21:48</td><td>PC-A → U 盘（冻结前）</td><td>454 文件</td></tr><tr><td>11-24 14:17</td><td>PC-B 同步前备份 U 盘</td><td>zip 19.9 MB</td></tr><tr><td>11-24 14:26</td><td>PC-B ↔ U 盘双向同步</td><td>18 文件；2 个人工合并</td></tr><tr><td>11-24 18:35</td><td>PC-A 生成整合候选</td><td>待审核</td></tr><tr><td>11-24 18:40</td><td>修订后部署到 PC-A 本地</td><td>完成</td></tr><tr><td>11-24 18:52</td><td>PC-A → U 盘首次正式同步</td><td>27 文件，SHA 通过；学习档案+Skill 一致</td></tr><tr><td>11-24 20:10</td><td>PC-A → U 盘（晚间复测 2 会话记录）</td><td>9 文件（备份 4），SHA 通过，退出 0</td></tr><tr><td>11-24 20:15</td><td>PC-A → U 盘（复习页重新生成）</td><td>4 文件（备份 4），SHA 通过，退出 0</td></tr><tr><td>11-25 08:22</td><td><strong>PC-B 首次接入</strong></td><td>30 文件，<code>status</code> 退出 0</td></tr><tr><td>11-25 09:27</td><td>PC-B → U 盘</td><td>18 文件，verified</td></tr><tr><td>11-25 12:23</td><td>PC-B → U 盘</td><td>10 文件，verified</td></tr><tr><td>11-25 12:53</td><td>PC-B → U 盘</td><td>11 文件，verified</td></tr><tr><td>11-25 13:39</td><td>PC-B → U 盘</td><td>10 文件，verified</td></tr><tr><td>11-25 13:42</td><td>PC-B → U 盘（收尾补记录）</td><td>1 文件，verified</td></tr><tr><td>11-25 19:20</td><td><strong>PC-A ← U 盘（pull）</strong></td><td>31 文件（备份 8），SHA 通过，退出 0；<code>498=498 diff=0</code></td></tr><tr><td>11-25 20:19</td><td>PC-A → U 盘（晚间 HTTP 重测 3 记录）</td><td>7 文件（备份 4），SHA 通过，退出 0</td></tr><tr><td>11-25 20:22</td><td>PC-A 复习页重新生成并部署</td><td><code>index.html</code> 737,270 B / 130 条；线上 SHA 与本地一致（<code>3430AF9E…</code>）</td></tr><tr><td>11-26 09:04</td><td>PC-B → U 盘</td><td>12 文件，verified</td></tr><tr><td>11-26 09:19</td><td>PC-B → U 盘</td><td>10 文件，verified</td></tr><tr><td>11-26 09:32</td><td>PC-B → U 盘</td><td>7 文件，verified</td></tr><tr><td>11-26 13:37</td><td>PC-B → U 盘（白天收尾）</td><td>19 文件，verified</td></tr><tr><td>11-26 20:36</td><td><strong>PC-A ← U 盘（pull）</strong></td><td>28 文件（备份 7），SHA 通过，退出 0；<code>522=522 diff=0</code></td></tr><tr><td>11-26 21:34</td><td>PC-A → U 盘（晚间 FastAPI 复习记录）</td><td>4 文件（备份 3），SHA 通过，退出 0</td></tr><tr><td>11-26 21:36</td><td>PC-A 复习页重新生成并部署</td><td><code>index.html</code> 793,664 B / 135 条；线上 SHA 与本地一致（<code>C6D341C1…</code>）</td></tr><tr><td>11-27 10:14</td><td>PC-A → U 盘（FastAPI 第 3–4 课记录）</td><td>8 文件（备份 3），SHA 通过，退出 0</td></tr><tr><td>11-27 10:19</td><td>PC-A 复习页重新生成并部署</td><td><code>index.html</code> 813,308 B / 136 条；线上 SHA 与本地一致（<code>06DCE5F5…</code>）</td></tr><tr><td>11-27 14:05</td><td>PC-A → U 盘（下午场记录：第 4 课验收 + products 小验收）</td><td>8 文件（备份 5），SHA 通过，退出 0</td></tr><tr><td>11-27 14:09</td><td>PC-A 复习页重新生成并部署</td><td><code>index.html</code> 828,278 B / 137 条；线上 SHA 与本地一致（<code>F20080BA…</code>）</td></tr></tbody></table>
+<h3>同步程序（按 SHA256 识别）</h3>
+<table><thead><tr><th>位置</th><th>实际 SHA256</th><th>说明</th></tr></thead><tbody><tr><td>PC-A <code>learning/tools/sync.py</code></td><td><code>f984cbe9…</code></td><td>当前使用（v5 + 备份文件排除补丁）</td></tr><tr><td>U 盘 <code>sync-tools/sync.py</code></td><td><code>f984cbe9…</code></td><td>当前使用；与 PC-A 相同</td></tr><tr><td>原始交付 <code>sync-delivery-20261124_153501/sync.py</code></td><td><code>0c025559…</code></td><td>作为基线保留</td></tr></tbody></table>
+<ul><li>两端程序 SHA 一致；37/37 测试通过；不得仅凭非正式版本号判断版本；</li><li>PC-B 侧程序版本见其 <code>CURRENT_STATE</code> 记录（同为 <code>f984cbe9…</code>），本机未直接读取 PC-B 文件。</li></ul>
+<h3>待验证 / 待确认</h3>
+<ul><li>[x] PC-A 与 U 盘学习档案一致（2026-11-26 20:36：522 文件，diff=0，Skill diff=0）；</li><li>[x] PC-A 建立自己的基线（<code>_sync/baselines/&lt;本机&gt;.json</code>）；</li><li>[x] PC-B 实际路径与主机名复核（<code>QY</code> / <code>学习目录\learning</code>，已核验）；</li><li>[x] PC-B 首次接入（2026-11-25 08:22，30 文件，退出 0）；</li><li>[x] PC-B 建立自己的基线（<code>_sync/baselines/QY.json</code>）；</li><li>[ ] PC-B 自 11-26 13:37 之后是否有未推送的本地改动——本机不可见，下次在 PC-B 上跑 <code>sync-status</code> 确认。</li></ul>
+<h3>当前状态</h3>
+<ul><li>PC-A 与 U 盘：学习档案与 Skill <strong>已一致</strong>（522 = 522，diff = 0）；</li><li>PC-B：已接入；最后一次 push 为 2026-11-26 13:37，其后 U 盘无新写入；</li><li>结论：截至 2026-11-26 20:36，三方档案一致（PC-B 端未推送改动需下次在其本机确认）。</li></ul></div>
 </details><details data-kind="其他" data-text="# 下午场：第 4 课串讲 + `products` 零提示小验收（未通过）+ 引导重写（通过）
 
 - 时间：12:22–14:04，**约 102 分钟**
@@ -834,119 +1032,6 @@ def delete_stock(sku: str, db=Depends(get_db)):
         raise HTTPException(status_code=404, detail=&quot;股票不存在&quot;)
     db.commit()
     return {&quot;deleted&quot;: sku}</code></pre></div>
-</details><details data-kind="其他" data-text="# sync_status
-
-&gt; 双机 + u 盘同步状态；**u 盘为同步中转与备份；2026-11-25 起 pc-a / pc-b / u 盘三方一致**。
-
-## 机器登记
-
-| 标识 | 主机名 | 工作区绝对路径 | 状态 |
-|---|---|---|---|
-| pc-a | ` ` | `学习目录\learning` | 已确认 |
-| pc-b | `qy` | `学习目录\learning` | **已接入**（2026-11-25 08:22，路径已核验含 `progress.md`） |
-
-## u 盘
-
-- 根目录自动探测：查找各盘符下的 `u盘`，不写死盘符；
-- pc-a 当前：`u盘\study\learning`；
-- pc-b 当前：`h:\u盘\study\learning`；
-- skill：`u盘\skills\python-bioinformatics-tutor`。
-
-## 写锁与基线
-
-- 写锁：无；
-- 每台电脑独立基线，**不得跨机使用**：
-  - pc-a：`_sync/baselines/ .json`（89,868 b，2026-11-26 20:36）；
-  - pc-b：`_sync/baselines/qy.json`（84,193 b，2026-11-25 13:42）；
-- 当前档案数：**522**（pc-a 口径，2026-11-26 20:36）。
-
-## 备份清单（u 盘 `_manual_backups`）
-
-| 备份 | 内容 | 校验 |
-|---|---|---|
-| `pc-a_20261124_1333` | pc-a learning + skill | sha ok |
-| `pc-a_20261124_1832` | pc-a learning + skill | sha ok（426 文件） |
-| `usb_20261124_1833` | u 盘 learning + skill 现状 | sha ok（428 文件） |
-| `usb-learning-20261124_1417.zip` | pc-b 同步前 u 盘备份 | 未逐项复核 |
-| pc-b 首次接入前备份 | `d:\_sync_backup\pc-b-20261125_0821\`（在 pc-b 本机） | pc-b 记录：learning 534 条、skills 9 条，sha 通过 |
-
-## 同步历史
-
-| 时间 | 事件 | 结果 |
-|---|---|---|
-| 11-23 21:48 | pc-a → u 盘（冻结前） | 454 文件 |
-| 11-24 14:17 | pc-b 同步前备份 u 盘 | zip 19.9 mb |
-| 11-24 14:26 | pc-b ↔ u 盘双向同步 | 18 文件；2 个人工合并 |
-| 11-24 18:35 | pc-a 生成整合候选 | 待审核 |
-| 11-24 18:40 | 修订后部署到 pc-a 本地 | 完成 |
-| 11-24 18:52 | pc-a → u 盘首次正式同步 | 27 文件，sha 通过；学习档案+skill 一致 |
-| 11-24 20:10 | pc-a → u 盘（晚间复测 2 会话记录） | 9 文件（备份 4），sha 通过，退出 0 |
-| 11-24 20:15 | pc-a → u 盘（复习页重新生成） | 4 文件（备份 4），sha 通过，退出 0 |
-| 11-25 08:22 | **pc-b 首次接入** | 30 文件，`status` 退出 0 |
-| 11-25 09:27 | pc-b → u 盘 | 18 文件，verified |
-| 11-25 12:23 | pc-b → u 盘 | 10 文件，verified |
-| 11-25 12:53 | pc-b → u 盘 | 11 文件，verified |
-| 11-25 13:39 | pc-b → u 盘 | 10 文件，verified |
-| 11-25 13:42 | pc-b → u 盘（收尾补记录） | 1 文件，verified |
-| 11-25 19:20 | **pc-a ← u 盘（pull）** | 31 文件（备份 8），sha 通过，退出 0；`498=498 diff=0` |
-| 11-25 20:19 | pc-a → u 盘（晚间 http 重测 3 记录） | 7 文件（备份 4），sha 通过，退出 0 |
-| 11-25 20:22 | pc-a 复习页重新生成并部署 | `index.html` 737,270 b / 130 条；线上 sha 与本地一致（`3430af9e…`） |
-| 11-26 09:04 | pc-b → u 盘 | 12 文件，verified |
-| 11-26 09:19 | pc-b → u 盘 | 10 文件，verified |
-| 11-26 09:32 | pc-b → u 盘 | 7 文件，verified |
-| 11-26 13:37 | pc-b → u 盘（白天收尾） | 19 文件，verified |
-| 11-26 20:36 | **pc-a ← u 盘（pull）** | 28 文件（备份 7），sha 通过，退出 0；`522=522 diff=0` |
-| 11-26 21:34 | pc-a → u 盘（晚间 fastapi 复习记录） | 4 文件（备份 3），sha 通过，退出 0 |
-| 11-26 21:36 | pc-a 复习页重新生成并部署 | `index.html` 793,664 b / 135 条；线上 sha 与本地一致（`c6d341c1…`） |
-| 11-27 10:14 | pc-a → u 盘（fastapi 第 3–4 课记录） | 8 文件（备份 3），sha 通过，退出 0 |
-| 11-27 10:19 | pc-a 复习页重新生成并部署 | `index.html` 813,308 b / 136 条；线上 sha 与本地一致（`06dce5f5…`） |
-
-## 同步程序（按 sha256 识别）
-
-| 位置 | 实际 sha256 | 说明 |
-|---|---|---|
-| pc-a `learning/tools/sync.py` | `f984cbe9…` | 当前使用（v5 + 备份文件排除补丁） |
-| u 盘 `sync-tools/sync.py` | `f984cbe9…` | 当前使用；与 pc-a 相同 |
-| 原始交付 `sync-delivery-20261124_153501/sync.py` | `0c025559…` | 作为基线保留 |
-
-- 两端程序 sha 一致；37/37 测试通过；不得仅凭非正式版本号判断版本；
-- pc-b 侧程序版本见其 `current_state` 记录（同为 `f984cbe9…`），本机未直接读取 pc-b 文件。
-
-## 待验证 / 待确认
-
-- [x] pc-a 与 u 盘学习档案一致（2026-11-26 20:36：522 文件，diff=0，skill diff=0）；
-- [x] pc-a 建立自己的基线（`_sync/baselines/ .json`）；
-- [x] pc-b 实际路径与主机名复核（`qy` / `学习目录\learning`，已核验）；
-- [x] pc-b 首次接入（2026-11-25 08:22，30 文件，退出 0）；
-- [x] pc-b 建立自己的基线（`_sync/baselines/qy.json`）；
-- [ ] pc-b 自 11-26 13:37 之后是否有未推送的本地改动——本机不可见，下次在 pc-b 上跑 `sync-status` 确认。
-
-## 当前状态
-
-- pc-a 与 u 盘：学习档案与 skill **已一致**（522 = 522，diff = 0）；
-- pc-b：已接入；最后一次 push 为 2026-11-26 13:37，其后 u 盘无新写入；
-- 结论：截至 2026-11-26 20:36，三方档案一致（pc-b 端未推送改动需下次在其本机确认）。
-">
-<summary><span class="date">11-27 10:20</span><span>SYNC_STATUS</span><span class="kind">其他</span></summary>
-<div class="body"><h2>SYNC_STATUS</h2>
-<blockquote>双机 + U 盘同步状态；<strong>U 盘为同步中转与备份；2026-11-25 起 PC-A / PC-B / U 盘三方一致</strong>。</blockquote>
-<h3>机器登记</h3>
-<table><thead><tr><th>标识</th><th>主机名</th><th>工作区绝对路径</th><th>状态</th></tr></thead><tbody><tr><td>PC-A</td><td><code>&lt;本机&gt;</code></td><td><code>学习目录\learning</code></td><td>已确认</td></tr><tr><td>PC-B</td><td><code>QY</code></td><td><code>学习目录\learning</code></td><td><strong>已接入</strong>（2026-11-25 08:22，路径已核验含 <code>PROGRESS.md</code>）</td></tr></tbody></table>
-<h3>U 盘</h3>
-<ul><li>根目录自动探测：查找各盘符下的 <code>U盘</code>，不写死盘符；</li><li>PC-A 当前：<code>U盘\study\learning</code>；</li><li>PC-B 当前：<code>H:\U盘\study\learning</code>；</li><li>Skill：<code>U盘\skills\python-bioinformatics-tutor</code>。</li></ul>
-<h3>写锁与基线</h3>
-<ul><li>写锁：无；</li><li>每台电脑独立基线，<strong>不得跨机使用</strong>：</li><li>PC-A：<code>_sync/baselines/&lt;本机&gt;.json</code>（89,868 B，2026-11-26 20:36）；</li><li>PC-B：<code>_sync/baselines/QY.json</code>（84,193 B，2026-11-25 13:42）；</li><li>当前档案数：<strong>522</strong>（PC-A 口径，2026-11-26 20:36）。</li></ul>
-<h3>备份清单（U 盘 <code>_manual_backups</code>）</h3>
-<table><thead><tr><th>备份</th><th>内容</th><th>校验</th></tr></thead><tbody><tr><td><code>PC-A_20261124_1333</code></td><td>PC-A learning + Skill</td><td>SHA OK</td></tr><tr><td><code>PC-A_20261124_1832</code></td><td>PC-A learning + Skill</td><td>SHA OK（426 文件）</td></tr><tr><td><code>USB_20261124_1833</code></td><td>U 盘 learning + Skill 现状</td><td>SHA OK（428 文件）</td></tr><tr><td><code>USB-learning-20261124_1417.zip</code></td><td>PC-B 同步前 U 盘备份</td><td>未逐项复核</td></tr><tr><td>PC-B 首次接入前备份</td><td><code>D:\_sync_backup\PC-B-20261125_0821\</code>（在 PC-B 本机）</td><td>PC-B 记录：learning 534 条、skills 9 条，SHA 通过</td></tr></tbody></table>
-<h3>同步历史</h3>
-<table><thead><tr><th>时间</th><th>事件</th><th>结果</th></tr></thead><tbody><tr><td>11-23 21:48</td><td>PC-A → U 盘（冻结前）</td><td>454 文件</td></tr><tr><td>11-24 14:17</td><td>PC-B 同步前备份 U 盘</td><td>zip 19.9 MB</td></tr><tr><td>11-24 14:26</td><td>PC-B ↔ U 盘双向同步</td><td>18 文件；2 个人工合并</td></tr><tr><td>11-24 18:35</td><td>PC-A 生成整合候选</td><td>待审核</td></tr><tr><td>11-24 18:40</td><td>修订后部署到 PC-A 本地</td><td>完成</td></tr><tr><td>11-24 18:52</td><td>PC-A → U 盘首次正式同步</td><td>27 文件，SHA 通过；学习档案+Skill 一致</td></tr><tr><td>11-24 20:10</td><td>PC-A → U 盘（晚间复测 2 会话记录）</td><td>9 文件（备份 4），SHA 通过，退出 0</td></tr><tr><td>11-24 20:15</td><td>PC-A → U 盘（复习页重新生成）</td><td>4 文件（备份 4），SHA 通过，退出 0</td></tr><tr><td>11-25 08:22</td><td><strong>PC-B 首次接入</strong></td><td>30 文件，<code>status</code> 退出 0</td></tr><tr><td>11-25 09:27</td><td>PC-B → U 盘</td><td>18 文件，verified</td></tr><tr><td>11-25 12:23</td><td>PC-B → U 盘</td><td>10 文件，verified</td></tr><tr><td>11-25 12:53</td><td>PC-B → U 盘</td><td>11 文件，verified</td></tr><tr><td>11-25 13:39</td><td>PC-B → U 盘</td><td>10 文件，verified</td></tr><tr><td>11-25 13:42</td><td>PC-B → U 盘（收尾补记录）</td><td>1 文件，verified</td></tr><tr><td>11-25 19:20</td><td><strong>PC-A ← U 盘（pull）</strong></td><td>31 文件（备份 8），SHA 通过，退出 0；<code>498=498 diff=0</code></td></tr><tr><td>11-25 20:19</td><td>PC-A → U 盘（晚间 HTTP 重测 3 记录）</td><td>7 文件（备份 4），SHA 通过，退出 0</td></tr><tr><td>11-25 20:22</td><td>PC-A 复习页重新生成并部署</td><td><code>index.html</code> 737,270 B / 130 条；线上 SHA 与本地一致（<code>3430AF9E…</code>）</td></tr><tr><td>11-26 09:04</td><td>PC-B → U 盘</td><td>12 文件，verified</td></tr><tr><td>11-26 09:19</td><td>PC-B → U 盘</td><td>10 文件，verified</td></tr><tr><td>11-26 09:32</td><td>PC-B → U 盘</td><td>7 文件，verified</td></tr><tr><td>11-26 13:37</td><td>PC-B → U 盘（白天收尾）</td><td>19 文件，verified</td></tr><tr><td>11-26 20:36</td><td><strong>PC-A ← U 盘（pull）</strong></td><td>28 文件（备份 7），SHA 通过，退出 0；<code>522=522 diff=0</code></td></tr><tr><td>11-26 21:34</td><td>PC-A → U 盘（晚间 FastAPI 复习记录）</td><td>4 文件（备份 3），SHA 通过，退出 0</td></tr><tr><td>11-26 21:36</td><td>PC-A 复习页重新生成并部署</td><td><code>index.html</code> 793,664 B / 135 条；线上 SHA 与本地一致（<code>C6D341C1…</code>）</td></tr><tr><td>11-27 10:14</td><td>PC-A → U 盘（FastAPI 第 3–4 课记录）</td><td>8 文件（备份 3），SHA 通过，退出 0</td></tr><tr><td>11-27 10:19</td><td>PC-A 复习页重新生成并部署</td><td><code>index.html</code> 813,308 B / 136 条；线上 SHA 与本地一致（<code>06DCE5F5…</code>）</td></tr></tbody></table>
-<h3>同步程序（按 SHA256 识别）</h3>
-<table><thead><tr><th>位置</th><th>实际 SHA256</th><th>说明</th></tr></thead><tbody><tr><td>PC-A <code>learning/tools/sync.py</code></td><td><code>f984cbe9…</code></td><td>当前使用（v5 + 备份文件排除补丁）</td></tr><tr><td>U 盘 <code>sync-tools/sync.py</code></td><td><code>f984cbe9…</code></td><td>当前使用；与 PC-A 相同</td></tr><tr><td>原始交付 <code>sync-delivery-20261124_153501/sync.py</code></td><td><code>0c025559…</code></td><td>作为基线保留</td></tr></tbody></table>
-<ul><li>两端程序 SHA 一致；37/37 测试通过；不得仅凭非正式版本号判断版本；</li><li>PC-B 侧程序版本见其 <code>CURRENT_STATE</code> 记录（同为 <code>f984cbe9…</code>），本机未直接读取 PC-B 文件。</li></ul>
-<h3>待验证 / 待确认</h3>
-<ul><li>[x] PC-A 与 U 盘学习档案一致（2026-11-26 20:36：522 文件，diff=0，Skill diff=0）；</li><li>[x] PC-A 建立自己的基线（<code>_sync/baselines/&lt;本机&gt;.json</code>）；</li><li>[x] PC-B 实际路径与主机名复核（<code>QY</code> / <code>学习目录\learning</code>，已核验）；</li><li>[x] PC-B 首次接入（2026-11-25 08:22，30 文件，退出 0）；</li><li>[x] PC-B 建立自己的基线（<code>_sync/baselines/QY.json</code>）；</li><li>[ ] PC-B 自 11-26 13:37 之后是否有未推送的本地改动——本机不可见，下次在 PC-B 上跑 <code>sync-status</code> 确认。</li></ul>
-<h3>当前状态</h3>
-<ul><li>PC-A 与 U 盘：学习档案与 Skill <strong>已一致</strong>（522 = 522，diff = 0）；</li><li>PC-B：已接入；最后一次 push 为 2026-11-26 13:37，其后 U 盘无新写入；</li><li>结论：截至 2026-11-26 20:36，三方档案一致（PC-B 端未推送改动需下次在其本机确认）。</li></ul></div>
 </details><details data-kind="SQL" data-text="# fastapi 第 3 课（sqlite + depends）完成；第 4 课（crud 补全）未完成
 
 - 时间：08:39–10:13，**94 分钟**（第 3 课 08:39–09:47，68 分钟；第 4 课 09:47–10:13，26 分钟）
