@@ -1,4 +1,4 @@
-const CACHE = 'py-review-f79260ad';
+const CACHE = 'py-review-64a22a6c';
 const ASSETS = ['./', './index.html', './manifest.json', './icon-180.png', './icon-192.png', './icon-512.png', './icon-maskable-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
