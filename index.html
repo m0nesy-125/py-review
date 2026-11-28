@@ -64,9 +64,365 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <h1>Python 学习复习</h1>
 <div class="sub">共 140 篇 · 最后生成 2026-11-28</div>
 <input id="q" type="search" placeholder="搜索关键词，如 SQL、argv、Git…" autocomplete="off">
-<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="HTTP · 复测">HTTP · 复测</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
+<div class="chips"><button class="chip on" data-kind="全部">全部</button><button class="chip" data-kind="其他">其他</button><button class="chip" data-kind="进度">进度</button><button class="chip" data-kind="SQL">SQL</button><button class="chip" data-kind="复习">复习</button><button class="chip" data-kind="HTTP">HTTP</button><button class="chip" data-kind="HTTP · 复测">HTTP · 复测</button><button class="chip" data-kind="SQL · 复测">SQL · 复测</button><button class="chip" data-kind="Git · 复测">Git · 复测</button><button class="chip" data-kind="易错点">易错点</button><button class="chip" data-kind="Python 基础">Python 基础</button><button class="chip" data-kind="Git">Git</button><button class="chip" data-kind="其他 · 复测">其他 · 复测</button></div>
 </header>
-<main><details data-kind="进度" data-text="# 学习进度
+<main><details data-kind="其他" data-text="# current_state
+
+&gt; 开课必须先读本文件；`progress.md` 只保存完整历史。
+&gt; **本文件是 `next_start` 的唯一来源。**
+
+- 更新时间：2026-11-28 18:47
+- 运行模式：**pc-a / pc-b / u 盘三方已一致**（pc-a 于 2026-11-26 20:36 pull，`status` 退出 0）
+- 活跃学习电脑：pc-b（白天，` `）/ pc-a（晚间，`desktop-3ldso0s`）
+- pc-a 路径：`学习目录\learning`
+- pc-b 路径：`学习目录\learning`（已核验）
+- u 盘：自动探测（pc-a `e:`，pc-b `h:`）
+- 自动同步：**已启用**（sync.py sha `f984cbe9…`）；两机各有独立基线
+
+## 阶段
+
+| 维度 | 状态 |
+|---|---|
+| 职业主线 | python 后端 + 大模型应用开发（机器学习工程为并行方向） |
+| 课程阶段 | 第 2 阶段门禁完成（11-26）；**已进入第 5 阶段：fastapi 第 1–2 课** |
+| 下一阶段 | **fastapi**（复习周 11-29 结束后启动） |
+| 每日目标 | 3 小时 dsh 学习；吴恩达课程另排 |
+
+## 2026-11-25 学习证据
+
+### 白天（pc-b）
+
+| 内容 | 结果 | 证据等级 |
+|---|---|---|
+| **sql 限时复测 3（`shipments.csv`）** | 22 分钟零提示跑通：`有效 7 跳过 3`、表 7 行、分组 east 120/north 50/west 40、`report.json`、重跑幂等 | **`independent_run`**（主流程） |
+| 交付后规格修正 | `report.json` 结构、表结构、键名 `count` | `hinted_run`（3 轮） |
+| 错题重做 3 个最小复现 | set vs dict、`if not exists` 旧表、赋值 vs 追加 | 独立完成 |
+| 阶段 2 复盘 4 问 | 2/4（冲突标记、http 异常分类错） | — |
+| python 基础抽查 | 口头 3.5/5；代码主流程独立，排序/json 块提示 | 混合 |
+| http 短迁移 2（`/orders.json`） | 42 分钟（超 12），三条分支实现 | `hinted_run`（8 处） |
+
+### 晚间（pc-a）
+
+| 内容 | 结果 | 证据等级 |
+|---|---|---|
+| **http 短迁移 3（`/meters.json`）** | 24 分钟主动停表，未跑通、无 `summary.json` | —（**未通过**） |
+| 提示修正 | 三行输出、`summary.json`、幂等、404/连不上全部通过 | `hinted_run`（8 处 + 3 段讲解） |
+
+- 11-25 计时：白天 **167 分钟** + 晚间 **56 分钟** = **223 分钟**。
+
+## 2026-11-26 学习证据（pc-b）
+
+| **http 短迁移 4（`/tickets.json`）** | 36 分钟：三条分支最终全过，但 3 处缺陷（`value&gt;1`、排序函数用全局变量导致排序失效、`except connectionerror` 抓错类）经指出后修 | `hinted_run` |
+| **http 短迁移 5（`/samples.json`）** | 25 分钟（限时内）：三条分支全过、`summary.json` 键与顺序正确、幂等；2 处机械性提示（循环变量残留、键名 `cnt`） | `hinted_run`（提示数 8→2） |
+
+| **10 分钟零提示验证（`/visits.json`）** | 11 分钟、**零提示**：`有效 7 跳过 2`、n2 2/17、n1 3/14、n3 2/9、`summary.json` 正确、代码复核无缺陷 | **`independent_run`** |
+
+| **阶段 2 收尾复盘（10 问）** | 5.5/10：git 标记检查（第 3 次错）、`{}` 类型（第 3 次错）、路径锚定答反；http 异常分类全对 | — |
+| **错题本整理** | 14 类错误按复发次数归档，含“改动前 4 条自查清单”：`notes/错题本-stage2.md` | — |
+
+| **跨主题小综合**（http→sqlite→json→三分支） | 24 分钟；1 处提示（`skipped = 0` 应 `+1`） | `hinted_run` |
+| **交叉验证**（python 分组 vs sql 分组） | 两个字典相等、`equal=true`、`一致`；结构由导师给出 | `hinted_run` |
+| **fastapi 第 1 课** | `/health`、`/stock/{sku}` 均 200；`/docs` 可访问 | 完成 |
+| **fastapi 第 2 课** | 查询参数、post+pydantic、404 全部通过；4 处提示（导入/切片/raise 位置/用错变量） | `hinted_run` |
+
+### 晚间复习（pc-a，21:03–21:33）
+
+| 内容 | 结果 | 证据等级 |
+|---|---|---|
+| 口头检索 8 题（fastapi 1–2 课） | 仅 `raise` 位置 1 题答对；路径/查询参数、get/post、`basemodel`、`uvicorn app:app` 空白；422 答成 421 | —（**未巩固**） |
+| 重讲后复述 | 422/404 归属、`uvicorn app:app` 两边含义答对 | 口头 |
+| 代码预测 5 题（读 `app.py`） | 3 题内容对但未说状态码；`/stocks/b` 答成返回数据；`qty: abc ` 不会 | — |
+
+- 11-26 计时：白天 **167 分钟**（pc-b，含 fastapi 两课 53 分钟）+ 晚间复习 **30 分钟**（pc-a）。
+
+## 2026-11-27 学习证据（pc-a）
+
+| 内容 | 结果 | 证据等级 |
+|---|---|---|
+| 门禁 3 问 | 路径/查询参数首次答反后纠正；422/404 归属对；`uvicorn app:app` 补精确 | 口头 |
+| **fastapi 第 3 课：sqlite + `depends(get_db)`** | 全部验收通过：`/stocks` 3 条、`?limit=1` 1 条、`/stocks/b` 200、`/stocks/z` 404、post 200、**重启后数据仍在** | `hinted_run`（8 处） |
+| fastapi 第 4 课：crud 补全 | 回填后 6 条验收全过（409 / put 200 / put 404 / delete 200 / delete 404 / `/docs`） | `hinted_run`（给完整版后回填） |
+| **`products` 零提示小验收** | 16 分钟只写出 21 行，仍是 `stocks` 残影（库名/模型/路由斜杠/缺 `depends`/sql 破碎） | **未通过** |
+| 引导重写 `products` | 最终验收全过：空列表、两次 post、id 自增、单条 200、999 → 404、`/docs`、磁盘 2 行 | `hinted_run`（7 处） |
+
+- 环境：独立 venv `projects/fastapi-api/.venv`（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4）；
+- 11-27 计时：上午 **94 分钟**（08:39–10:13）+ 下午 **102 分钟**（12:22–14:04）+ 晚间复习 **36 分钟**（22:15–22:51）= **232 分钟**。
+
+### 晚间复习（22:15–22:51，含 22:44 后 7 分钟命名约定答疑）
+
+| 内容 | 结果 |
+|---|---|
+| 骨架口述 5 格 | 仅 `commit` 答对；装饰器、`item: productin`、`values`、422/409 均错 |
+| 6 个快问 | `depends` 位置、`yield`、422/404、未 commit 不可见——对；`fetchone/fetchall` 返回 `none`/`[]` 错；`rowcount` 半对 |
+| 默写两遍 | 第一遍 4 处结构错 → 第二遍仅 `depend` 拼写与键名大小写 |
+
+| **第三次默写 `tickets`**（pc-b，零提示 20 分钟 + 修正 5 分钟） | 零提示轮未跑通（8 处）；修正阶段又出 `c.commit()`、单条返回元组 2 处；最终五次验收 + 重启持久化全过 | **`hinted_run`（10 处提示）** |
+| **sql 句式填空** | 3.5/5（`set` 写成 `when`、`limit` 写成 `limit=2`、未写参数元组） | — |
+
+## 薄弱点（下次优先）
+
+1. **fastapi 代码结构**：同一路径不能注册两次；路径里的 `{sku}` 必须在函数签名里；`depends` 只能写在路由参数里；
+2. **`is` vs `==`**：判数值用 `==`（`if m is 0` 是错）；
+3. **括号语义**：`( c ,2)` 元组、`( c :2)` 非法、`( c ,)` 单元素元组、`init_db()` 才是调用；
+4. **`fetchone()` / `fetchall()`**：一条 vs 列表；查不到分别是 `none` 与 `[]`；
+5. **`rowcount`**：属于 `execute` 返回的游标，判断要在 `commit` 前；
+6. **启动环境**：必须用 venv 解释器；`python app.py` 不起服务，要 `python -m uvicorn app:app`；cmd 切盘符用 `cd /d`，含空格路径要引号；
+7. 旧：冲突标记检查（★★★）、`{}` 集合/字典（★★★）、路径锚定、循环变量残留、排序 key、json 键名（★★）。
+
+&gt; 完整清单见 `notes/错题本-stage2.md`（含“改动前 4 条自查清单”）。
+
+## next_start（唯一）
+
+**11-29：第四次默写（零提示，换表）**（20 分钟）
+
+- 新表：`notes(id integer primary key, title text, minutes integer)`，端口 **8005**；
+- 三个接口：`get /notes`、`get /notes/{nid}`（404）、`post /notes`；`depends(get_db)`、`commit` 位置、参数元组；
+- 硬性：**零提示**、20 分钟内、五条验收 + 重启后数据仍在；
+- 通过 → 记 `independent_run`，进 fastapi 第 5 课（查询参数过滤 + `put`/`delete`）；
+- 不通过 → 只练薄弱点（sql 句子 / 参数元组 / commit 位置），隔日再试，不推新内容。
+
+- 今日遗留：`set`/`limit` 句式、单元素元组 `(1,)`、`commit` 属于连接不属于 cursor。
+- 开课前过错题本 4 条自查。
+
+## 同步与备份（当前）
+
+- 三方一致（pc-a 于 2026-11-26 20:36 pull，522 文件，`diff=0`），详见 `sync_status.md`；
+- 同步程序：三方均为 `f984cbe9…`（v5 + 备份排除补丁，37/37 测试）；
+- 备份：`pc-a_20261124_1333`、`pc-a_20261124_1832`、`usb_20261124_1833`、pc-b 首次接入前备份（`d:\_sync_backup\pc-b-20261125_0821\`）。
+">
+<summary><span class="date">11-28 18:47</span><span>CURRENT_STATE</span><span class="kind">其他</span></summary>
+<div class="body"><h2>CURRENT_STATE</h2>
+<blockquote>开课必须先读本文件；<code>PROGRESS.md</code> 只保存完整历史。</blockquote>
+<blockquote><strong>本文件是 <code>NEXT_START</code> 的唯一来源。</strong></blockquote>
+<ul><li>更新时间：2026-11-28 18:47</li><li>运行模式：<strong>PC-A / PC-B / U 盘三方已一致</strong>（PC-A 于 2026-11-26 20:36 pull，<code>status</code> 退出 0）</li><li>活跃学习电脑：PC-B（白天，<code>&lt;本机&gt;</code>）/ PC-A（晚间，<code>DESKTOP-3LDSO0S</code>）</li><li>PC-A 路径：<code>学习目录\learning</code></li><li>PC-B 路径：<code>学习目录\learning</code>（已核验）</li><li>U 盘：自动探测（PC-A <code>E:</code>，PC-B <code>H:</code>）</li><li>自动同步：<strong>已启用</strong>（sync.py SHA <code>f984cbe9…</code>）；两机各有独立基线</li></ul>
+<h3>阶段</h3>
+<table><thead><tr><th>维度</th><th>状态</th></tr></thead><tbody><tr><td>职业主线</td><td>Python 后端 + 大模型应用开发（机器学习工程为并行方向）</td></tr><tr><td>课程阶段</td><td>第 2 阶段门禁完成（11-26）；<strong>已进入第 5 阶段：FastAPI 第 1–2 课</strong></td></tr><tr><td>下一阶段</td><td><strong>FastAPI</strong>（复习周 11-29 结束后启动）</td></tr><tr><td>每日目标</td><td>3 小时 DSH 学习；吴恩达课程另排</td></tr></tbody></table>
+<h3>2026-11-25 学习证据</h3>
+<h4>白天（PC-B）</h4>
+<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td><strong>SQL 限时复测 3（<code>shipments.csv</code>）</strong></td><td>22 分钟零提示跑通：<code>有效 7 跳过 3</code>、表 7 行、分组 east 120/north 50/west 40、<code>report.json</code>、重跑幂等</td><td><strong><code>INDEPENDENT_RUN</code></strong>（主流程）</td></tr><tr><td>交付后规格修正</td><td><code>report.json</code> 结构、表结构、键名 <code>count</code></td><td><code>HINTED_RUN</code>（3 轮）</td></tr><tr><td>错题重做 3 个最小复现</td><td>set vs dict、<code>IF NOT EXISTS</code> 旧表、赋值 vs 追加</td><td>独立完成</td></tr><tr><td>阶段 2 复盘 4 问</td><td>2/4（冲突标记、HTTP 异常分类错）</td><td>—</td></tr><tr><td>Python 基础抽查</td><td>口头 3.5/5；代码主流程独立，排序/JSON 块提示</td><td>混合</td></tr><tr><td>HTTP 短迁移 2（<code>/orders.json</code>）</td><td>42 分钟（超 12），三条分支实现</td><td><code>HINTED_RUN</code>（8 处）</td></tr></tbody></table>
+<h4>晚间（PC-A）</h4>
+<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td><strong>HTTP 短迁移 3（<code>/meters.json</code>）</strong></td><td>24 分钟主动停表，未跑通、无 <code>summary.json</code></td><td>—（<strong>未通过</strong>）</td></tr><tr><td>提示修正</td><td>三行输出、<code>summary.json</code>、幂等、404/连不上全部通过</td><td><code>HINTED_RUN</code>（8 处 + 3 段讲解）</td></tr></tbody></table>
+<ul><li>11-25 计时：白天 <strong>167 分钟</strong> + 晚间 <strong>56 分钟</strong> = <strong>223 分钟</strong>。</li></ul>
+<h3>2026-11-26 学习证据（PC-B）</h3>
+<p>| <strong>HTTP 短迁移 4（<code>/tickets.json</code>）</strong> | 36 分钟：三条分支最终全过，但 3 处缺陷（<code>value&gt;1</code>、排序函数用全局变量导致排序失效、<code>except ConnectionError</code> 抓错类）经指出后修 | <code>HINTED_RUN</code> | | <strong>HTTP 短迁移 5（<code>/samples.json</code>）</strong> | 25 分钟（限时内）：三条分支全过、<code>summary.json</code> 键与顺序正确、幂等；2 处机械性提示（循环变量残留、键名 <code>cnt</code>） | <code>HINTED_RUN</code>（提示数 8→2） |</p>
+<p>| <strong>10 分钟零提示验证（<code>/visits.json</code>）</strong> | 11 分钟、<strong>零提示</strong>：<code>有效 7 跳过 2</code>、n2 2/17、n1 3/14、n3 2/9、<code>summary.json</code> 正确、代码复核无缺陷 | <strong><code>INDEPENDENT_RUN</code></strong> |</p>
+<p>| <strong>阶段 2 收尾复盘（10 问）</strong> | 5.5/10：Git 标记检查（第 3 次错）、<code>{}</code> 类型（第 3 次错）、路径锚定答反；HTTP 异常分类全对 | — | | <strong>错题本整理</strong> | 14 类错误按复发次数归档，含“改动前 4 条自查清单”：<code>notes/错题本-stage2.md</code> | — |</p>
+<p>| <strong>跨主题小综合</strong>（HTTP→SQLite→JSON→三分支） | 24 分钟；1 处提示（<code>skipped = 0</code> 应 <code>+1</code>） | <code>HINTED_RUN</code> | | <strong>交叉验证</strong>（Python 分组 vs SQL 分组） | 两个字典相等、<code>equal=true</code>、<code>一致</code>；结构由导师给出 | <code>HINTED_RUN</code> | | <strong>FastAPI 第 1 课</strong> | <code>/health</code>、<code>/stock/{sku}</code> 均 200；<code>/docs</code> 可访问 | 完成 | | <strong>FastAPI 第 2 课</strong> | 查询参数、POST+Pydantic、404 全部通过；4 处提示（导入/切片/raise 位置/用错变量） | <code>HINTED_RUN</code> |</p>
+<h4>晚间复习（PC-A，21:03–21:33）</h4>
+<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td>口头检索 8 题（FastAPI 1–2 课）</td><td>仅 <code>raise</code> 位置 1 题答对；路径/查询参数、GET/POST、<code>BaseModel</code>、<code>uvicorn app:app</code> 空白；422 答成 421</td><td>—（<strong>未巩固</strong>）</td></tr><tr><td>重讲后复述</td><td>422/404 归属、<code>uvicorn app:app</code> 两边含义答对</td><td>口头</td></tr><tr><td>代码预测 5 题（读 <code>app.py</code>）</td><td>3 题内容对但未说状态码；<code>/stocks/b</code> 答成返回数据；<code>qty:&quot;abc&quot;</code> 不会</td><td>—</td></tr></tbody></table>
+<ul><li>11-26 计时：白天 <strong>167 分钟</strong>（PC-B，含 FastAPI 两课 53 分钟）+ 晚间复习 <strong>30 分钟</strong>（PC-A）。</li></ul>
+<h3>2026-11-27 学习证据（PC-A）</h3>
+<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td>门禁 3 问</td><td>路径/查询参数首次答反后纠正；422/404 归属对；<code>uvicorn app:app</code> 补精确</td><td>口头</td></tr><tr><td><strong>FastAPI 第 3 课：SQLite + <code>Depends(get_db)</code></strong></td><td>全部验收通过：<code>/stocks</code> 3 条、<code>?limit=1</code> 1 条、<code>/stocks/B</code> 200、<code>/stocks/Z</code> 404、POST 200、<strong>重启后数据仍在</strong></td><td><code>HINTED_RUN</code>（8 处）</td></tr><tr><td>FastAPI 第 4 课：CRUD 补全</td><td>回填后 6 条验收全过（409 / PUT 200 / PUT 404 / DELETE 200 / DELETE 404 / <code>/docs</code>）</td><td><code>HINTED_RUN</code>（给完整版后回填）</td></tr><tr><td><strong><code>products</code> 零提示小验收</strong></td><td>16 分钟只写出 21 行，仍是 <code>stocks</code> 残影（库名/模型/路由斜杠/缺 <code>Depends</code>/SQL 破碎）</td><td><strong>未通过</strong></td></tr><tr><td>引导重写 <code>products</code></td><td>最终验收全过：空列表、两次 POST、id 自增、单条 200、999 → 404、<code>/docs</code>、磁盘 2 行</td><td><code>HINTED_RUN</code>（7 处）</td></tr></tbody></table>
+<ul><li>环境：独立 venv <code>projects/fastapi-api/.venv</code>（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4）；</li><li>11-27 计时：上午 <strong>94 分钟</strong>（08:39–10:13）+ 下午 <strong>102 分钟</strong>（12:22–14:04）+ 晚间复习 <strong>36 分钟</strong>（22:15–22:51）= <strong>232 分钟</strong>。</li></ul>
+<h4>晚间复习（22:15–22:51，含 22:44 后 7 分钟命名约定答疑）</h4>
+<table><thead><tr><th>内容</th><th>结果</th></tr></thead><tbody><tr><td>骨架口述 5 格</td><td>仅 <code>commit</code> 答对；装饰器、<code>item: ProductIn</code>、<code>VALUES</code>、422/409 均错</td></tr><tr><td>6 个快问</td><td><code>Depends</code> 位置、<code>yield</code>、422/404、未 commit 不可见——对；<code>fetchone/fetchall</code> 返回 <code>None</code>/<code>[]</code> 错；<code>rowcount</code> 半对</td></tr><tr><td>默写两遍</td><td>第一遍 4 处结构错 → 第二遍仅 <code>Depend</code> 拼写与键名大小写</td></tr></tbody></table>
+<p>| <strong>第三次默写 <code>tickets</code></strong>（PC-B，零提示 20 分钟 + 修正 5 分钟） | 零提示轮未跑通（8 处）；修正阶段又出 <code>c.commit()</code>、单条返回元组 2 处；最终五次验收 + 重启持久化全过 | <strong><code>HINTED_RUN</code>（10 处提示）</strong> | | <strong>SQL 句式填空</strong> | 3.5/5（<code>SET</code> 写成 <code>WHEN</code>、<code>LIMIT</code> 写成 <code>limit=2</code>、未写参数元组） | — |</p>
+<h3>薄弱点（下次优先）</h3>
+<ul><li><strong>FastAPI 代码结构</strong>：同一路径不能注册两次；路径里的 <code>{sku}</code> 必须在函数签名里；<code>Depends</code> 只能写在路由参数里；</li><li><strong><code>is</code> vs <code>==</code></strong>：判数值用 <code>==</code>（<code>if m is 0</code> 是错）；</li><li><strong>括号语义</strong>：<code>(&quot;C&quot;,2)</code> 元组、<code>(&quot;C&quot;:2)</code> 非法、<code>(&quot;C&quot;,)</code> 单元素元组、<code>init_db()</code> 才是调用；</li><li><strong><code>fetchone()</code> / <code>fetchall()</code></strong>：一条 vs 列表；查不到分别是 <code>None</code> 与 <code>[]</code>；</li><li><strong><code>rowcount</code></strong>：属于 <code>execute</code> 返回的游标，判断要在 <code>commit</code> 前；</li><li><strong>启动环境</strong>：必须用 venv 解释器；<code>python app.py</code> 不起服务，要 <code>python -m uvicorn app:app</code>；cmd 切盘符用 <code>cd /d</code>，含空格路径要引号；</li><li>旧：冲突标记检查（★★★）、<code>{}</code> 集合/字典（★★★）、路径锚定、循环变量残留、排序 key、JSON 键名（★★）。</li></ul>
+<blockquote>完整清单见 <code>notes/错题本-stage2.md</code>（含“改动前 4 条自查清单”）。</blockquote>
+<h3>NEXT_START（唯一）</h3>
+<p><strong>11-29：第四次默写（零提示，换表）</strong>（20 分钟）</p>
+<ul><li>新表：<code>notes(id INTEGER PRIMARY KEY, title TEXT, minutes INTEGER)</code>，端口 <strong>8005</strong>；</li><li>三个接口：<code>GET /notes</code>、<code>GET /notes/{nid}</code>（404）、<code>POST /notes</code>；<code>Depends(get_db)</code>、<code>commit</code> 位置、参数元组；</li><li>硬性：<strong>零提示</strong>、20 分钟内、五条验收 + 重启后数据仍在；</li><li>通过 → 记 <code>INDEPENDENT_RUN</code>，进 FastAPI 第 5 课（查询参数过滤 + <code>PUT</code>/<code>DELETE</code>）；</li><li>不通过 → 只练薄弱点（SQL 句子 / 参数元组 / commit 位置），隔日再试，不推新内容。</li></ul>
+<ul><li>今日遗留：<code>SET</code>/<code>LIMIT</code> 句式、单元素元组 <code>(1,)</code>、<code>commit</code> 属于连接不属于 cursor。</li><li>开课前过错题本 4 条自查。</li></ul>
+<h3>同步与备份（当前）</h3>
+<ul><li>三方一致（PC-A 于 2026-11-26 20:36 pull，522 文件，<code>diff=0</code>），详见 <code>SYNC_STATUS.md</code>；</li><li>同步程序：三方均为 <code>f984cbe9…</code>（v5 + 备份排除补丁，37/37 测试）；</li><li>备份：<code>PC-A_20261124_1333</code>、<code>PC-A_20261124_1832</code>、<code>USB_20261124_1833</code>、PC-B 首次接入前备份（<code>D:\_sync_backup\PC-B-20261125_0821\</code>）。</li></ul></div>
+</details><details data-kind="其他" data-text="# 第三次默写 `tickets`（未完成，时间到停手）
+
+- 时间：18:06:15–18:33:34（含 sql 填空 2 分钟 + 默写约 25 分钟）
+- 机器：pc-b（` `）
+- 目录：`code/2026-11-28-tickets-dictation`
+- 端口：8004（未启动）
+- 形式：空目录 + 空 `app.py`，零提示，20 分钟限时
+
+## 一、sql 句式填空（18:06–18:08）：3.5 / 5
+
+| # | 学员答案 | 正确 | 参数元组 |
+|---|---|---|---|
+| 1 `where ___ = ?` | `id` ✓ | `id` | `(1,)` |
+| 2 `update ... ___ hours = ?` | `when` ✗ | **`set`** | `(3, 1)` |
+| 3 `delete ... ___ id = ?` | `where` ✓ | `where` | `(1,)` |
+| 4 `insert ... ___ (?, ?)` | `values` ✓ | `values` | `( 排序 , 3)` |
+| 5 `select * ... ___ ?` | `limit=2` 半 | **`limit ?`** | `(2,)` |
+
+未写参数元组；已强调单元素元组要带逗号 `(1,)`。
+
+## 二、默写 `tickets`：时间到未跑通
+
+20 分钟到点（18:28）后继续写到 18:32:45，**文件语法级错误，无法导入**。
+
+已写出的正确部分：
+- `get_db()` 用 `yield` + `finally: close()`（依赖注入结构对）
+- `init()` + `create table if not exists` + `commit`
+- pydantic 模型 `ticketin(topic: str, hours: int)`
+- 三条路由 + `depends(get_db)` 签名
+- 404 逻辑思路（`fetchone()` 为 none → 抛异常）
+
+错误清单（原文未改，供回宿舍修正）：
+
+| # | 行 | 问题 |
+|---|---|---|
+| 1 | 1 | `from pytasic import basemodel` 拼错（pydantic） |
+| 2 | 36 | `execute( ... where id=?  (tid,))` 少了**逗号**，缺参数元组外层括号 |
+| 3 | 38 | `status_code()` 应为 `status_code=404` |
+| 4 | 42 | `item=ticketin` 应为 `item: ticketin`（冒号） |
+| 5 | 43 | 同上，`execute(sql (a, b))` 缺逗号、参数没包成一个元组 |
+| 6 | 44–45 | `commit()` 写在 `return` 之后，永远执行不到；`commit` 应在 `return` 之前 |
+| 7 | 44 | 返回 `[{...}]` 是列表，应返回单个 dict |
+| 8 | 35 | 第二条路由函数名与第一条重复（`get_tickets` 两次） |
+
+## 三、修正后（18:41:35–18:46:10，5 分钟）
+
+按导师给的清单逐条修，另发现两处：
+
+| # | 问题 | 修正 |
+|---|---|---|
+| 9 | `c.commit()`（`c` 是 cursor） | `db.commit()` |
+| 10 | 单条 `return b`（元组） | `return { id :b[0], ...}` |
+
+最终验收（全部通过）：
+
+```
+get /tickets       200 [{ id :1,...},{ id :2,...}]   ← 重启后仍在（持久化）
+get /tickets/1     200 { id :1, topic : 排序算法 , hours :3}
+get /tickets/2     200 {...}
+get /tickets/999   404
+post 坏类型         422
+数据库             3 列、2 行、id 自增
+```
+
+## 四、判定
+
+零提示那轮**未通过**；修正阶段共 **10 处提示**，故整体记 **`hinted_run`**。
+需第四次零提示默写（换表名与字段）才能记 `independent_run`。
+
+## 四、下次（回宿舍）第一件事
+
+1. 先修上面 8 处，按顺序：导入拼错 → 缺逗号（两处）→ `status_code=404` → 冒号 → `commit` 位置 → 返回形状 → 函数重名；
+2. 启动 `py -3.12 -m uvicorn app:app --port 8004 --reload`；
+3. 跑五次验收 + 重启验证；
+4. 通过才算 `independent_run`，做第四次重试或进第 5 课。
+">
+<summary><span class="date">11-28 18:47</span><span>第三次默写 `tickets`（未完成，时间到停手）</span><span class="kind">其他</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><h2>第三次默写 <code>tickets</code>（未完成，时间到停手）</h2>
+<ul><li>时间：18:06:15–18:33:34（含 SQL 填空 2 分钟 + 默写约 25 分钟）</li><li>机器：PC-B（<code>&lt;本机&gt;</code>）</li><li>目录：<code>code/2026-11-28-tickets-dictation</code></li><li>端口：8004（未启动）</li><li>形式：空目录 + 空 <code>app.py</code>，零提示，20 分钟限时</li></ul>
+<h3>一、SQL 句式填空（18:06–18:08）：3.5 / 5</h3>
+<table><thead><tr><th>#</th><th>学员答案</th><th>正确</th><th>参数元组</th></tr></thead><tbody><tr><td>1 <code>WHERE ___ = ?</code></td><td><code>id</code> ✓</td><td><code>id</code></td><td><code>(1,)</code></td></tr><tr><td>2 <code>UPDATE ... ___ hours = ?</code></td><td><code>WHEN</code> ✗</td><td><strong><code>SET</code></strong></td><td><code>(3, 1)</code></td></tr><tr><td>3 <code>DELETE ... ___ id = ?</code></td><td><code>WHERE</code> ✓</td><td><code>WHERE</code></td><td><code>(1,)</code></td></tr><tr><td>4 <code>INSERT ... ___ (?, ?)</code></td><td><code>VALUES</code> ✓</td><td><code>VALUES</code></td><td><code>(&quot;排序&quot;, 3)</code></td></tr><tr><td>5 <code>SELECT * ... ___ ?</code></td><td><code>limit=2</code> 半</td><td><strong><code>LIMIT ?</code></strong></td><td><code>(2,)</code></td></tr></tbody></table>
+<p>未写参数元组；已强调单元素元组要带逗号 <code>(1,)</code>。</p>
+<h3>二、默写 <code>tickets</code>：时间到未跑通</h3>
+<p>20 分钟到点（18:28）后继续写到 18:32:45，<strong>文件语法级错误，无法导入</strong>。</p>
+<p>已写出的正确部分：</p>
+<ul><li><code>get_db()</code> 用 <code>yield</code> + <code>finally: close()</code>（依赖注入结构对）</li><li><code>init()</code> + <code>CREATE TABLE IF NOT EXISTS</code> + <code>commit</code></li><li>Pydantic 模型 <code>TicketIn(topic: str, hours: int)</code></li><li>三条路由 + <code>Depends(get_db)</code> 签名</li><li>404 逻辑思路（<code>fetchone()</code> 为 None → 抛异常）</li></ul>
+<p>错误清单（原文未改，供回宿舍修正）：</p>
+<table><thead><tr><th>#</th><th>行</th><th>问题</th></tr></thead><tbody><tr><td>1</td><td>1</td><td><code>from pytasic import BaseModel</code> 拼错（pydantic）</td></tr><tr><td>2</td><td>36</td><td><code>execute(&quot;... WHERE id=?&quot; (tid,))</code> 少了<strong>逗号</strong>，缺参数元组外层括号</td></tr><tr><td>3</td><td>38</td><td><code>status_code()</code> 应为 <code>status_code=404</code></td></tr><tr><td>4</td><td>42</td><td><code>item=TicketIn</code> 应为 <code>item: TicketIn</code>（冒号）</td></tr><tr><td>5</td><td>43</td><td>同上，<code>execute(sql (a, b))</code> 缺逗号、参数没包成一个元组</td></tr><tr><td>6</td><td>44–45</td><td><code>commit()</code> 写在 <code>return</code> 之后，永远执行不到；<code>commit</code> 应在 <code>return</code> 之前</td></tr><tr><td>7</td><td>44</td><td>返回 <code>[{...}]</code> 是列表，应返回单个 dict</td></tr><tr><td>8</td><td>35</td><td>第二条路由函数名与第一条重复（<code>get_tickets</code> 两次）</td></tr></tbody></table>
+<h3>三、修正后（18:41:35–18:46:10，5 分钟）</h3>
+<p>按导师给的清单逐条修，另发现两处：</p>
+<table><thead><tr><th>#</th><th>问题</th><th>修正</th></tr></thead><tbody><tr><td>9</td><td><code>c.commit()</code>（<code>c</code> 是 cursor）</td><td><code>db.commit()</code></td></tr><tr><td>10</td><td>单条 <code>return b</code>（元组）</td><td><code>return {&quot;id&quot;:b[0], ...}</code></td></tr></tbody></table>
+<p>最终验收（全部通过）：</p>
+<pre><code>GET /tickets       200 [{&quot;id&quot;:1,...},{&quot;id&quot;:2,...}]   ← 重启后仍在（持久化）
+GET /tickets/1     200 {&quot;id&quot;:1,&quot;topic&quot;:&quot;排序算法&quot;,&quot;hours&quot;:3}
+GET /tickets/2     200 {...}
+GET /tickets/999   404
+POST 坏类型         422
+数据库             3 列、2 行、id 自增</code></pre>
+<h3>四、判定</h3>
+<p>零提示那轮<strong>未通过</strong>；修正阶段共 <strong>10 处提示</strong>，故整体记 <strong><code>HINTED_RUN</code></strong>。 需第四次零提示默写（换表名与字段）才能记 <code>INDEPENDENT_RUN</code>。</p>
+<h3>四、下次（回宿舍）第一件事</h3>
+<ul><li>先修上面 8 处，按顺序：导入拼错 → 缺逗号（两处）→ <code>status_code=404</code> → 冒号 → <code>commit</code> 位置 → 返回形状 → 函数重名；</li><li>启动 <code>py -3.12 -m uvicorn app:app --port 8004 --reload</code>；</li><li>跑五次验收 + 重启验证；</li><li>通过才算 <code>INDEPENDENT_RUN</code>，做第四次重试或进第 5 课。</li></ul></div>
+</details><details data-kind="其他" data-text="```python
+from pydantic import basemodel
+from pathlib import path
+from fastapi import fastapi,httpexception,depends
+import sqlite3
+base = path(__file__).parent
+db = base /  tickets.db 
+
+def get_db():
+    cnn = sqlite3.connect(db)
+    try:
+        yield cnn
+    finally:
+        cnn.close()
+
+def init():
+    cnn = sqlite3.connect(db)
+    cur = cnn.cursor()
+    cur.execute( create table if not exists tickets(id integer primary key,topic text,hours integer) )
+    cnn.commit()
+
+init()
+
+class ticketin(basemodel):
+    topic: str
+    hours: int
+
+app = fastapi()
+
+@app.get( /tickets )
+def get_tickets(db=depends(get_db)):
+    a = db.execute( select id,topic,hours from tickets ).fetchall()
+    return[{ id :r[0], topic :r[1], hours :r[2]} for r in a]
+
+@app.get( /tickets/{tid} )
+def get_ticket(tid,db=depends(get_db)):
+    b = db.execute( select id,topic,hours from tickets where id=? ,(tid,)).fetchone()
+    if b is none:
+        raise httpexception(status_code=404,detail= 单条，不存在 404 )
+    return { id :b[0], topic :b[1], hours :b[2]}
+
+@app.post( /tickets )
+def create_tickets(item:ticketin,db=depends(get_db)):
+    c = db.execute( insert into tickets(topic,hours) values(?,?) ,(item.topic,item.hours))
+    db.commit()
+    return{ id : c.lastrowid,  topic :item.topic, hours :item.hours}
+```
+">
+<summary><span class="date">11-28 18:46</span><span>其他 · 代码练习</span><span class="kind">其他</span></summary>
+<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>from pydantic import BaseModel
+from pathlib import Path
+from fastapi import FastAPI,HTTPException,Depends
+import sqlite3
+base = Path(__file__).parent
+DB = base / &quot;tickets.db&quot;
+
+def get_db():
+    cnn = sqlite3.connect(DB)
+    try:
+        yield cnn
+    finally:
+        cnn.close()
+
+def init():
+    cnn = sqlite3.connect(DB)
+    cur = cnn.cursor()
+    cur.execute(&quot;CREATE TABLE IF NOT EXISTS tickets(id INTEGER PRIMARY KEY,topic TEXT,hours INTEGER)&quot;)
+    cnn.commit()
+
+init()
+
+class TicketIn(BaseModel):
+    topic: str
+    hours: int
+
+app = FastAPI()
+
+@app.get(&quot;/tickets&quot;)
+def get_tickets(db=Depends(get_db)):
+    a = db.execute(&quot;SELECT id,topic,hours FROM tickets&quot;).fetchall()
+    return[{&quot;id&quot;:r[0],&quot;topic&quot;:r[1],&quot;hours&quot;:r[2]} for r in a]
+
+@app.get(&quot;/tickets/{tid}&quot;)
+def get_ticket(tid,db=Depends(get_db)):
+    b = db.execute(&quot;SELECT id,topic,hours FROM tickets WHERE id=?&quot;,(tid,)).fetchone()
+    if b is None:
+        raise HTTPException(status_code=404,detail=&quot;单条，不存在 404&quot;)
+    return {&quot;id&quot;:b[0],&quot;topic&quot;:b[1],&quot;hours&quot;:b[2]}
+
+@app.post(&quot;/tickets&quot;)
+def create_tickets(item:TicketIn,db=Depends(get_db)):
+    c = db.execute(&quot;INSERT INTO tickets(topic,hours) VALUES(?,?)&quot;,(item.topic,item.hours))
+    db.commit()
+    return{&quot;id&quot;: c.lastrowid, &quot;topic&quot;:item.topic,&quot;hours&quot;:item.hours}</code></pre></div>
+</details><details data-kind="进度" data-text="# 学习进度
 
 - 更新时间：2026-11-25 09:25
 - **双机整合（2026-11-24）**：以 pc-a 学习记录为基础，已按审核意见修订并部署到 pc-a 本地；18:52 完成 pc-a → u 盘首次正式同步（27 文件，sha 校验，学习档案与 skill 一致）；pc-b 待接入。设备登记、同步操作与备份记录见 `sync_status.md`。
@@ -369,331 +725,6 @@ footer{color:var(--mut);font-size:12px;text-align:center;padding:20px}
 <ul><li>时间：22:15–22:51（含 22:44 后 7 分钟命名约定答疑）；形式：骨架口述 5 格 + 6 个快问 + 默写两遍；</li><li>第一轮口述：装饰器漏方法名、<code>item=&quot;ProductIn&quot;</code> 用引号、SQL 漏 <code>VALUES</code>、把“已存在”答成 422；仅 <code>commit</code> 答对；</li><li>快问：<code>Depends</code> 位置、<code>yield</code> 前后、422/404 来源、未 commit 不可见——全对；<code>fetchone/fetchall</code> 返回 <code>None</code>/<code>[]</code> 答错；<code>rowcount</code> 半对；</li><li>默写第一遍 4 处错（等号、参数塞进 SQL 字符串、列名、返回键）；第二遍只剩 2 处拼写（<code>Depend</code>、键名 <code>CREATE</code>）；</li><li>会话记录：<code>sessions/2026-11-27-review-fastapi34.md</code>；</li><li>结论：骨架已基本成形，明日默写重点查 <code>Depends</code> 拼写、JSON 键名、<code>fetchone</code> 的 <code>None</code>。全天累计 <strong>232 分钟</strong>。</li></ul>
 <h3>2026-11-28 上午：两次空白默写均未在限时内独立完成</h3>
 <ul><li>时间：07:32–08:46，<strong>74 分钟</strong>；端口 8002 / 8003；</li><li><strong>默写 1 <code>products</code>（20 分钟）</strong>：到点 7 处语法错（<code>sqlite3.Connection</code>、<code>price: int</code>、参数被引号包住两处、空 SQL、空函数体、<code>app_post</code>、<code>ftechall</code>），无法载入；修正 23 分钟后验收全过 → <code>HINTED_RUN</code>；</li><li><strong>默写 2 <code>orders</code>（20 分钟）</strong>：到点四接口全 500；修正 9 分钟后通过 → <code>HINTED_RUN</code>；错处：<code>finally: commit</code>、<code>list.commit()</code>、列表返回形状、<code>WHERE=?</code> 缺列名与参数、<code>INSERT ... FROM</code>、参数未成元组且漏 <code>commit()</code>；</li><li><strong>共同失败点</strong>：结构记熟了，卡在 <strong>SQL 句子完整度</strong> 与 <strong><code>execute</code> 参数必须是元组</strong>；</li><li>答疑：<code>init()</code> 的必要性（空库无表）、<code>WHERE id=?</code> 与主键唯一性、三列与 WHERE 无关；</li><li>会话记录：<code>sessions/2026-11-28-products-orders-redo.md</code>；</li><li>结论：第 4 课“独立迁移”仍未达标；下次先做 10 分钟 SQL 句式填空，再第三次默写（<code>tickets</code> 表），通过后才进 pytest。</li><li>2026-11-28 傍晚（PC-B）<strong>SQL 填空 3.5/5 + 第三次默写 <code>tickets</code> 未通过</strong>（<code>sessions/2026-11-28-tickets-dictation.md</code>）：默写 25 分钟未跑通，8 处语法级错误（<code>pytasic</code>、两处缺逗号、<code>status_code()</code>、<code>item=TicketIn</code>、<code>commit</code> 在 <code>return</code> 后、返回列表、函数重名）；已写出的正确部分为 <code>get_db()</code> 依赖注入、<code>init()</code> 建表、模型声明、三条路由签名。回宿舍先修这 8 处再验收。</li></ul></div>
-</details><details data-kind="其他" data-text="# current_state
-
-&gt; 开课必须先读本文件；`progress.md` 只保存完整历史。
-&gt; **本文件是 `next_start` 的唯一来源。**
-
-- 更新时间：2026-11-28 18:33
-- 运行模式：**pc-a / pc-b / u 盘三方已一致**（pc-a 于 2026-11-26 20:36 pull，`status` 退出 0）
-- 活跃学习电脑：pc-b（白天，` `）/ pc-a（晚间，`desktop-3ldso0s`）
-- pc-a 路径：`学习目录\learning`
-- pc-b 路径：`学习目录\learning`（已核验）
-- u 盘：自动探测（pc-a `e:`，pc-b `h:`）
-- 自动同步：**已启用**（sync.py sha `f984cbe9…`）；两机各有独立基线
-
-## 阶段
-
-| 维度 | 状态 |
-|---|---|
-| 职业主线 | python 后端 + 大模型应用开发（机器学习工程为并行方向） |
-| 课程阶段 | 第 2 阶段门禁完成（11-26）；**已进入第 5 阶段：fastapi 第 1–2 课** |
-| 下一阶段 | **fastapi**（复习周 11-29 结束后启动） |
-| 每日目标 | 3 小时 dsh 学习；吴恩达课程另排 |
-
-## 2026-11-25 学习证据
-
-### 白天（pc-b）
-
-| 内容 | 结果 | 证据等级 |
-|---|---|---|
-| **sql 限时复测 3（`shipments.csv`）** | 22 分钟零提示跑通：`有效 7 跳过 3`、表 7 行、分组 east 120/north 50/west 40、`report.json`、重跑幂等 | **`independent_run`**（主流程） |
-| 交付后规格修正 | `report.json` 结构、表结构、键名 `count` | `hinted_run`（3 轮） |
-| 错题重做 3 个最小复现 | set vs dict、`if not exists` 旧表、赋值 vs 追加 | 独立完成 |
-| 阶段 2 复盘 4 问 | 2/4（冲突标记、http 异常分类错） | — |
-| python 基础抽查 | 口头 3.5/5；代码主流程独立，排序/json 块提示 | 混合 |
-| http 短迁移 2（`/orders.json`） | 42 分钟（超 12），三条分支实现 | `hinted_run`（8 处） |
-
-### 晚间（pc-a）
-
-| 内容 | 结果 | 证据等级 |
-|---|---|---|
-| **http 短迁移 3（`/meters.json`）** | 24 分钟主动停表，未跑通、无 `summary.json` | —（**未通过**） |
-| 提示修正 | 三行输出、`summary.json`、幂等、404/连不上全部通过 | `hinted_run`（8 处 + 3 段讲解） |
-
-- 11-25 计时：白天 **167 分钟** + 晚间 **56 分钟** = **223 分钟**。
-
-## 2026-11-26 学习证据（pc-b）
-
-| **http 短迁移 4（`/tickets.json`）** | 36 分钟：三条分支最终全过，但 3 处缺陷（`value&gt;1`、排序函数用全局变量导致排序失效、`except connectionerror` 抓错类）经指出后修 | `hinted_run` |
-| **http 短迁移 5（`/samples.json`）** | 25 分钟（限时内）：三条分支全过、`summary.json` 键与顺序正确、幂等；2 处机械性提示（循环变量残留、键名 `cnt`） | `hinted_run`（提示数 8→2） |
-
-| **10 分钟零提示验证（`/visits.json`）** | 11 分钟、**零提示**：`有效 7 跳过 2`、n2 2/17、n1 3/14、n3 2/9、`summary.json` 正确、代码复核无缺陷 | **`independent_run`** |
-
-| **阶段 2 收尾复盘（10 问）** | 5.5/10：git 标记检查（第 3 次错）、`{}` 类型（第 3 次错）、路径锚定答反；http 异常分类全对 | — |
-| **错题本整理** | 14 类错误按复发次数归档，含“改动前 4 条自查清单”：`notes/错题本-stage2.md` | — |
-
-| **跨主题小综合**（http→sqlite→json→三分支） | 24 分钟；1 处提示（`skipped = 0` 应 `+1`） | `hinted_run` |
-| **交叉验证**（python 分组 vs sql 分组） | 两个字典相等、`equal=true`、`一致`；结构由导师给出 | `hinted_run` |
-| **fastapi 第 1 课** | `/health`、`/stock/{sku}` 均 200；`/docs` 可访问 | 完成 |
-| **fastapi 第 2 课** | 查询参数、post+pydantic、404 全部通过；4 处提示（导入/切片/raise 位置/用错变量） | `hinted_run` |
-
-### 晚间复习（pc-a，21:03–21:33）
-
-| 内容 | 结果 | 证据等级 |
-|---|---|---|
-| 口头检索 8 题（fastapi 1–2 课） | 仅 `raise` 位置 1 题答对；路径/查询参数、get/post、`basemodel`、`uvicorn app:app` 空白；422 答成 421 | —（**未巩固**） |
-| 重讲后复述 | 422/404 归属、`uvicorn app:app` 两边含义答对 | 口头 |
-| 代码预测 5 题（读 `app.py`） | 3 题内容对但未说状态码；`/stocks/b` 答成返回数据；`qty: abc ` 不会 | — |
-
-- 11-26 计时：白天 **167 分钟**（pc-b，含 fastapi 两课 53 分钟）+ 晚间复习 **30 分钟**（pc-a）。
-
-## 2026-11-27 学习证据（pc-a）
-
-| 内容 | 结果 | 证据等级 |
-|---|---|---|
-| 门禁 3 问 | 路径/查询参数首次答反后纠正；422/404 归属对；`uvicorn app:app` 补精确 | 口头 |
-| **fastapi 第 3 课：sqlite + `depends(get_db)`** | 全部验收通过：`/stocks` 3 条、`?limit=1` 1 条、`/stocks/b` 200、`/stocks/z` 404、post 200、**重启后数据仍在** | `hinted_run`（8 处） |
-| fastapi 第 4 课：crud 补全 | 回填后 6 条验收全过（409 / put 200 / put 404 / delete 200 / delete 404 / `/docs`） | `hinted_run`（给完整版后回填） |
-| **`products` 零提示小验收** | 16 分钟只写出 21 行，仍是 `stocks` 残影（库名/模型/路由斜杠/缺 `depends`/sql 破碎） | **未通过** |
-| 引导重写 `products` | 最终验收全过：空列表、两次 post、id 自增、单条 200、999 → 404、`/docs`、磁盘 2 行 | `hinted_run`（7 处） |
-
-- 环境：独立 venv `projects/fastapi-api/.venv`（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4）；
-- 11-27 计时：上午 **94 分钟**（08:39–10:13）+ 下午 **102 分钟**（12:22–14:04）+ 晚间复习 **36 分钟**（22:15–22:51）= **232 分钟**。
-
-### 晚间复习（22:15–22:51，含 22:44 后 7 分钟命名约定答疑）
-
-| 内容 | 结果 |
-|---|---|
-| 骨架口述 5 格 | 仅 `commit` 答对；装饰器、`item: productin`、`values`、422/409 均错 |
-| 6 个快问 | `depends` 位置、`yield`、422/404、未 commit 不可见——对；`fetchone/fetchall` 返回 `none`/`[]` 错；`rowcount` 半对 |
-| 默写两遍 | 第一遍 4 处结构错 → 第二遍仅 `depend` 拼写与键名大小写 |
-
-| **第三次默写 `tickets`**（pc-b，零提示，20 分钟） | 时间到**未跑通**：8 处语法级错误（`pytasic`、两处缺逗号、`status_code()`、`item=ticketin`、`commit` 在 `return` 后、返回列表、函数重名） | **未通过** |
-| **sql 句式填空** | 3.5/5（`set` 写成 `when`、`limit` 写成 `limit=2`、未写参数元组） | — |
-
-## 薄弱点（下次优先）
-
-1. **fastapi 代码结构**：同一路径不能注册两次；路径里的 `{sku}` 必须在函数签名里；`depends` 只能写在路由参数里；
-2. **`is` vs `==`**：判数值用 `==`（`if m is 0` 是错）；
-3. **括号语义**：`( c ,2)` 元组、`( c :2)` 非法、`( c ,)` 单元素元组、`init_db()` 才是调用；
-4. **`fetchone()` / `fetchall()`**：一条 vs 列表；查不到分别是 `none` 与 `[]`；
-5. **`rowcount`**：属于 `execute` 返回的游标，判断要在 `commit` 前；
-6. **启动环境**：必须用 venv 解释器；`python app.py` 不起服务，要 `python -m uvicorn app:app`；cmd 切盘符用 `cd /d`，含空格路径要引号；
-7. 旧：冲突标记检查（★★★）、`{}` 集合/字典（★★★）、路径锚定、循环变量残留、排序 key、json 键名（★★）。
-
-&gt; 完整清单见 `notes/错题本-stage2.md`（含“改动前 4 条自查清单”）。
-
-## next_start（唯一）
-
-**11-29（回宿舍第一件事）：修完 `tickets` 默写 + 四次验收**
-
-- 目录 `code/2026-11-28-tickets-dictation/app.py`，按 `sessions/2026-11-28-tickets-dictation.md` 的 8 条清单逐条修（**先不看答案，自己找**）：
-  1. `from pytasic` → `from pydantic`；2. 两处 `execute(sql (a,b))` 缺逗号 + 参数元组；3. `status_code()` → `status_code=404`；4. `item=ticketin` → `item: ticketin`；5. `commit()` 移到 `return` 之前；6. 返回单个 dict；7. 两条路由函数重名；
-- 启动 `py -3.12 -m uvicorn app:app --port 8004 --reload`；
-- 验收：空列表 → post ×2 → 列表 2 条 → 单条 200 → 999→404 → **重启后数据仍在**；
-- 全过 → 记 `independent_run`，进 fastapi 第 5 课；不过 → 再练 sql 句子 + 参数元组，不推新内容。
-
-- 今日遗留：`set`/`limit` 句式、单元素元组 `(1,)`。
-- 三重自查仍要过：变量引号 / `{}` 类型 / 循环变量。
-
-## 同步与备份（当前）
-
-- 三方一致（pc-a 于 2026-11-26 20:36 pull，522 文件，`diff=0`），详见 `sync_status.md`；
-- 同步程序：三方均为 `f984cbe9…`（v5 + 备份排除补丁，37/37 测试）；
-- 备份：`pc-a_20261124_1333`、`pc-a_20261124_1832`、`usb_20261124_1833`、pc-b 首次接入前备份（`d:\_sync_backup\pc-b-20261125_0821\`）。
-">
-<summary><span class="date">11-28 18:33</span><span>CURRENT_STATE</span><span class="kind">其他</span></summary>
-<div class="body"><h2>CURRENT_STATE</h2>
-<blockquote>开课必须先读本文件；<code>PROGRESS.md</code> 只保存完整历史。</blockquote>
-<blockquote><strong>本文件是 <code>NEXT_START</code> 的唯一来源。</strong></blockquote>
-<ul><li>更新时间：2026-11-28 18:33</li><li>运行模式：<strong>PC-A / PC-B / U 盘三方已一致</strong>（PC-A 于 2026-11-26 20:36 pull，<code>status</code> 退出 0）</li><li>活跃学习电脑：PC-B（白天，<code>&lt;本机&gt;</code>）/ PC-A（晚间，<code>DESKTOP-3LDSO0S</code>）</li><li>PC-A 路径：<code>学习目录\learning</code></li><li>PC-B 路径：<code>学习目录\learning</code>（已核验）</li><li>U 盘：自动探测（PC-A <code>E:</code>，PC-B <code>H:</code>）</li><li>自动同步：<strong>已启用</strong>（sync.py SHA <code>f984cbe9…</code>）；两机各有独立基线</li></ul>
-<h3>阶段</h3>
-<table><thead><tr><th>维度</th><th>状态</th></tr></thead><tbody><tr><td>职业主线</td><td>Python 后端 + 大模型应用开发（机器学习工程为并行方向）</td></tr><tr><td>课程阶段</td><td>第 2 阶段门禁完成（11-26）；<strong>已进入第 5 阶段：FastAPI 第 1–2 课</strong></td></tr><tr><td>下一阶段</td><td><strong>FastAPI</strong>（复习周 11-29 结束后启动）</td></tr><tr><td>每日目标</td><td>3 小时 DSH 学习；吴恩达课程另排</td></tr></tbody></table>
-<h3>2026-11-25 学习证据</h3>
-<h4>白天（PC-B）</h4>
-<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td><strong>SQL 限时复测 3（<code>shipments.csv</code>）</strong></td><td>22 分钟零提示跑通：<code>有效 7 跳过 3</code>、表 7 行、分组 east 120/north 50/west 40、<code>report.json</code>、重跑幂等</td><td><strong><code>INDEPENDENT_RUN</code></strong>（主流程）</td></tr><tr><td>交付后规格修正</td><td><code>report.json</code> 结构、表结构、键名 <code>count</code></td><td><code>HINTED_RUN</code>（3 轮）</td></tr><tr><td>错题重做 3 个最小复现</td><td>set vs dict、<code>IF NOT EXISTS</code> 旧表、赋值 vs 追加</td><td>独立完成</td></tr><tr><td>阶段 2 复盘 4 问</td><td>2/4（冲突标记、HTTP 异常分类错）</td><td>—</td></tr><tr><td>Python 基础抽查</td><td>口头 3.5/5；代码主流程独立，排序/JSON 块提示</td><td>混合</td></tr><tr><td>HTTP 短迁移 2（<code>/orders.json</code>）</td><td>42 分钟（超 12），三条分支实现</td><td><code>HINTED_RUN</code>（8 处）</td></tr></tbody></table>
-<h4>晚间（PC-A）</h4>
-<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td><strong>HTTP 短迁移 3（<code>/meters.json</code>）</strong></td><td>24 分钟主动停表，未跑通、无 <code>summary.json</code></td><td>—（<strong>未通过</strong>）</td></tr><tr><td>提示修正</td><td>三行输出、<code>summary.json</code>、幂等、404/连不上全部通过</td><td><code>HINTED_RUN</code>（8 处 + 3 段讲解）</td></tr></tbody></table>
-<ul><li>11-25 计时：白天 <strong>167 分钟</strong> + 晚间 <strong>56 分钟</strong> = <strong>223 分钟</strong>。</li></ul>
-<h3>2026-11-26 学习证据（PC-B）</h3>
-<p>| <strong>HTTP 短迁移 4（<code>/tickets.json</code>）</strong> | 36 分钟：三条分支最终全过，但 3 处缺陷（<code>value&gt;1</code>、排序函数用全局变量导致排序失效、<code>except ConnectionError</code> 抓错类）经指出后修 | <code>HINTED_RUN</code> | | <strong>HTTP 短迁移 5（<code>/samples.json</code>）</strong> | 25 分钟（限时内）：三条分支全过、<code>summary.json</code> 键与顺序正确、幂等；2 处机械性提示（循环变量残留、键名 <code>cnt</code>） | <code>HINTED_RUN</code>（提示数 8→2） |</p>
-<p>| <strong>10 分钟零提示验证（<code>/visits.json</code>）</strong> | 11 分钟、<strong>零提示</strong>：<code>有效 7 跳过 2</code>、n2 2/17、n1 3/14、n3 2/9、<code>summary.json</code> 正确、代码复核无缺陷 | <strong><code>INDEPENDENT_RUN</code></strong> |</p>
-<p>| <strong>阶段 2 收尾复盘（10 问）</strong> | 5.5/10：Git 标记检查（第 3 次错）、<code>{}</code> 类型（第 3 次错）、路径锚定答反；HTTP 异常分类全对 | — | | <strong>错题本整理</strong> | 14 类错误按复发次数归档，含“改动前 4 条自查清单”：<code>notes/错题本-stage2.md</code> | — |</p>
-<p>| <strong>跨主题小综合</strong>（HTTP→SQLite→JSON→三分支） | 24 分钟；1 处提示（<code>skipped = 0</code> 应 <code>+1</code>） | <code>HINTED_RUN</code> | | <strong>交叉验证</strong>（Python 分组 vs SQL 分组） | 两个字典相等、<code>equal=true</code>、<code>一致</code>；结构由导师给出 | <code>HINTED_RUN</code> | | <strong>FastAPI 第 1 课</strong> | <code>/health</code>、<code>/stock/{sku}</code> 均 200；<code>/docs</code> 可访问 | 完成 | | <strong>FastAPI 第 2 课</strong> | 查询参数、POST+Pydantic、404 全部通过；4 处提示（导入/切片/raise 位置/用错变量） | <code>HINTED_RUN</code> |</p>
-<h4>晚间复习（PC-A，21:03–21:33）</h4>
-<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td>口头检索 8 题（FastAPI 1–2 课）</td><td>仅 <code>raise</code> 位置 1 题答对；路径/查询参数、GET/POST、<code>BaseModel</code>、<code>uvicorn app:app</code> 空白；422 答成 421</td><td>—（<strong>未巩固</strong>）</td></tr><tr><td>重讲后复述</td><td>422/404 归属、<code>uvicorn app:app</code> 两边含义答对</td><td>口头</td></tr><tr><td>代码预测 5 题（读 <code>app.py</code>）</td><td>3 题内容对但未说状态码；<code>/stocks/b</code> 答成返回数据；<code>qty:&quot;abc&quot;</code> 不会</td><td>—</td></tr></tbody></table>
-<ul><li>11-26 计时：白天 <strong>167 分钟</strong>（PC-B，含 FastAPI 两课 53 分钟）+ 晚间复习 <strong>30 分钟</strong>（PC-A）。</li></ul>
-<h3>2026-11-27 学习证据（PC-A）</h3>
-<table><thead><tr><th>内容</th><th>结果</th><th>证据等级</th></tr></thead><tbody><tr><td>门禁 3 问</td><td>路径/查询参数首次答反后纠正；422/404 归属对；<code>uvicorn app:app</code> 补精确</td><td>口头</td></tr><tr><td><strong>FastAPI 第 3 课：SQLite + <code>Depends(get_db)</code></strong></td><td>全部验收通过：<code>/stocks</code> 3 条、<code>?limit=1</code> 1 条、<code>/stocks/B</code> 200、<code>/stocks/Z</code> 404、POST 200、<strong>重启后数据仍在</strong></td><td><code>HINTED_RUN</code>（8 处）</td></tr><tr><td>FastAPI 第 4 课：CRUD 补全</td><td>回填后 6 条验收全过（409 / PUT 200 / PUT 404 / DELETE 200 / DELETE 404 / <code>/docs</code>）</td><td><code>HINTED_RUN</code>（给完整版后回填）</td></tr><tr><td><strong><code>products</code> 零提示小验收</strong></td><td>16 分钟只写出 21 行，仍是 <code>stocks</code> 残影（库名/模型/路由斜杠/缺 <code>Depends</code>/SQL 破碎）</td><td><strong>未通过</strong></td></tr><tr><td>引导重写 <code>products</code></td><td>最终验收全过：空列表、两次 POST、id 自增、单条 200、999 → 404、<code>/docs</code>、磁盘 2 行</td><td><code>HINTED_RUN</code>（7 处）</td></tr></tbody></table>
-<ul><li>环境：独立 venv <code>projects/fastapi-api/.venv</code>（fastapi 0.165.0 / uvicorn 0.54.0 / pydantic 2.14.4）；</li><li>11-27 计时：上午 <strong>94 分钟</strong>（08:39–10:13）+ 下午 <strong>102 分钟</strong>（12:22–14:04）+ 晚间复习 <strong>36 分钟</strong>（22:15–22:51）= <strong>232 分钟</strong>。</li></ul>
-<h4>晚间复习（22:15–22:51，含 22:44 后 7 分钟命名约定答疑）</h4>
-<table><thead><tr><th>内容</th><th>结果</th></tr></thead><tbody><tr><td>骨架口述 5 格</td><td>仅 <code>commit</code> 答对；装饰器、<code>item: ProductIn</code>、<code>VALUES</code>、422/409 均错</td></tr><tr><td>6 个快问</td><td><code>Depends</code> 位置、<code>yield</code>、422/404、未 commit 不可见——对；<code>fetchone/fetchall</code> 返回 <code>None</code>/<code>[]</code> 错；<code>rowcount</code> 半对</td></tr><tr><td>默写两遍</td><td>第一遍 4 处结构错 → 第二遍仅 <code>Depend</code> 拼写与键名大小写</td></tr></tbody></table>
-<p>| <strong>第三次默写 <code>tickets</code></strong>（PC-B，零提示，20 分钟） | 时间到<strong>未跑通</strong>：8 处语法级错误（<code>pytasic</code>、两处缺逗号、<code>status_code()</code>、<code>item=TicketIn</code>、<code>commit</code> 在 <code>return</code> 后、返回列表、函数重名） | <strong>未通过</strong> | | <strong>SQL 句式填空</strong> | 3.5/5（<code>SET</code> 写成 <code>WHEN</code>、<code>LIMIT</code> 写成 <code>limit=2</code>、未写参数元组） | — |</p>
-<h3>薄弱点（下次优先）</h3>
-<ul><li><strong>FastAPI 代码结构</strong>：同一路径不能注册两次；路径里的 <code>{sku}</code> 必须在函数签名里；<code>Depends</code> 只能写在路由参数里；</li><li><strong><code>is</code> vs <code>==</code></strong>：判数值用 <code>==</code>（<code>if m is 0</code> 是错）；</li><li><strong>括号语义</strong>：<code>(&quot;C&quot;,2)</code> 元组、<code>(&quot;C&quot;:2)</code> 非法、<code>(&quot;C&quot;,)</code> 单元素元组、<code>init_db()</code> 才是调用；</li><li><strong><code>fetchone()</code> / <code>fetchall()</code></strong>：一条 vs 列表；查不到分别是 <code>None</code> 与 <code>[]</code>；</li><li><strong><code>rowcount</code></strong>：属于 <code>execute</code> 返回的游标，判断要在 <code>commit</code> 前；</li><li><strong>启动环境</strong>：必须用 venv 解释器；<code>python app.py</code> 不起服务，要 <code>python -m uvicorn app:app</code>；cmd 切盘符用 <code>cd /d</code>，含空格路径要引号；</li><li>旧：冲突标记检查（★★★）、<code>{}</code> 集合/字典（★★★）、路径锚定、循环变量残留、排序 key、JSON 键名（★★）。</li></ul>
-<blockquote>完整清单见 <code>notes/错题本-stage2.md</code>（含“改动前 4 条自查清单”）。</blockquote>
-<h3>NEXT_START（唯一）</h3>
-<p><strong>11-29（回宿舍第一件事）：修完 <code>tickets</code> 默写 + 四次验收</strong></p>
-<ul><li>目录 <code>code/2026-11-28-tickets-dictation/app.py</code>，按 <code>sessions/2026-11-28-tickets-dictation.md</code> 的 8 条清单逐条修（<strong>先不看答案，自己找</strong>）：</li><li><code>from pytasic</code> → <code>from pydantic</code>；2. 两处 <code>execute(sql (a,b))</code> 缺逗号 + 参数元组；3. <code>status_code()</code> → <code>status_code=404</code>；4. <code>item=TicketIn</code> → <code>item: TicketIn</code>；5. <code>commit()</code> 移到 <code>return</code> 之前；6. 返回单个 dict；7. 两条路由函数重名；</li><li>启动 <code>py -3.12 -m uvicorn app:app --port 8004 --reload</code>；</li><li>验收：空列表 → POST ×2 → 列表 2 条 → 单条 200 → 999→404 → <strong>重启后数据仍在</strong>；</li><li>全过 → 记 <code>INDEPENDENT_RUN</code>，进 FastAPI 第 5 课；不过 → 再练 SQL 句子 + 参数元组，不推新内容。</li></ul>
-<ul><li>今日遗留：<code>SET</code>/<code>LIMIT</code> 句式、单元素元组 <code>(1,)</code>。</li><li>三重自查仍要过：变量引号 / <code>{}</code> 类型 / 循环变量。</li></ul>
-<h3>同步与备份（当前）</h3>
-<ul><li>三方一致（PC-A 于 2026-11-26 20:36 pull，522 文件，<code>diff=0</code>），详见 <code>SYNC_STATUS.md</code>；</li><li>同步程序：三方均为 <code>f984cbe9…</code>（v5 + 备份排除补丁，37/37 测试）；</li><li>备份：<code>PC-A_20261124_1333</code>、<code>PC-A_20261124_1832</code>、<code>USB_20261124_1833</code>、PC-B 首次接入前备份（<code>D:\_sync_backup\PC-B-20261125_0821\</code>）。</li></ul></div>
-</details><details data-kind="其他" data-text="# 第三次默写 `tickets`（未完成，时间到停手）
-
-- 时间：18:06:15–18:33:34（含 sql 填空 2 分钟 + 默写约 25 分钟）
-- 机器：pc-b（` `）
-- 目录：`code/2026-11-28-tickets-dictation`
-- 端口：8004（未启动）
-- 形式：空目录 + 空 `app.py`，零提示，20 分钟限时
-
-## 一、sql 句式填空（18:06–18:08）：3.5 / 5
-
-| # | 学员答案 | 正确 | 参数元组 |
-|---|---|---|---|
-| 1 `where ___ = ?` | `id` ✓ | `id` | `(1,)` |
-| 2 `update ... ___ hours = ?` | `when` ✗ | **`set`** | `(3, 1)` |
-| 3 `delete ... ___ id = ?` | `where` ✓ | `where` | `(1,)` |
-| 4 `insert ... ___ (?, ?)` | `values` ✓ | `values` | `( 排序 , 3)` |
-| 5 `select * ... ___ ?` | `limit=2` 半 | **`limit ?`** | `(2,)` |
-
-未写参数元组；已强调单元素元组要带逗号 `(1,)`。
-
-## 二、默写 `tickets`：时间到未跑通
-
-20 分钟到点（18:28）后继续写到 18:32:45，**文件语法级错误，无法导入**。
-
-已写出的正确部分：
-- `get_db()` 用 `yield` + `finally: close()`（依赖注入结构对）
-- `init()` + `create table if not exists` + `commit`
-- pydantic 模型 `ticketin(topic: str, hours: int)`
-- 三条路由 + `depends(get_db)` 签名
-- 404 逻辑思路（`fetchone()` 为 none → 抛异常）
-
-错误清单（原文未改，供回宿舍修正）：
-
-| # | 行 | 问题 |
-|---|---|---|
-| 1 | 1 | `from pytasic import basemodel` 拼错（pydantic） |
-| 2 | 36 | `execute( ... where id=?  (tid,))` 少了**逗号**，缺参数元组外层括号 |
-| 3 | 38 | `status_code()` 应为 `status_code=404` |
-| 4 | 42 | `item=ticketin` 应为 `item: ticketin`（冒号） |
-| 5 | 43 | 同上，`execute(sql (a, b))` 缺逗号、参数没包成一个元组 |
-| 6 | 44–45 | `commit()` 写在 `return` 之后，永远执行不到；`commit` 应在 `return` 之前 |
-| 7 | 44 | 返回 `[{...}]` 是列表，应返回单个 dict |
-| 8 | 35 | 第二条路由函数名与第一条重复（`get_tickets` 两次） |
-
-## 三、判定
-
-`hinted_run` 都算不上——**未通过**（时间到未跑通）。计划中的五次验收（空列表 / post ×2 / 列表 2 条 / 单条 200 / 999→404 / 重启仍在）一项未测。
-
-## 四、下次（回宿舍）第一件事
-
-1. 先修上面 8 处，按顺序：导入拼错 → 缺逗号（两处）→ `status_code=404` → 冒号 → `commit` 位置 → 返回形状 → 函数重名；
-2. 启动 `py -3.12 -m uvicorn app:app --port 8004 --reload`；
-3. 跑五次验收 + 重启验证；
-4. 通过才算 `independent_run`，做第四次重试或进第 5 课。
-">
-<summary><span class="date">11-28 18:33</span><span>第三次默写 `tickets`（未完成，时间到停手）</span><span class="kind">其他</span></summary>
-<div class="body"><h2>第三次默写 <code>tickets</code>（未完成，时间到停手）</h2>
-<ul><li>时间：18:06:15–18:33:34（含 SQL 填空 2 分钟 + 默写约 25 分钟）</li><li>机器：PC-B（<code>&lt;本机&gt;</code>）</li><li>目录：<code>code/2026-11-28-tickets-dictation</code></li><li>端口：8004（未启动）</li><li>形式：空目录 + 空 <code>app.py</code>，零提示，20 分钟限时</li></ul>
-<h3>一、SQL 句式填空（18:06–18:08）：3.5 / 5</h3>
-<table><thead><tr><th>#</th><th>学员答案</th><th>正确</th><th>参数元组</th></tr></thead><tbody><tr><td>1 <code>WHERE ___ = ?</code></td><td><code>id</code> ✓</td><td><code>id</code></td><td><code>(1,)</code></td></tr><tr><td>2 <code>UPDATE ... ___ hours = ?</code></td><td><code>WHEN</code> ✗</td><td><strong><code>SET</code></strong></td><td><code>(3, 1)</code></td></tr><tr><td>3 <code>DELETE ... ___ id = ?</code></td><td><code>WHERE</code> ✓</td><td><code>WHERE</code></td><td><code>(1,)</code></td></tr><tr><td>4 <code>INSERT ... ___ (?, ?)</code></td><td><code>VALUES</code> ✓</td><td><code>VALUES</code></td><td><code>(&quot;排序&quot;, 3)</code></td></tr><tr><td>5 <code>SELECT * ... ___ ?</code></td><td><code>limit=2</code> 半</td><td><strong><code>LIMIT ?</code></strong></td><td><code>(2,)</code></td></tr></tbody></table>
-<p>未写参数元组；已强调单元素元组要带逗号 <code>(1,)</code>。</p>
-<h3>二、默写 <code>tickets</code>：时间到未跑通</h3>
-<p>20 分钟到点（18:28）后继续写到 18:32:45，<strong>文件语法级错误，无法导入</strong>。</p>
-<p>已写出的正确部分：</p>
-<ul><li><code>get_db()</code> 用 <code>yield</code> + <code>finally: close()</code>（依赖注入结构对）</li><li><code>init()</code> + <code>CREATE TABLE IF NOT EXISTS</code> + <code>commit</code></li><li>Pydantic 模型 <code>TicketIn(topic: str, hours: int)</code></li><li>三条路由 + <code>Depends(get_db)</code> 签名</li><li>404 逻辑思路（<code>fetchone()</code> 为 None → 抛异常）</li></ul>
-<p>错误清单（原文未改，供回宿舍修正）：</p>
-<table><thead><tr><th>#</th><th>行</th><th>问题</th></tr></thead><tbody><tr><td>1</td><td>1</td><td><code>from pytasic import BaseModel</code> 拼错（pydantic）</td></tr><tr><td>2</td><td>36</td><td><code>execute(&quot;... WHERE id=?&quot; (tid,))</code> 少了<strong>逗号</strong>，缺参数元组外层括号</td></tr><tr><td>3</td><td>38</td><td><code>status_code()</code> 应为 <code>status_code=404</code></td></tr><tr><td>4</td><td>42</td><td><code>item=TicketIn</code> 应为 <code>item: TicketIn</code>（冒号）</td></tr><tr><td>5</td><td>43</td><td>同上，<code>execute(sql (a, b))</code> 缺逗号、参数没包成一个元组</td></tr><tr><td>6</td><td>44–45</td><td><code>commit()</code> 写在 <code>return</code> 之后，永远执行不到；<code>commit</code> 应在 <code>return</code> 之前</td></tr><tr><td>7</td><td>44</td><td>返回 <code>[{...}]</code> 是列表，应返回单个 dict</td></tr><tr><td>8</td><td>35</td><td>第二条路由函数名与第一条重复（<code>get_tickets</code> 两次）</td></tr></tbody></table>
-<h3>三、判定</h3>
-<p><code>HINTED_RUN</code> 都算不上——<strong>未通过</strong>（时间到未跑通）。计划中的五次验收（空列表 / POST ×2 / 列表 2 条 / 单条 200 / 999→404 / 重启仍在）一项未测。</p>
-<h3>四、下次（回宿舍）第一件事</h3>
-<ul><li>先修上面 8 处，按顺序：导入拼错 → 缺逗号（两处）→ <code>status_code=404</code> → 冒号 → <code>commit</code> 位置 → 返回形状 → 函数重名；</li><li>启动 <code>py -3.12 -m uvicorn app:app --port 8004 --reload</code>；</li><li>跑五次验收 + 重启验证；</li><li>通过才算 <code>INDEPENDENT_RUN</code>，做第四次重试或进第 5 课。</li></ul></div>
-</details><details data-kind="其他" data-text="```python
-from pytasic import basemodel
-from pathlib import path
-from fastapi import fastapi,httpexception,depends
-import sqlite3
-base = path(__file__).parent
-db = base /  tickets.db 
-
-def get_db():
-    cnn = sqlite3.connect(db)
-    try:
-        yield cnn
-    finally:
-        cnn.close()
-
-def init():
-    cnn = sqlite3.connect(db)
-    cur = cnn.cursor()
-    cur.execute( create table if not exists tickets(id integer primary key,topic text,hours integer) )
-    cnn.commit()
-
-init()
-
-class ticketin(basemodel):
-    topic: str
-    hours: int
-
-app = fastapi()
-
-@app.get( /tickets )
-def get_tickets(db=depends(get_db)):
-    a = db.execute( select id,topic,hours from tickets ).fetchall()
-    return[{ id :r[0], topic :r[1], hours :r[2]} for r in a]
-
-@app.get( /tickets/{tid} )
-def get_tickets(tid,db=depends(get_db)):
-    b = db.execute( select id,topic,hours from tickets where id=?  (tid,)).fetchone()
-    if b is none:
-        raise httpexception(status_code(),detail= 单条，不存在 404 )
-    return b
-
-@app.post( /tickets )
-def create_tickets(item=ticketin,db=depends(get_db)):
-    c = db.execute( insert into tickets(topic,hours) values(?,?) (item.topic,item.hours))
-    return[{ create :item.topic, hours :item.hours}]
-    c.commit()
-```
-">
-<summary><span class="date">11-28 18:32</span><span>其他 · 代码练习</span><span class="kind">其他</span></summary>
-<div class="body"><p class="codetip">点击代码块可全屏查看</p><pre><code>from pytasic import BaseModel
-from pathlib import Path
-from fastapi import FastAPI,HTTPException,Depends
-import sqlite3
-base = Path(__file__).parent
-DB = base / &quot;tickets.db&quot;
-
-def get_db():
-    cnn = sqlite3.connect(DB)
-    try:
-        yield cnn
-    finally:
-        cnn.close()
-
-def init():
-    cnn = sqlite3.connect(DB)
-    cur = cnn.cursor()
-    cur.execute(&quot;CREATE TABLE IF NOT EXISTS tickets(id INTEGER PRIMARY KEY,topic TEXT,hours INTEGER)&quot;)
-    cnn.commit()
-
-init()
-
-class TicketIn(BaseModel):
-    topic: str
-    hours: int
-
-app = FastAPI()
-
-@app.get(&quot;/tickets&quot;)
-def get_tickets(db=Depends(get_db)):
-    a = db.execute(&quot;SELECT id,topic,hours FROM tickets&quot;).fetchall()
-    return[{&quot;id&quot;:r[0],&quot;topic&quot;:r[1],&quot;hours&quot;:r[2]} for r in a]
-
-@app.get(&quot;/tickets/{tid}&quot;)
-def get_tickets(tid,db=Depends(get_db)):
-    b = db.execute(&quot;SELECT id,topic,hours FROM tickets WHERE id=?&quot; (tid,)).fetchone()
-    if b is None:
-        raise HTTPException(status_code(),detail=&quot;单条，不存在 404&quot;)
-    return b
-
-@app.post(&quot;/tickets&quot;)
-def create_tickets(item=TicketIn,db=Depends(get_db)):
-    c = db.execute(&quot;INSERT INTO tickets(topic,hours) VALUES(?,?)&quot;(item.topic,item.hours))
-    return[{&quot;create&quot;:item.topic,&quot;hours&quot;:item.hours}]
-    c.commit()</code></pre></div>
 </details><details data-kind="其他" data-text="# sync_status
 
 &gt; 双机 + u 盘同步状态；**u 盘为同步中转与备份；2026-11-25 起 pc-a / pc-b / u 盘三方一致**。
